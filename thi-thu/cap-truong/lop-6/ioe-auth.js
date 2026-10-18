@@ -161,7 +161,7 @@ window.ioeLogin=async()=>{
  $('ioeLogin').disabled=true;
  status('Đang mở cửa sổ đăng nhập Google…');
  try{await signInWithPopup(auth,new GoogleAuthProvider());status('Google đã xác thực. Đang kiểm tra hồ sơ Firestore…');}
- catch(e){if(e.code==='auth/popup-closed-by-user')status('Bạn đã đóng cửa sổ đăng nhập. Hãy thử lại.');else status(`Đăng nhập thất bại (${e.code||'unknown'}): ${e.message}`);}
+ catch(e){if(e.code==='auth/popup-closed-by-user')status('Bạn đã đóng cửa sổ đăng nhập. Hãy thử lại.');else if(e.code==='auth/unauthorized-domain')status('Tên miền tienganhthi.github.io chưa được cho phép trong Firebase. Quản trị viên vào Firebase Console → Authentication → Settings → Authorized domains → Add domain và thêm tienganhthi.github.io. Sau đó tải lại trang.');else status(`Đăng nhập thất bại (${e.code||'unknown'}): ${e.message}`);}
  finally{$('ioeLogin').disabled=false;}
 };
 window.ioeLogout=async()=>{displaced=false;stopPresence();await releaseSession(me?.uid);if(auth)await signOut(auth);};
