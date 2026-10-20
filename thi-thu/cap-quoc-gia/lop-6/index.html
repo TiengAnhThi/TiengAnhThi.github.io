@@ -63,7 +63,43 @@
 <div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
 </section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp Quốc gia – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.remove('hidden')">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ IOE LỚP 6</h2><div class="welcome-year">200 câu hỏi · 30 phút · 5 lượt thi miễn phí/ tài khoản</div></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP QUỐC GIA</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><div id="wrongReview" class="wrong-review"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
 'use strict';
+function ioeGiaiThichSapXep(q){
+ const a=String(q.answer||'').trim();
+ if(!a)return 'Ghép các từ thành một câu hoàn chỉnh, đặt chủ ngữ trước động từ và kiểm tra dấu câu.';
+ const low=a.toLowerCase();
+ const parts=[];
+ const add=(x)=>{if(!parts.includes(x))parts.push(x)};
+ const isQuestion=/\?$/.test(a);
+ const who=/^(what|where|when|why|who|whose|which|how)\b/i.test(a);
+ if(who)add('Từ để hỏi đứng đầu câu; tiếp theo là trợ động từ hoặc động từ to be, rồi đến chủ ngữ và phần còn lại.');
+ else if(/^(do|does|did|is|are|am|can|could|will|would|should|have|has)\b/i.test(a)&&isQuestion)add('Đây là câu hỏi: đưa trợ động từ hoặc động từ to be lên trước chủ ngữ.');
+ else if(/^(please |don't |do not |let's |open |close |look |listen |put |stand |sit )/i.test(a))add('Đây là câu yêu cầu hoặc mệnh lệnh: bắt đầu bằng động từ hoặc từ chỉ dẫn.');
+ else add('Đặt chủ ngữ (người hoặc vật được nói đến) trước cụm động từ.');
+ if(/\b(always|usually|often|sometimes|never)\b/i.test(a))add('Trạng từ chỉ tần suất như usually (thường) đứng trước động từ thường, nhưng đứng sau am/is/are.');
+ if(/\b(am|is|are)\s+\w+ing\b/i.test(a))add('Thì hiện tại tiếp diễn: am/is/are + động từ thêm -ing, diễn tả hành động đang xảy ra.');
+ else if(/\b(don't|doesn't|do not|does not)\b/i.test(a))add('Câu phủ định hiện tại đơn dùng do not/does not + động từ nguyên mẫu.');
+ else if(/\b(he|she|it|my brother|my sister|my mother|my father|lan|nam|mai)\b/i.test(a)&&/\b(plays|washes|watches|reads|goes|does|has|likes|studies)\b/i.test(a))add('Chủ ngữ ngôi thứ ba số ít ở hiện tại đơn thường làm động từ thêm -s hoặc -es.');
+ if(/\b(taller|shorter|bigger|smaller|older|younger|better|more\s+\w+)\s+than\b/i.test(a))add('Cấu trúc so sánh hơn: tính từ so sánh + than (hơn).');
+ if(/\b(after school|before dinner|every day|every morning|every evening|on sundays|at the moment|right now|tomorrow|yesterday)\b/i.test(a))add('Cụm từ chỉ thời gian thường đặt ở cuối câu để cho biết khi nào hành động diễn ra.');
+ if(/\b(in|on|under|behind|between|next to|near|at)\b/i.test(a))add('Giữ giới từ chỉ nơi chốn hoặc thời gian đi cùng cụm danh từ phía sau nó.');
+ const dict={
+  'my brother':'anh trai tôi','my sister':'chị/em gái tôi','my mother':'mẹ tôi','my father':'bố tôi','my best friend':'bạn thân nhất của tôi','i':'tôi','we':'chúng tôi','they':'họ','he':'cậu ấy','she':'cô ấy',
+  'usually':'thường','always':'luôn luôn','often':'thường xuyên','sometimes':'đôi khi','never':'không bao giờ',
+  'washes the dishes':'rửa bát','does my homework':'làm bài tập về nhà','do my homework':'làm bài tập về nhà','plays badminton':'chơi cầu lông','reads comics':'đọc truyện tranh','watches cartoons':'xem phim hoạt hình','goes to school':'đi học','after school':'sau giờ học','before dinner':'trước bữa tối','every day':'mỗi ngày','tomorrow':'ngày mai','right now':'ngay lúc này','at the moment':'lúc này','on sundays':'vào các ngày Chủ nhật',
+  'is playing badminton':'đang chơi cầu lông','is reading comics':'đang đọc truyện tranh','is studying english':'đang học tiếng Anh','wants to':'muốn','does not':'không','do not':'không','my house':'nhà tôi','the library':'thư viện','the park':'công viên','near':'gần','between':'ở giữa','and':'và','is':'là/ở','are':'là/ở','the computer room':'phòng máy tính'};
+ let translated='';
+ let rest=low.replace(/[.!?]+$/,'').trim();
+ const keys=Object.keys(dict).sort((x,y)=>y.length-x.length);
+ const tokens=[];
+ while(rest){let match=keys.find(k=>rest===k||rest.startsWith(k+' '));if(match){tokens.push(dict[match]);rest=rest.slice(match.length).trim()}else{const m=rest.match(/^\S+/);if(!m)break;tokens.push(null);rest=rest.slice(m[0].length).trim()}}
+ if(tokens.length&&tokens.every(Boolean))translated=' Nghĩa gần đúng: '+tokens.join(' ')+'.';
+ const old=String(q.explain||'').trim();
+ const specific=old&& !/^(sắp xếp đúng|trật tự câu đúng|xếp từ theo thứ tự|sắp xếp các từ)/i.test(old) && old!==a ? ' Ghi nhớ thêm: '+old : '';
+ return 'Câu đúng: '+a+'. '+parts.join(' ')+translated+specific;
+}
+
 function ioeGiaiThichTiengViet(q){
+ if(q && q.type==='order') return ioeGiaiThichSapXep(q);
  const t=String(q.explain||'');
  if (/[À-ỹ]/.test(t)) return t;
  const s=t.toLowerCase();
