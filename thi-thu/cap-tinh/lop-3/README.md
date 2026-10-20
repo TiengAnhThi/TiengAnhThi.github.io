@@ -1,0 +1,1 @@
+Ngân hàng 2.000 câu cấp tỉnh lớp 3. Tự biên soạn theo kiểu bài trong 25 ảnh mẫu: ghép câu, điền từ, nghe, trắc nghiệm, tranh. Chưa được kiểm định từng câu và chưa thể chứng nhận không vượt độ khó ảnh mẫu.
