@@ -1,1 +1,1 @@
-Ngân hàng 2000 câu lớp 3 tham khảo 24 ảnh cấp trường. 5 dạng, mỗi dạng 400 câu. Mỗi lượt 200 câu. Nội dung tự biên soạn theo mẫu, chưa kiểm định chất lượng toàn bộ.
+Cấp trường lớp 3: 2.000 câu thay mới, 5 dạng x 400. Nội dung ngắn, từ vựng cơ bản; tham khảo định dạng 23 ảnh do người dùng gửi. Không chép nguyên văn 2.000 câu từ ảnh. Chưa kiểm định từng câu với giáo viên.
