@@ -63,6 +63,63 @@
 <div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
 </section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp Xã/Phường – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.remove('hidden')">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ TIẾNG ANH LỚP 6</h2></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP XÃ/PHƯỜNG</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><div id="wrongReview" class="wrong-review"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
 'use strict';
+
+/* TAT: Phần phân tích BỔ SUNG; không thay thế lời giải hiện có. */
+function tatPhanTichBoSung(q){
+ if(!q||q.type!=='order')return '';
+ const sentence=String(q.answer||'').trim().replace(/[.!?]+$/,'');
+ const words=sentence.split(/\s+/).filter(Boolean);
+ if(words.length<2)return '';
+ const low=words.map(x=>x.toLowerCase());
+ const be=['am','is','are','was','were'];
+ const aux=['do','does','did','can','could','will','would','should','must','have','has'];
+ const verbs=['ride','rides','play','plays','go','goes','study','studies','read','reads','wash','washes','watch','watches','like','likes','eat','eats','drink','drinks','have','has','live','lives','visit','visits','help','helps','walk','walks','run','runs','get','gets','make','makes','take','takes','see','sees','want','wants','love','loves','speak','speaks','learn','learns','listen','listens','write','writes','buy','buys','work','works','clean','cleans','cook','cooks','sleep','sleeps','sit','sits','stand','stands','open','opens','close','closes','draw','draws','sing','sings','dance','dances','swim','swims'];
+ const times=['right now','at the moment','on sundays','on mondays','on tuesdays','on wednesdays','on thursdays','on fridays','on saturdays','after school','before school','every day','every morning','every afternoon','every evening','every night','last night','last week','next week','in the morning','in the afternoon','in the evening','today','tomorrow','yesterday','now'];
+ let time='';let core=sentence;
+ for(const t of times.sort((a,b)=>b.length-a.length))if(core.toLowerCase().endsWith(' '+t)){time=core.slice(-t.length);core=core.slice(0,-t.length).trim();break;}
+ let w=core.split(/\s+/);let l=w.map(x=>x.toLowerCase());
+ let question=/\?$/.test(String(q.answer||''));
+ let wh=/^(what|where|when|why|who|how|which|whose)$/i.test(w[0]||'');
+ let start=0, subject='',helper='',verb='',object='',freq='';
+ if(question && (wh||aux.includes(l[0])||be.includes(l[0]))){
+   let lead=wh?1:0;let h=l[lead];
+   if(aux.includes(h)||be.includes(h)){
+     helper=w[lead];subject=w[lead+1]||'';start=lead+2;
+     if(wh)helper=w[0]+' + '+helper;
+   }else return '';
+ }else{
+   let vi=l.findIndex((x,i)=>i>0&&(be.includes(x)||aux.includes(x)||verbs.includes(x)||/ing$/.test(x)||/ed$/.test(x)));
+   if(vi<1)return '';
+   subject=w.slice(0,vi).join(' ');start=vi;
+ }
+ if(!subject)return '';
+ if(!question){
+   if(be.includes(l[start])||aux.includes(l[start])){helper=w[start++];if(['not',"n't"].includes(l[start]))helper+=' '+w[start++];}
+ }
+ if(['always','usually','often','sometimes','never'].includes(l[start]))freq=w[start++];
+ if(!question && helper && ['always','usually','often','sometimes','never'].includes(l[start]))freq=w[start++];
+ if(w[start])verb=w[start++];
+ if(verb.toLowerCase()==='not'&&w[start]){helper+=' not';verb=w[start++];}
+ if(!verb && helper && be.includes(helper.toLowerCase()))verb=helper,helper='';
+ if(!verb)return '';
+ object=w.slice(start).join(' ');
+ let form='S + V + (O) + (thời gian)';
+ if(/\b(am|is|are)\b/i.test(helper)&&/ing$/i.test(verb))form='S + am/is/are + V-ing + (O) + (thời gian)';
+ else if(/\b(do|does|did)\s+not\b/i.test(helper))form='S + do/does/did not + V nguyên mẫu + (O) + (thời gian)';
+ else if(question)form=wh?'Từ để hỏi + trợ động từ/to be + S + V + (phần còn lại)?':'Trợ động từ/to be + S + V + (phần còn lại)?';
+ else if(be.includes(verb.toLowerCase()))form='S + am/is/are + bổ ngữ + (thời gian)';
+ else if(freq)form='S + trạng từ tần suất + V + (O) + (thời gian)';
+ const lines=['📘 PHÂN TÍCH BỔ SUNG','Công thức tổng quát: '+form,'S – Chủ ngữ: '+subject+' (người/vật được nói đến).'];
+ if(helper)lines.push('Trợ động từ / to be: '+helper+'.');
+ if(freq)lines.push('Trạng từ tần suất: '+freq+'.');
+ lines.push('V – Động từ: '+verb+'.');
+ if(object)lines.push((be.includes(verb.toLowerCase())?'Bổ ngữ: ':'O / phần bổ sung: ')+object+'.');
+ if(time)lines.push('Cụm từ chỉ thời gian: '+time+'.');
+ lines.push('Áp dụng: '+[subject,helper,freq,verb,object,time].filter(Boolean).join(' + ')+'.');
+ lines.push('Ghi nhớ: S = chủ ngữ; V = động từ; O = tân ngữ. Không phải câu nào cũng có tân ngữ.');
+ return lines.join('\n');
+}
+
 function ioeGiaiThichSapXep(q){
  const a=String(q.answer||'').trim();
  if(!a)return 'Ghép các từ thành một câu hoàn chỉnh, đặt chủ ngữ trước động từ và kiểm tra dấu câu.';
@@ -168,5 +225,5 @@ function norm(s){return String(s).trim().toLowerCase().replace(/[‘’‛`´＇
 function saveCurrent(){if(finished)return;let q=questions[current];if(q.submitted)return;let value=q.type==='order'?[...selection]:(q.type==='choice'||q.type==='picture')?chosen:typed;let complete=q.type==='order'?selection.length===q.parts.length:(q.type==='choice'||q.type==='picture')?chosen!==null:String(value).trim()!=='';q.user=complete?value:null;q.submitted=complete;q.correct=complete&&(q.type==='choice'||q.type==='picture'?value===q.answer:q.type==='order'?norm(selection.map(i=>q.tiles[i].text).join(' '))===norm(q.answer):norm(value)===norm(q.answer));updateScore();}
 function updateScore(){const el=$('liveScore');if(el)el.textContent=questions.filter(q=>q.correct).length*10;}
 function submitAnswer(){saveCurrent();}
-function finish(auto){saveCurrent();if(!auto&&!confirm('Bạn muốn nộp bài và xem kết quả?'))return;clearInterval(timer);finished=true;let ok=questions.filter(q=>q.correct).length,done=questions.filter(q=>q.submitted).length;$('correct').textContent=ok;$('incorrect').textContent=done-ok;$('missing').textContent=200-done;$('finalScore').textContent=`🏆 Tổng điểm: ${ok*10} / 2000 (${ok} câu đúng × 10 điểm)`;$('scoreline').textContent=`Điểm quy đổi: ${(ok/200*100).toFixed(1)}/100 • ${auto?'Đã hết thời gian.':'Đã nộp bài.'} Dưới đây là đáp án và giải thích cho những câu bạn làm sai.`;const wrong=questions.map((q,i)=>({q,i})).filter(({q})=>q.submitted&&!q.correct);$('wrongReview').innerHTML=wrong.length?`<h3 class="wrong-review-title">📖 Giải thích ${wrong.length} câu trả lời sai</h3>`+wrong.map(({q,i})=>{const userAnswer=q.type==='order'?(q.user||[]).map(j=>q.tiles[j].text).join(' '):(q.type==='choice'||q.type==='picture')?(q.user===null?'Chưa trả lời':('ABCD'[q.user]+'. '+q.options[q.user])):q.user;return `<section class="wrong-item"><h3>Câu ${i+1}</h3><p><b>Đề bài:</b> ${escapeHtml(q.prompt)}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswer||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${escapeHtml(ioeGiaiThichTiengViet(q))}</p></section>`}).join(''):`<p class="review-empty">🎉 Không có câu trả lời sai!</p>`;$('result').classList.remove('hidden');$('reviewActions').classList.remove('hidden');if(auto){autoReturnTimer=setTimeout(()=>{if(finished)restart()},15000)}if(window.ioeSaveResult)window.ioeSaveResult({score:ok*10,correct:ok,answered:done,total:200,finishedAt:new Date().toISOString()})}
+function finish(auto){saveCurrent();if(!auto&&!confirm('Bạn muốn nộp bài và xem kết quả?'))return;clearInterval(timer);finished=true;let ok=questions.filter(q=>q.correct).length,done=questions.filter(q=>q.submitted).length;$('correct').textContent=ok;$('incorrect').textContent=done-ok;$('missing').textContent=200-done;$('finalScore').textContent=`🏆 Tổng điểm: ${ok*10} / 2000 (${ok} câu đúng × 10 điểm)`;$('scoreline').textContent=`Điểm quy đổi: ${(ok/200*100).toFixed(1)}/100 • ${auto?'Đã hết thời gian.':'Đã nộp bài.'} Dưới đây là đáp án và giải thích cho những câu bạn làm sai.`;const wrong=questions.map((q,i)=>({q,i})).filter(({q})=>q.submitted&&!q.correct);$('wrongReview').innerHTML=wrong.length?`<h3 class="wrong-review-title">📖 Giải thích ${wrong.length} câu trả lời sai</h3>`+wrong.map(({q,i})=>{const userAnswer=q.type==='order'?(q.user||[]).map(j=>q.tiles[j].text).join(' '):(q.type==='choice'||q.type==='picture')?(q.user===null?'Chưa trả lời':('ABCD'[q.user]+'. '+q.options[q.user])):q.user;return `<section class="wrong-item"><h3>Câu ${i+1}</h3><p><b>Đề bài:</b> ${escapeHtml(q.prompt)}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswer||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${escapeHtml(ioeGiaiThichTiengViet(q))}</p>${q.type==='order'&&tatPhanTichBoSung(q)?`<div class="tat-extra-explain" style="white-space:pre-line;margin-top:10px;padding:12px;border-left:3px solid #f6bb55;background:rgba(255,255,255,.06);border-radius:6px;line-height:1.7">${escapeHtml(tatPhanTichBoSung(q))}</div>`:''}</section>`}).join(''):`<p class="review-empty">🎉 Không có câu trả lời sai!</p>`;$('result').classList.remove('hidden');$('reviewActions').classList.remove('hidden');if(auto){autoReturnTimer=setTimeout(()=>{if(finished)restart()},15000)}if(window.ioeSaveResult)window.ioeSaveResult({score:ok*10,correct:ok,answered:done,total:200,finishedAt:new Date().toISOString()})}
 </script><script type="module" src="./ioe-auth.js"></script></body></html>
