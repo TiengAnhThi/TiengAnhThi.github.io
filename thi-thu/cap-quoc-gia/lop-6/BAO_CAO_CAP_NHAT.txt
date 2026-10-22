@@ -1,0 +1,5 @@
+TAT IOE lop 6 cap Quoc gia
+2000 cau hoi.
+Cap nhat: 26 bai word form, 32 cau ngu phap, 24 cau doc hieu theo 8 doan van, 100 cau tranh ngu canh.
+Kiem tra tu dong: JSON, dap an, HTML dong bo, so luong.
+Can luu y: chua kiem dinh thu cong 2000 cau va van con nhom cau tuong tu ve y tuong.
