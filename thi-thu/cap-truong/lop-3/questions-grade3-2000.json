@@ -4194,587 +4194,638 @@
  },
  {
   "type": "choice",
-  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam's school is big and clean.",
+  "prompt": "Bill likes soup. Which food does Bill like?",
+  "answer": 3,
+  "explain": "Tìm món ăn được nhắc tới.",
   "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: small but clean."
+   "salad",
+   "rice",
+   "pizza",
+   "soup"
+  ]
  },
  {
   "type": "choice",
-  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nThere are ten classrooms in Nam's school.",
+  "prompt": "This is ____ box.",
+  "answer": 0,
+  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
   "options": [
-   "TRUE",
-   "FALSE"
+   "a",
+   "the",
+   "an",
+   "some"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Bill ____ my friend.",
+  "answer": 3,
+  "explain": "Tên một người dùng is.",
+  "options": [
+   "am",
+   "do",
+   "are",
+   "is"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Practice 352: In Lan's English lesson, these ____ my books.",
+  "answer": 3,
+  "explain": "These đi với are.",
+  "options": [
+   "be",
+   "am",
+   "is",
+   "are"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "____ you like soup? – Yes, I do.",
+  "answer": 1,
+  "explain": "Câu hỏi Do you like ...?",
+  "options": [
+   "Are",
+   "Do",
+   "Is",
+   "Does"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Can Bill listen to music? – Yes, he ____.",
+  "answer": 3,
+  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
+  "options": [
+   "does",
+   "is",
+   "am",
+   "can"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Practice 355: In Mary's English lesson, what do you do at break time? – I ____.",
+  "answer": 1,
+  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
+  "options": [
+   "play the piano",
+   "listen to music",
+   "sing",
+   "watch TV"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Is this your box? – Yes, it ____.",
+  "answer": 3,
+  "explain": "Yes, it is.",
+  "options": [
+   "am",
+   "do",
+   "are",
+   "is"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "What is your favourite animal? – It is pig.",
+  "answer": 0,
+  "explain": "Chọn đúng sở thích trong câu trả lời.",
+  "options": [
+   "pig",
+   "sheep",
+   "goat",
+   "cat"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Practice 358: In Lily's English lesson, where ____ your books? – They are on the desk.",
+  "answer": 1,
+  "explain": "Books số nhiều dùng are.",
+  "options": [
+   "does",
+   "are",
+   "am",
+   "is"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Bill ____ two books.",
+  "answer": 1,
+  "explain": "Tên riêng một người dùng has.",
+  "options": [
+   "is",
+   "has",
+   "are",
+   "have"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct greeting for Bill in the morning.",
+  "answer": 1,
+  "explain": "Good morning là lời chào buổi sáng.",
+  "options": [
+   "Good night!",
+   "Good morning!",
+   "See you tomorrow!",
+   "Goodbye!"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy has a black clock. What colour is the clock?",
+  "answer": 0,
+  "explain": "What colour hỏi màu sắc.",
+  "options": [
+   "black",
+   "green",
+   "red",
+   "blue"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy has a clock. What does Daisy have?",
+  "answer": 3,
+  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
+  "options": [
+   "book",
+   "lamp",
+   "pen",
+   "clock"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "This is my daughter. ____ is very kind.",
+  "answer": 3,
+  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
+  "options": [
+   "He",
+   "They",
+   "It",
+   "She"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "____ is your name? – My name is Daisy.",
+  "answer": 1,
+  "explain": "What is your name? hỏi tên.",
+  "options": [
+   "Who",
+   "What",
+   "How",
+   "Where"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Practice 365: In Mary's English lesson, how old are you? – I am ____ years old.",
+  "answer": 2,
+  "explain": "Câu trả lời tuổi dùng số đếm.",
+  "options": [
+   "twenty",
+   "one",
+   "nineteen",
+   "two"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Look! There is a goat in the picture. What animal is it?",
+  "answer": 2,
+  "explain": "Tên con vật xuất hiện trong lời dẫn.",
+  "options": [
+   "sheep",
+   "cat",
+   "goat",
+   "dog"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy is in the hall. Where is Daisy?",
+  "answer": 1,
+  "explain": "Where hỏi nơi chốn.",
+  "options": [
+   "classroom",
+   "hall",
+   "library",
+   "school yard"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy likes to watch TV. What does Daisy like to do?",
+  "answer": 2,
+  "explain": "Like to + động từ nguyên mẫu.",
+  "options": [
+   "play the piano",
+   "dance",
+   "watch TV",
+   "sing"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy likes salad. Which food does Daisy like?",
+  "answer": 1,
+  "explain": "Tìm món ăn được nhắc tới.",
+  "options": [
+   "pizza",
+   "salad",
+   "rice",
+   "bread"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "This is ____ clock.",
+  "answer": 1,
+  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
+  "options": [
+   "the",
+   "a",
+   "some",
+   "an"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Daisy ____ my friend.",
+  "answer": 2,
+  "explain": "Tên một người dùng is.",
+  "options": [
+   "am",
+   "do",
+   "is",
+   "are"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "Practice 372: In Lan's English lesson, these ____ my books.",
+  "answer": 1,
+  "explain": "These đi với are.",
+  "options": [
+   "is",
+   "are",
+   "am",
+   "be"
+  ]
+ },
+ {
+  "type": "choice",
+  "prompt": "What colour is your hat? – It's ____.",
+  "options": [
+   "blue and red",
+   "orange and white",
+   "purple and blue",
+   "purple and white"
   ],
   "answer": 0,
-  "explain": "Dựa vào đoạn đọc: ten classrooms."
+  "explain": "Chiếc mũ có phần thân đỏ và vành xanh dương.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><path d=\"M75 143 Q80 37 181 31 Q282 38 286 143Z\" fill=\"#e33126\" stroke=\"#99241b\" stroke-width=\"4\"/><ellipse cx=\"181\" cy=\"155\" rx=\"139\" ry=\"33\" fill=\"#2160cf\" stroke=\"#17439a\" stroke-width=\"4\"/><path d=\"M177 33V138\" stroke=\"#a62218\" stroke-width=\"3\" opacity=\".4\"/></svg>"
  },
  {
   "type": "choice",
-  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam does not like his school.",
+  "prompt": "A black ____ is in my classroom.",
   "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: I love my school.."
- },
- {
-  "type": "choice",
-  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam's teacher is kind.",
-  "options": [
-   "TRUE",
-   "FALSE"
+   "board",
+   "boart",
+   "boat",
+   "boad"
   ],
   "answer": 0,
-  "explain": "Dựa vào đoạn đọc: very kind."
+  "explain": "Blackboard = bảng đen.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><rect x=\"20\" y=\"10\" width=\"320\" height=\"188\" rx=\"6\" fill=\"#9ee8ee\"/><rect x=\"32\" y=\"20\" width=\"296\" height=\"170\" fill=\"#805023\"/><rect x=\"43\" y=\"29\" width=\"275\" height=\"150\" fill=\"#193728\"/><rect x=\"48\" y=\"165\" width=\"260\" height=\"12\" fill=\"#bc8144\"/><rect x=\"65\" y=\"146\" width=\"90\" height=\"15\" fill=\"#f4c94b\"/><rect x=\"85\" y=\"130\" width=\"64\" height=\"15\" fill=\"#5a98e3\"/><circle cx=\"92\" cy=\"117\" r=\"13\" fill=\"#ed3b29\"/><path d=\"M91 106q3 -9 13 -5\" stroke=\"#24883c\" stroke-width=\"5\" fill=\"none\"/><path d=\"M263 153l25 -43 10 9 -27 39\" fill=\"#f4c54a\"/></svg>"
  },
  {
   "type": "choice",
-  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nThere is a garden in front of Linh's house.",
+  "prompt": "Listen and choose the correct colour in the picture.",
   "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: a garden in front."
- },
- {
-  "type": "choice",
-  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nLinh lives in a small house.",
-  "options": [
-   "TRUE",
-   "FALSE"
+   "Yellow",
+   "Blue",
+   "Red",
+   "Purple"
   ],
   "answer": 1,
-  "explain": "Dựa vào đoạn đọc: a big house."
+  "explain": "Nghe từ blue và chọn hình D màu xanh dương.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><g transform=\"translate(95 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ef321e\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ef321e\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ef321e\"/></g><g transform=\"translate(260 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ffdb24\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ffdb24\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ffdb24\"/></g><g transform=\"translate(95 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#803eae\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#803eae\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#803eae\"/></g><g transform=\"translate(260 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#0874b7\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#0874b7\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#0874b7\"/></g></svg>",
+  "speech": "Blue."
  },
  {
   "type": "choice",
-  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nThere are three bedrooms.",
+  "prompt": "Listen and choose the correct colour in the picture.",
   "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: two bedrooms."
- },
- {
-  "type": "choice",
-  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nLinh's house has a kitchen.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: a kitchen."
- },
- {
-  "type": "choice",
-  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai is eight years old.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: eight years old."
- },
- {
-  "type": "choice",
-  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai's school bag is red.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: blue school bag."
- },
- {
-  "type": "choice",
-  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai goes to school with her sister.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: with my brother."
- },
- {
-  "type": "choice",
-  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai has a red pencil case.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: red pencil case."
- },
- {
-  "type": "choice",
-  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nTom has a cat named Lucky.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: a little dog."
- },
- {
-  "type": "choice",
-  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky is brown and white.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: brown and white."
- },
- {
-  "type": "choice",
-  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky plays with a red ball.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: yellow ball."
- },
- {
-  "type": "choice",
-  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky plays in the garden.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: in the garden."
- },
- {
-  "type": "choice",
-  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThere are twenty desks.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: twenty desks."
- },
- {
-  "type": "choice",
-  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe clock is under the board.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: above the board."
- },
- {
-  "type": "choice",
-  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe classroom has two boards.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: one big board."
- },
- {
-  "type": "choice",
-  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe children draw pictures here.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: draw pictures."
- },
- {
-  "type": "choice",
-  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy father works at a school.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: at a hospital."
- },
- {
-  "type": "choice",
-  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy mother teaches English.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: teaches English."
- },
- {
-  "type": "choice",
-  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nWe visit our grandparents on Mondays.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 1,
-  "explain": "Dựa vào đoạn đọc: On Sundays."
- },
- {
-  "type": "choice",
-  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy father is a doctor.",
-  "options": [
-   "TRUE",
-   "FALSE"
-  ],
-  "answer": 0,
-  "explain": "Dựa vào đoạn đọc: a doctor."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct answer: What is it?",
-  "options": [
-   "It's my friend.",
-   "It's yellow.",
-   "It's a pen.",
-   "It's big."
+   "Yellow",
+   "Blue",
+   "Red",
+   "Purple"
   ],
   "answer": 2,
-  "explain": "What is it? hỏi đồ vật; trả lời It is a pen."
+  "explain": "Nghe từ red và chọn hình A màu đỏ.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><g transform=\"translate(95 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ef321e\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ef321e\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ef321e\"/></g><g transform=\"translate(260 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ffdb24\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ffdb24\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ffdb24\"/></g><g transform=\"translate(95 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#803eae\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#803eae\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#803eae\"/></g><g transform=\"translate(260 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#0874b7\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#0874b7\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#0874b7\"/></g></svg>",
+  "speech": "Red."
  },
  {
   "type": "choice",
-  "prompt": "Do you have a ruler? – ____",
+  "prompt": "Listen and choose the correct colour in the picture.",
   "options": [
-   "Yes, I am.",
-   "No, I am not.",
-   "No, I do.",
-   "Yes, I do."
+   "Yellow",
+   "Blue",
+   "Red",
+   "Purple"
+  ],
+  "answer": 0,
+  "explain": "Nghe từ yellow và chọn hình B màu vàng.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><g transform=\"translate(95 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ef321e\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ef321e\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ef321e\"/></g><g transform=\"translate(260 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ffdb24\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ffdb24\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ffdb24\"/></g><g transform=\"translate(95 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#803eae\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#803eae\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#803eae\"/></g><g transform=\"translate(260 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#0874b7\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#0874b7\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#0874b7\"/></g></svg>",
+  "speech": "Yellow."
+ },
+ {
+  "type": "choice",
+  "prompt": "Listen and choose the correct colour in the picture.",
+  "options": [
+   "Red",
+   "Yellow",
+   "Blue",
+   "Purple"
   ],
   "answer": 3,
-  "explain": "Do you...? → Yes, I do."
+  "explain": "Nghe từ purple và chọn hình C màu tím.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 360 210\" style=\"display:block;width:min(100%,360px);height:auto;margin:auto;background:white;border-radius:12px\" role=\"img\"><g transform=\"translate(95 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ef321e\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ef321e\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ef321e\"/></g><g transform=\"translate(260 59)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#ffdb24\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#ffdb24\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#ffdb24\"/></g><g transform=\"translate(95 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#803eae\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#803eae\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#803eae\"/></g><g transform=\"translate(260 153)\"><path d=\"M0 -42 Q11 -25 25 -37 Q28 -14 47 -12 Q28 1 43 24 Q17 20 12 46 Q-3 24 -26 38 Q-23 12 -45 7 Q-21 -4 -34 -30 Q-10 -21 0 -42Z\" fill=\"#0874b7\"/><circle cx=\"46\" cy=\"-31\" r=\"5\" fill=\"#0874b7\"/><circle cx=\"-46\" cy=\"31\" r=\"4\" fill=\"#0874b7\"/></g></svg>",
+  "speech": "Purple."
  },
  {
   "type": "choice",
-  "prompt": "What is your name?",
+  "prompt": "Choose the letter(s) to make a correct word: _THER",
   "options": [
-   "My name is Ben.",
-   "Her name is Lan.",
-   "My brother is Peter.",
-   "My surname is Nguyen."
+   "FA",
+   "FI",
+   "TA",
+   "MA"
   ],
   "answer": 0,
-  "explain": "My name is... trả lời trực tiếp tên của mình."
+  "explain": "FATHER = bố."
  },
  {
   "type": "choice",
-  "prompt": "____ have a pencil? – Yes, I do.",
+  "prompt": "Choose the letter(s) to make a correct word: SEV_N",
   "options": [
-   "Do she",
-   "Do you",
-   "Is he",
-   "Are you"
+   "R",
+   "E",
+   "I",
+   "O"
   ],
   "answer": 1,
-  "explain": "Do you have...?"
+  "explain": "SEVEN = số bảy."
  },
  {
   "type": "choice",
-  "prompt": "What is this? – ____",
+  "prompt": "What's your ____? – I like cooking.",
   "options": [
-   "It's an eraser.",
-   "She is my sister.",
-   "I'm fine.",
-   "It's sunny."
-  ],
-  "answer": 0,
-  "explain": "Câu hỏi What is this? yêu cầu nêu tên đồ vật."
- },
- {
-  "type": "choice",
-  "prompt": "How old are you?",
-  "options": [
-   "I have eight books.",
-   "I'm in class 3A.",
-   "I'm eight years old.",
-   "My name is An."
+   "name",
+   "body",
+   "hobby",
+   "thing"
   ],
   "answer": 2,
-  "explain": "How old hỏi tuổi."
+  "explain": "Hobby = sở thích."
  },
  {
   "type": "choice",
-  "prompt": "What colour is your ruler?",
+  "prompt": "My bedroom is new ____ nice.",
   "options": [
-   "It's green.",
-   "It's long.",
-   "It's in my bag.",
-   "It's a ruler."
+   "no",
+   "and",
+   "not",
+   "but"
+  ],
+  "answer": 1,
+  "explain": "And nối hai tính từ cùng chiều nghĩa."
+ },
+ {
+  "type": "choice",
+  "prompt": "My name ____ Linda.",
+  "options": [
+   "is",
+   "am",
+   "are",
+   "be"
   ],
   "answer": 0,
-  "explain": "What colour hỏi màu sắc."
+  "explain": "My name is Linda."
  },
  {
   "type": "choice",
-  "prompt": "Is this your pencil?",
+  "prompt": "Choose the CORRECT sentence.",
   "options": [
-   "Yes, they are.",
-   "Yes, I am.",
-   "Yes, I do.",
-   "Yes, it is."
+   "Ms. Hoa is a teacher.",
+   "Ms. Hoa is a teachers.",
+   "Ms. Hoa is teacher.",
+   "Ms. Hoa are a teacher."
+  ],
+  "answer": 0,
+  "explain": "Danh từ nghề nghiệp số ít cần a; chủ ngữ Ms. Hoa đi với is."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the incorrect word in this sentence: The girl are in the yellow shirt.",
+  "options": [
+   "yellow",
+   "shirt",
+   "in",
+   "are"
   ],
   "answer": 3,
-  "explain": "Is this...? → Yes, it is."
+  "explain": "The girl là số ít, dùng is."
  },
  {
   "type": "choice",
-  "prompt": "How many books do you have?",
+  "prompt": "My sister ____ nine years old.",
   "options": [
-   "I have three books.",
-   "I like books.",
-   "They are blue.",
-   "I am three."
+   "is",
+   "am",
+   "are",
+   "be"
   ],
   "answer": 0,
-  "explain": "How many hỏi số lượng."
+  "explain": "My sister is nine years old."
  },
  {
   "type": "choice",
-  "prompt": "Where is your bag?",
+  "prompt": "This is my _____. She is a doctor.",
   "options": [
-   "It's mine.",
-   "It's under the desk.",
-   "It's red.",
-   "It's a bag."
+   "grandfather",
+   "mother",
+   "brother",
+   "father"
   ],
   "answer": 1,
-  "explain": "Where hỏi vị trí."
+  "explain": "She chỉ người nữ; mother là mẹ."
  },
  {
   "type": "choice",
-  "prompt": "Can you swim?",
+  "prompt": "____ is your teacher? – Mrs. Hoa.",
   "options": [
-   "Yes, it is.",
-   "Yes, I can.",
-   "Yes, I do.",
-   "Yes, I am."
+   "Who",
+   "Where",
+   "When",
+   "How old"
+  ],
+  "answer": 0,
+  "explain": "Who hỏi về người."
+ },
+ {
+  "type": "choice",
+  "prompt": "There is a ____ in our classroom. We write on it.",
+  "options": [
+   "bed",
+   "ball",
+   "boat",
+   "board"
+  ],
+  "answer": 3,
+  "explain": "Board là bảng để viết."
+ },
+ {
+  "type": "choice",
+  "prompt": "What colour is the sky on a clear day?",
+  "options": [
+   "blue",
+   "brown",
+   "purple",
+   "orange"
+  ],
+  "answer": 0,
+  "explain": "Bầu trời quang thường có màu xanh."
+ },
+ {
+  "type": "choice",
+  "prompt": "I like drawing pictures. Drawing is my ____.",
+  "options": [
+   "name",
+   "address",
+   "age",
+   "hobby"
+  ],
+  "answer": 3,
+  "explain": "Drawing là một sở thích."
+ },
+ {
+  "type": "choice",
+  "prompt": "Which sentence is correct?",
+  "options": [
+   "She am six years old.",
+   "She are six years old.",
+   "She is six years old.",
+   "She be six years old."
+  ],
+  "answer": 2,
+  "explain": "She đi với is."
+ },
+ {
+  "type": "choice",
+  "prompt": "Which sentence is correct?",
+  "options": [
+   "My sister be five years old.",
+   "My sister is five years old.",
+   "My sister am five years old.",
+   "My sister are five years old."
   ],
   "answer": 1,
-  "explain": "Can you...? → Yes, I can."
+  "explain": "My sister đi với is."
+ },
+ {
+  "type": "choice",
+  "prompt": "Which sentence is correct?",
+  "options": [
+   "That are my brother.",
+   "That is my brothers.",
+   "Those is my brother.",
+   "That is my brother."
+  ],
+  "answer": 3,
+  "explain": "That is đi với danh từ số ít."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the incorrect word: My brother are tall.",
+  "options": [
+   "are",
+   "brother",
+   "tall",
+   "My"
+  ],
+  "answer": 0,
+  "explain": "My brother là số ít nên dùng is."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the incorrect word: She have a yellow bag.",
+  "options": [
+   "bag",
+   "yellow",
+   "She",
+   "have"
+  ],
+  "answer": 3,
+  "explain": "She dùng has, không dùng have."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct sentence.",
+  "options": [
+   "These is my books.",
+   "These are my books.",
+   "These are my book.",
+   "This are my books."
+  ],
+  "answer": 1,
+  "explain": "These đi với are và books số nhiều."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct sentence.",
+  "options": [
+   "There am a desk in my bedroom.",
+   "There is desk in my bedroom.",
+   "There is a desk in my bedroom.",
+   "There are a desk in my bedroom."
+  ],
+  "answer": 2,
+  "explain": "There is a + danh từ số ít."
  },
  {
   "type": "choice",
   "prompt": "What do you do at break time?",
   "options": [
-   "I am nine.",
-   "I am fine.",
-   "I play chess.",
-   "I am at home."
-  ],
-  "answer": 2,
-  "explain": "Hỏi hoạt động trong giờ ra chơi."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct sentence.",
-  "options": [
-   "There are two cats.",
-   "There is two cats.",
-   "There am two cats.",
-   "There are two cat."
+   "I play badminton.",
+   "It is blue.",
+   "I am nine years old.",
+   "My name is Nam."
   ],
   "answer": 0,
-  "explain": "There are + danh từ số nhiều."
+  "explain": "Hỏi hoạt động giờ ra chơi."
  },
  {
   "type": "choice",
-  "prompt": "Choose the correct sentence.",
+  "prompt": "Listen and choose the word that is NOT in the recording.",
   "options": [
-   "He have a blue bike.",
-   "He has blue bike.",
-   "He having a blue bike.",
-   "He has a blue bike."
-  ],
-  "answer": 3,
-  "explain": "He has a blue bike."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the incorrect word: She are my sister.",
-  "options": [
-   "sister",
-   "my",
-   "She",
-   "are"
-  ],
-  "answer": 3,
-  "explain": "She đi với is."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the incorrect word: They is in the classroom.",
-  "options": [
-   "They",
-   "in",
-   "classroom",
-   "is"
-  ],
-  "answer": 3,
-  "explain": "They đi với are."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the letter(s) to make a correct word: _ITE",
-  "options": [
-   "P",
-   "R",
-   "L",
-   "K"
-  ],
-  "answer": 3,
-  "explain": "KITE = cái diều."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the letter(s) to make a correct word: PENC_L",
-  "options": [
-   "A",
-   "E",
-   "O",
-   "I"
-  ],
-  "answer": 3,
-  "explain": "PENCIL = bút chì."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the letter(s) to make a correct word: SCH_OL",
-  "options": [
-   "A",
-   "O",
-   "I",
-   "U"
-  ],
-  "answer": 1,
-  "explain": "SCHOOL = trường học."
- },
- {
-  "type": "choice",
-  "prompt": "Choose the letter(s) to make a correct word: FRI_ND",
-  "options": [
-   "I",
-   "A",
-   "E",
-   "O"
+   "playground",
+   "school",
+   "library",
+   "classroom"
   ],
   "answer": 2,
-  "explain": "FRIEND = bạn bè."
- },
- {
-  "type": "choice",
-  "prompt": "The number in the picture is ____.",
-  "options": [
-   "sixty-nine",
-   "sixty-seven",
-   "fifty-two",
-   "fifty-six"
-  ],
-  "answer": 0,
-  "explain": "69 = sixty-nine.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"148\" font-size=\"110\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">69</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "The number in the picture is ____.",
-  "options": [
-   "forty-three",
-   "forty-two",
-   "forty-five",
-   "twenty-four"
-  ],
-  "answer": 1,
-  "explain": "42 = forty-two.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">42</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "The number in the picture is ____.",
-  "options": [
-   "fifty-nine",
-   "seventy-five",
-   "fifty-seven",
-   "fifty-six"
-  ],
-  "answer": 2,
-  "explain": "57 = fifty-seven.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">57</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "The number in the picture is ____.",
-  "options": [
-   "eighty-one",
-   "eighty-two",
-   "eighteen",
-   "eighty-nine"
-  ],
-  "answer": 0,
-  "explain": "81 = eighty-one.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">81</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct picture: They are reading together.",
-  "options": [
-   "D. dancing",
-   "B. watching television",
-   "C. drawing pictures",
-   "A. reading books"
-  ],
-  "answer": 3,
-  "explain": "Hình A thể hiện hoạt động reading books.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct picture: They are watching TV together.",
-  "options": [
-   "C. drawing pictures",
-   "A. reading books",
-   "B. watching television",
-   "D. dancing"
-  ],
-  "answer": 2,
-  "explain": "Hình B thể hiện hoạt động watching television.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct picture: They are drawing together.",
-  "options": [
-   "D. dancing",
-   "A. reading books",
-   "B. watching television",
-   "C. drawing pictures"
-  ],
-  "answer": 3,
-  "explain": "Hình C thể hiện hoạt động drawing pictures.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct picture: They are dancing together.",
-  "options": [
-   "D. dancing",
-   "C. drawing pictures",
-   "B. watching television",
-   "A. reading books"
-  ],
-  "answer": 0,
-  "explain": "Hình D thể hiện hoạt động dancing.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
+  "explain": "Bài nghe có school, classroom, playground, không có library.",
+  "speech": "At my school, I study in a classroom and play in the playground."
  },
  {
   "type": "fill",
@@ -7137,46 +7188,45 @@
  },
  {
   "type": "fill",
-  "prompt": "L_NG",
-  "answer": "O",
-  "explain": "LONG = dài.",
-  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><text x=\"175\" y=\"162\" font-size=\"145\" text-anchor=\"middle\">🦒</text></svg>"
+  "prompt": "____ many lamps do you have? – Two.",
+  "answer": "How",
+  "explain": "How many ...?"
  },
  {
   "type": "fill",
-  "prompt": "I __aw a picture.",
-  "answer": "dr",
-  "explain": "draw = vẽ."
+  "prompt": "My sister ____ nine years old.",
+  "answer": "is",
+  "explain": "My sister is nine years old."
  },
  {
   "type": "fill",
-  "prompt": "I'm f__e, thanks.",
-  "answer": "in",
-  "explain": "fine = khỏe, ổn."
+  "prompt": "My sister ____ five years old.",
+  "answer": "is",
+  "explain": "My sister is five years old."
  },
  {
   "type": "fill",
-  "prompt": "_ite",
-  "answer": "k",
-  "explain": "kite = diều."
+  "prompt": "She ____ six years old.",
+  "answer": "is",
+  "explain": "She is six years old."
  },
  {
   "type": "fill",
-  "prompt": "My brother is t__l.",
-  "answer": "al",
-  "explain": "tall = cao."
+  "prompt": "That is my broth____. He is tall.",
+  "answer": "er",
+  "explain": "brother = anh/em trai."
  },
  {
   "type": "fill",
-  "prompt": "My house has two bedr__ms.",
-  "answer": "oo",
-  "explain": "bedrooms = phòng ngủ."
+  "prompt": "What do you d____ at break time?",
+  "answer": "o",
+  "explain": "do = làm."
  },
  {
   "type": "fill",
-  "prompt": "I can r__d a book.",
-  "answer": "ea",
-  "explain": "read = đọc."
+  "prompt": "My name ____ Linda.",
+  "answer": "is",
+  "explain": "My name is Linda."
  },
  {
   "type": "order",
@@ -14786,31 +14836,31 @@
  },
  {
   "type": "listen",
-  "prompt": "Listen and complete: I have a _____.",
-  "answer": "pencil",
-  "explain": "Nghe: I have a pencil.",
-  "speech": "I have a pencil."
+  "prompt": "At ____ool.",
+  "answer": "sch",
+  "explain": "school = trường học.",
+  "speech": "At school."
  },
  {
   "type": "listen",
-  "prompt": "Listen and complete: The kite is _____.",
-  "answer": "yellow",
-  "explain": "Nghe: The kite is yellow.",
-  "speech": "The kite is yellow."
+  "prompt": "Listen and complete: I like _____.",
+  "answer": "cooking",
+  "explain": "I like cooking.",
+  "speech": "I like cooking."
  },
  {
   "type": "listen",
-  "prompt": "Listen and complete: My sister is ____ years old.",
-  "answer": "seven",
-  "explain": "Nghe: My sister is seven years old.",
-  "speech": "My sister is seven years old."
+  "prompt": "Listen and complete: My hat is _____.",
+  "answer": "red",
+  "explain": "red = màu đỏ.",
+  "speech": "My hat is red."
  },
  {
   "type": "listen",
-  "prompt": "Listen and complete: We play in the _____.",
+  "prompt": "Listen and complete: I play in the _____.",
   "answer": "playground",
-  "explain": "Nghe: We play in the playground.",
-  "speech": "We play in the playground."
+  "explain": "playground = sân chơi.",
+  "speech": "I play in the playground."
  },
  {
   "type": "picture",
