@@ -2417,759 +2417,760 @@
  },
  {
   "type": "choice",
-  "prompt": "Lucy has a red doll. What colour is the doll?",
-  "answer": 3,
-  "explain": "What colour hỏi màu sắc.",
+  "prompt": "Look at the picture. Anna's school bag is yellow and pink. Which number is it?",
   "options": [
-   "green",
-   "yellow",
-   "blue",
-   "red"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Lucy has a doll. What does Lucy have?",
-  "answer": 2,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
-  "options": [
-   "robot",
-   "bike",
-   "doll",
-   "car"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is my parents. ____ is very kind.",
-  "answer": 0,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
-  "options": [
-   "They",
-   "It",
-   "He",
-   "She"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ is your name? – My name is Lucy.",
+   "2",
+   "3",
+   "1",
+   "4"
+  ],
   "answer": 1,
-  "explain": "What is your name? hỏi tên.",
-  "options": [
-   "Who",
-   "What",
-   "Where",
-   "How"
-  ]
+  "explain": "Túi số 3 có màu vàng và hồng.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 220\" role=\"img\" style=\"width:min(100%,380px);height:auto;background:white;border-radius:12px;border:2px solid #dbe3ee\"><rect width=\"380\" height=\"220\" fill=\"#fff\"/><g transform=\"translate(20,10)\"><path d=\"M35 20 Q35 -6 70 3 Q96 6 96 30 L96 82 Q95 90 84 90 L24 90 Q14 88 14 77 L14 27 Q15 10 35 20Z\" fill=\"#2aa88e\" stroke=\"#645f64\" stroke-width=\"3\"/><rect x=\"24\" y=\"47\" width=\"62\" height=\"34\" rx=\"8\" fill=\"#ff7e44\" stroke=\"#645f64\" stroke-width=\"2\"/><path d=\"M30 19Q54 -9 79 17\" fill=\"none\" stroke=\"#b9774d\" stroke-width=\"7\"/><text x=\"57\" y=\"66\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"18\" fill=\"#22354b\" text-anchor=\"middle\">1</text></g><g transform=\"translate(210,10)\"><path d=\"M35 20 Q35 -6 70 3 Q96 6 96 30 L96 82 Q95 90 84 90 L24 90 Q14 88 14 77 L14 27 Q15 10 35 20Z\" fill=\"#ffd235\" stroke=\"#645f64\" stroke-width=\"3\"/><rect x=\"24\" y=\"47\" width=\"62\" height=\"34\" rx=\"8\" fill=\"#e34d53\" stroke=\"#645f64\" stroke-width=\"2\"/><path d=\"M30 19Q54 -9 79 17\" fill=\"none\" stroke=\"#b9774d\" stroke-width=\"7\"/><text x=\"57\" y=\"66\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"18\" fill=\"#22354b\" text-anchor=\"middle\">2</text></g><g transform=\"translate(20,112)\"><path d=\"M35 20 Q35 -6 70 3 Q96 6 96 30 L96 82 Q95 90 84 90 L24 90 Q14 88 14 77 L14 27 Q15 10 35 20Z\" fill=\"#ffe56a\" stroke=\"#645f64\" stroke-width=\"3\"/><rect x=\"24\" y=\"47\" width=\"62\" height=\"34\" rx=\"8\" fill=\"#f45fba\" stroke=\"#645f64\" stroke-width=\"2\"/><path d=\"M30 19Q54 -9 79 17\" fill=\"none\" stroke=\"#b9774d\" stroke-width=\"7\"/><text x=\"57\" y=\"66\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"18\" fill=\"#22354b\" text-anchor=\"middle\">3</text></g><g transform=\"translate(210,112)\"><path d=\"M35 20 Q35 -6 70 3 Q96 6 96 30 L96 82 Q95 90 84 90 L24 90 Q14 88 14 77 L14 27 Q15 10 35 20Z\" fill=\"#a68be9\" stroke=\"#645f64\" stroke-width=\"3\"/><rect x=\"24\" y=\"47\" width=\"62\" height=\"34\" rx=\"8\" fill=\"#784cbe\" stroke=\"#645f64\" stroke-width=\"2\"/><path d=\"M30 19Q54 -9 79 17\" fill=\"none\" stroke=\"#b9774d\" stroke-width=\"7\"/><text x=\"57\" y=\"66\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"18\" fill=\"#22354b\" text-anchor=\"middle\">4</text></g></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Practice 205: In Mary's English lesson, how old are you? – I am ____ years old.",
-  "answer": 2,
-  "explain": "Câu trả lời tuổi dùng số đếm.",
+  "prompt": "Look at the picture and choose the FALSE sentence.",
   "options": [
-   "twelve",
-   "thirteen",
-   "eleven",
-   "fourteen"
-  ]
+   "Mary likes tennis.",
+   "Jack likes baseball.",
+   "John likes football.",
+   "Tracy likes skating."
+  ],
+  "answer": 1,
+  "explain": "Jack đang chơi bóng rổ, không phải bóng chày.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 215\" role=\"img\" style=\"width:min(100%,380px);height:auto;background:white;border-radius:12px;border:2px solid #dbe3ee\"><rect width=\"380\" height=\"215\" fill=\"#fff\"/><g transform=\"translate(20,8)\"><rect width=\"160\" height=\"92\" rx=\"8\" fill=\"#eaf5fd\" stroke=\"#d5e2eb\"/><text x=\"80\" y=\"19\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"16\" fill=\"#22354b\" text-anchor=\"middle\">Jack</text><text x=\"80\" y=\"67\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"42\" fill=\"#22354b\" text-anchor=\"middle\">🏀</text></g><g transform=\"translate(205,8)\"><rect width=\"160\" height=\"92\" rx=\"8\" fill=\"#eaf5fd\" stroke=\"#d5e2eb\"/><text x=\"80\" y=\"19\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"16\" fill=\"#22354b\" text-anchor=\"middle\">John</text><text x=\"80\" y=\"67\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"42\" fill=\"#22354b\" text-anchor=\"middle\">⚽</text></g><g transform=\"translate(20,111)\"><rect width=\"160\" height=\"92\" rx=\"8\" fill=\"#eaf5fd\" stroke=\"#d5e2eb\"/><text x=\"80\" y=\"19\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"16\" fill=\"#22354b\" text-anchor=\"middle\">Tracy</text><text x=\"80\" y=\"67\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"42\" fill=\"#22354b\" text-anchor=\"middle\">⛸️</text></g><g transform=\"translate(205,111)\"><rect width=\"160\" height=\"92\" rx=\"8\" fill=\"#eaf5fd\" stroke=\"#d5e2eb\"/><text x=\"80\" y=\"19\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"16\" fill=\"#22354b\" text-anchor=\"middle\">Mary</text><text x=\"80\" y=\"67\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"42\" fill=\"#22354b\" text-anchor=\"middle\">🎾</text></g></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Look! There is a monkey in the picture. What animal is it?",
-  "answer": 2,
-  "explain": "Tên con vật xuất hiện trong lời dẫn.",
+  "prompt": "Look at the picture. “Let’s go to the gym.” True or False?",
   "options": [
-   "tiger",
-   "elephant",
-   "monkey",
-   "lion"
-  ]
+   "True",
+   "False"
+  ],
+  "answer": 1,
+  "explain": "Hình minh họa là phòng máy tính, không phải phòng thể chất.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 215\" role=\"img\" style=\"width:min(100%,380px);height:auto;background:white;border-radius:12px;border:2px solid #dbe3ee\"><rect width=\"380\" height=\"215\" fill=\"#fff\"/><rect x=\"30\" y=\"22\" width=\"320\" height=\"170\" rx=\"8\" fill=\"#e9f6ff\"/><rect x=\"76\" y=\"40\" width=\"225\" height=\"85\" fill=\"#9ed2ee\" stroke=\"#537d9e\" stroke-width=\"6\"/><rect x=\"100\" y=\"139\" width=\"160\" height=\"24\" rx=\"5\" fill=\"#9d7155\"/><rect x=\"117\" y=\"164\" width=\"9\" height=\"29\" fill=\"#70503e\"/><rect x=\"230\" y=\"164\" width=\"9\" height=\"29\" fill=\"#70503e\"/><text x=\"188\" y=\"97\" font-family=\"Arial,sans-serif\" font-weight=\"bold\" font-size=\"20\" fill=\"#22354b\" text-anchor=\"middle\">COMPUTER ROOM</text></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Lucy is in the bathroom. Where is Lucy?",
-  "answer": 2,
-  "explain": "Where hỏi nơi chốn.",
+  "prompt": "Choose the letter(s) to make a correct word: n_ce",
   "options": [
-   "zoo",
-   "school",
-   "bathroom",
-   "park"
-  ]
+   "ec",
+   "ic",
+   "is",
+   "es"
+  ],
+  "answer": 1,
+  "explain": "n + ic + e = nice."
  },
  {
   "type": "choice",
-  "prompt": "Lucy likes to skip. What does Lucy like to do?",
+  "prompt": "Choose the letter(s) to make a correct word: sch__l",
+  "options": [
+   "oa",
+   "ee",
+   "ou",
+   "oo"
+  ],
   "answer": 3,
-  "explain": "Like to + động từ nguyên mẫu.",
-  "options": [
-   "play football",
-   "play chess",
-   "ride a bike",
-   "skip"
-  ]
+  "explain": "school có hai chữ o."
  },
  {
   "type": "choice",
-  "prompt": "Lucy likes apples. Which food does Lucy like?",
+  "prompt": "Choose the letter(s) to make a correct word: fr__nd",
+  "options": [
+   "ea",
+   "ai",
+   "ie",
+   "ei"
+  ],
   "answer": 2,
-  "explain": "Tìm món ăn được nhắc tới.",
-  "options": [
-   "grapes",
-   "oranges",
-   "apples",
-   "mangoes"
-  ]
+  "explain": "friend viết với ie."
  },
  {
   "type": "choice",
-  "prompt": "This is ____ doll.",
-  "answer": 0,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
+  "prompt": "Choose the letter(s) to make a correct word: cl_ss",
+  "options": [
+   "e",
+   "a",
+   "o",
+   "i"
+  ],
+  "answer": 1,
+  "explain": "class = lớp học."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: h__se",
+  "options": [
+   "oo",
+   "ou",
+   "ow",
+   "au"
+  ],
+  "answer": 1,
+  "explain": "house = ngôi nhà."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: t_cher",
+  "options": [
+   "ee",
+   "ea",
+   "ie",
+   "ae"
+  ],
+  "answer": 1,
+  "explain": "teacher = giáo viên."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: p_ncil",
   "options": [
    "a",
-   "some",
-   "an",
-   "the"
-  ]
+   "i",
+   "o",
+   "e"
+  ],
+  "answer": 3,
+  "explain": "pencil = bút chì."
  },
  {
   "type": "choice",
-  "prompt": "Lucy ____ my friend.",
-  "answer": 3,
-  "explain": "Tên một người dùng is.",
+  "prompt": "Choose the letter(s) to make a correct word: s_ster",
   "options": [
-   "do",
-   "am",
+   "u",
+   "e",
+   "a",
+   "i"
+  ],
+  "answer": 3,
+  "explain": "sister = chị/em gái."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: m_ther",
+  "options": [
+   "o",
+   "a",
+   "e",
+   "u"
+  ],
+  "answer": 0,
+  "explain": "mother = mẹ."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: p_rple",
+  "options": [
+   "e",
+   "o",
+   "a",
+   "u"
+  ],
+  "answer": 3,
+  "explain": "purple = màu tím."
+ },
+ {
+  "type": "choice",
+  "prompt": "Let's go to the zoo to see ____.",
+  "options": [
+   "candies",
+   "students",
+   "books",
+   "animals"
+  ],
+  "answer": 3,
+  "explain": "Sở thú có các loài động vật."
+ },
+ {
+  "type": "choice",
+  "prompt": "Which animal has two legs?",
+  "options": [
+   "a pig",
+   "a horse",
+   "a duck",
+   "a cow"
+  ],
+  "answer": 2,
+  "explain": "Con vịt có hai chân."
+ },
+ {
+  "type": "choice",
+  "prompt": "How old is her sister?",
+  "options": [
+   "He is eleven years old.",
+   "We are nine years old.",
+   "She is twelve years old.",
+   "I am six years old."
+  ],
+  "answer": 2,
+  "explain": "Her sister là nữ, dùng She."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct sentence.",
+  "options": [
+   "Is this our school?",
+   "Is these our school?",
+   "Is this our schools?",
+   "Are this our school?"
+  ],
+  "answer": 0,
+  "explain": "This là số ít nên dùng Is."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct sentence.",
+  "options": [
+   "There are two apples and three orange.",
+   "There are two apple and three oranges.",
+   "There are two apples and three oranges.",
+   "There are two apple and three orange."
+  ],
+  "answer": 2,
+  "explain": "Sau two và three dùng danh từ số nhiều."
+ },
+ {
+  "type": "choice",
+  "prompt": "The school ____ is old ____ very large.",
+  "options": [
+   "green – to",
+   "blue – but",
+   "library – to",
+   "library – but"
+  ],
+  "answer": 3,
+  "explain": "School library = thư viện trường; but = nhưng."
+ },
+ {
+  "type": "choice",
+  "prompt": "Linda has two ____ and two notebooks.",
+  "options": [
+   "book",
+   "pencils",
+   "pen",
+   "pencil"
+  ],
+  "answer": 1,
+  "explain": "Sau two dùng danh từ số nhiều pencils."
+ },
+ {
+  "type": "choice",
+  "prompt": "May I ____ up? – No, you ____.",
+  "options": [
+   "sit – can",
+   "sit – can't",
+   "stand – can't",
+   "stand – can"
+  ],
+  "answer": 2,
+  "explain": "May I stand up? No, you can’t."
+ },
+ {
+  "type": "choice",
+  "prompt": "These / my / school / things.",
+  "options": [
+   "These are my school things.",
+   "These is my school things.",
+   "These are my school and things.",
+   "These are my school on things."
+  ],
+  "answer": 0,
+  "explain": "These are ... là cấu trúc đúng."
+ },
+ {
+  "type": "choice",
+  "prompt": "Which sentence is correct?",
+  "options": [
+   "Those am my papers.",
+   "Those are my papers.",
+   "Those is my papers.",
+   "Those are my paper."
+  ],
+  "answer": 1,
+  "explain": "Those đi với are và papers số nhiều."
+ },
+ {
+  "type": "choice",
+  "prompt": "My sister ____ a red school bag.",
+  "options": [
    "are",
-   "is"
-  ]
+   "am",
+   "have",
+   "has"
+  ],
+  "answer": 3,
+  "explain": "My sister là ngôi thứ ba số ít, dùng has."
  },
  {
   "type": "choice",
-  "prompt": "Practice 212: In Lan's English lesson, these ____ my books.",
-  "answer": 3,
-  "explain": "These đi với are.",
+  "prompt": "There ____ three books on my desk.",
   "options": [
-   "is",
-   "am",
+   "are",
    "be",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ you like apples? – Yes, I do.",
-  "answer": 1,
-  "explain": "Câu hỏi Do you like ...?",
-  "options": [
-   "Are",
-   "Do",
-   "Does",
-   "Is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Can Lucy skip? – Yes, she ____.",
-  "answer": 3,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
-  "options": [
-   "does",
    "is",
-   "am",
-   "can"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 215: In Mary's English lesson, what do you do at break time? – I ____.",
+   "am"
+  ],
   "answer": 0,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "skip",
-   "play football",
-   "ride a bike",
-   "play chess"
-  ]
+  "explain": "Three books là số nhiều."
  },
  {
   "type": "choice",
-  "prompt": "Is this your doll? – Yes, it ____.",
-  "answer": 1,
-  "explain": "Yes, it is.",
+  "prompt": "My mother ____ cooking in the kitchen.",
   "options": [
    "do",
    "is",
    "are",
    "am"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "In Anna's English lesson, what is your favourite colour? – It is red.",
-  "answer": 3,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
-  "options": [
-   "green",
-   "blue",
-   "yellow",
-   "red"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 218: In Lily's English lesson, where ____ your books? – They are on the desk.",
+  ],
   "answer": 1,
-  "explain": "Books số nhiều dùng are.",
-  "options": [
-   "is",
-   "are",
-   "does",
-   "am"
-  ]
+  "explain": "My mother đi với is."
  },
  {
   "type": "choice",
-  "prompt": "Lucy ____ two pens.",
-  "answer": 0,
-  "explain": "Tên riêng một người dùng has.",
-  "options": [
-   "has",
-   "are",
-   "is",
-   "have"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct greeting for Lucy in the morning.",
-  "answer": 1,
-  "explain": "Good morning là lời chào buổi sáng.",
-  "options": [
-   "See you tomorrow!",
-   "Good morning!",
-   "Goodbye!",
-   "Good night!"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben has a blue robot. What colour is the robot?",
-  "answer": 0,
-  "explain": "What colour hỏi màu sắc.",
-  "options": [
-   "blue",
-   "green",
-   "yellow",
-   "red"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben has a robot. What does Ben have?",
-  "answer": 0,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
-  "options": [
-   "robot",
-   "hat",
-   "car",
-   "bike"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is my grandparents. ____ is very kind.",
-  "answer": 3,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
-  "options": [
-   "She",
-   "It",
-   "He",
-   "They"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ is your name? – My name is Ben.",
-  "answer": 1,
-  "explain": "What is your name? hỏi tên.",
+  "prompt": "____ is your birthday? – In May.",
   "options": [
    "Who",
-   "What",
-   "How",
+   "What colour",
+   "When",
    "Where"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 225: In Mary's English lesson, how old are you? – I am ____ years old.",
-  "answer": 1,
-  "explain": "Câu trả lời tuổi dùng số đếm.",
-  "options": [
-   "fifteen",
-   "twelve",
-   "fourteen",
-   "thirteen"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Look! There is a tiger in the picture. What animal is it?",
-  "answer": 1,
-  "explain": "Tên con vật xuất hiện trong lời dẫn.",
-  "options": [
-   "bear",
-   "tiger",
-   "elephant",
-   "lion"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben is in the school. Where is Ben?",
-  "answer": 1,
-  "explain": "Where hỏi nơi chốn.",
-  "options": [
-   "zoo",
-   "school",
-   "shop",
-   "park"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben likes to play football. What does Ben like to do?",
-  "answer": 3,
-  "explain": "Like to + động từ nguyên mẫu.",
-  "options": [
-   "fly a kite",
-   "ride a bike",
-   "play chess",
-   "play football"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben likes oranges. Which food does Ben like?",
-  "answer": 0,
-  "explain": "Tìm món ăn được nhắc tới.",
-  "options": [
-   "oranges",
-   "cakes",
-   "grapes",
-   "mangoes"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is ____ robot.",
-  "answer": 1,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
-  "options": [
-   "some",
-   "a",
-   "the",
-   "an"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben ____ my friend.",
-  "answer": 1,
-  "explain": "Tên một người dùng is.",
-  "options": [
-   "am",
-   "is",
-   "are",
-   "do"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 232: In Lan's English lesson, these ____ my books.",
-  "answer": 3,
-  "explain": "These đi với are.",
-  "options": [
-   "be",
-   "is",
-   "am",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ you like oranges? – Yes, I do.",
-  "answer": 3,
-  "explain": "Câu hỏi Do you like ...?",
-  "options": [
-   "Is",
-   "Are",
-   "Does",
-   "Do"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Can Ben play football? – Yes, he ____.",
-  "answer": 0,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
-  "options": [
-   "can",
-   "does",
-   "is",
-   "am"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 235: In Mary's English lesson, what do you do at break time? – I ____.",
-  "answer": 1,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "ride a bike",
-   "play football",
-   "play chess",
-   "fly a kite"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Is this your robot? – Yes, it ____.",
-  "answer": 3,
-  "explain": "Yes, it is.",
-  "options": [
-   "am",
-   "are",
-   "do",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "What is your favourite animal? – It is tiger.",
+  ],
   "answer": 2,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
-  "options": [
-   "bear",
-   "elephant",
-   "tiger",
-   "lion"
-  ]
+  "explain": "Hỏi thời điểm dùng When."
  },
  {
   "type": "choice",
-  "prompt": "Practice 238: In Lily's English lesson, where ____ your books? – They are on the desk.",
-  "answer": 0,
-  "explain": "Books số nhiều dùng are.",
-  "options": [
-   "are",
-   "am",
-   "does",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Ben ____ two books.",
-  "answer": 2,
-  "explain": "Tên riêng một người dùng has.",
-  "options": [
-   "are",
-   "have",
-   "has",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct greeting for Ben in the morning.",
-  "answer": 2,
-  "explain": "Good morning là lời chào buổi sáng.",
-  "options": [
-   "Good night!",
-   "Goodbye!",
-   "Good morning!",
-   "See you tomorrow!"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Anna has a green car. What colour is the car?",
-  "answer": 3,
-  "explain": "What colour hỏi màu sắc.",
-  "options": [
-   "yellow",
-   "red",
-   "blue",
-   "green"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Anna has a car. What does Anna have?",
-  "answer": 2,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
-  "options": [
-   "bike",
-   "shirt",
-   "car",
-   "hat"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is my family. ____ is very kind.",
-  "answer": 1,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
-  "options": [
-   "It",
-   "They",
-   "He",
-   "She"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ is your name? – My name is Anna.",
-  "answer": 3,
-  "explain": "What is your name? hỏi tên.",
+  "prompt": "____ is your best friend? – It's Lan.",
   "options": [
    "Who",
-   "How",
+   "When",
+   "How many",
+   "Where"
+  ],
+  "answer": 0,
+  "explain": "Hỏi người dùng Who."
+ },
+ {
+  "type": "choice",
+  "prompt": "____ is the ruler? – It's on the table.",
+  "options": [
+   "When",
+   "Who",
    "Where",
-   "What"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 245: In Mary's English lesson, how old are you? – I am ____ years old.",
+   "How old"
+  ],
   "answer": 2,
-  "explain": "Câu trả lời tuổi dùng số đếm.",
-  "options": [
-   "fifteen",
-   "fourteen",
-   "thirteen",
-   "sixteen"
-  ]
+  "explain": "Hỏi vị trí dùng Where."
  },
  {
   "type": "choice",
-  "prompt": "Look! There is a elephant in the picture. What animal is it?",
-  "answer": 0,
-  "explain": "Tên con vật xuất hiện trong lời dẫn.",
+  "prompt": "____ pencils are there? – Four.",
   "options": [
-   "elephant",
-   "parrot",
-   "bear",
-   "lion"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Anna is in the park. Where is Anna?",
+   "How old",
+   "How many",
+   "What time",
+   "How much"
+  ],
   "answer": 1,
-  "explain": "Where hỏi nơi chốn.",
-  "options": [
-   "shop",
-   "park",
-   "zoo",
-   "farm"
-  ]
+  "explain": "Đếm đồ vật dùng How many."
  },
  {
   "type": "choice",
-  "prompt": "Anna likes to play chess. What does Anna like to do?",
+  "prompt": "My father is thirty-five ____ old.",
+  "options": [
+   "days",
+   "hours",
+   "years",
+   "year"
+  ],
+  "answer": 2,
+  "explain": "Tuổi từ hai trở lên dùng years old."
+ },
+ {
+  "type": "choice",
+  "prompt": "The cat is ____ the chair, not on it.",
+  "options": [
+   "in",
+   "from",
+   "with",
+   "under"
+  ],
   "answer": 3,
-  "explain": "Like to + động từ nguyên mẫu.",
-  "options": [
-   "ride a bike",
-   "play badminton",
-   "fly a kite",
-   "play chess"
-  ]
+  "explain": "Under là bên dưới."
  },
  {
   "type": "choice",
-  "prompt": "Anna likes grapes. Which food does Anna like?",
+  "prompt": "I can ____ a bike.",
+  "options": [
+   "rode",
+   "riding",
+   "rides",
+   "ride"
+  ],
   "answer": 3,
-  "explain": "Tìm món ăn được nhắc tới.",
-  "options": [
-   "cakes",
-   "mangoes",
-   "ice cream",
-   "grapes"
-  ]
+  "explain": "Sau can dùng động từ nguyên mẫu."
  },
  {
   "type": "choice",
-  "prompt": "This is ____ car.",
-  "answer": 1,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
-  "options": [
-   "the",
-   "a",
-   "an",
-   "some"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Anna ____ my friend.",
-  "answer": 0,
-  "explain": "Tên một người dùng is.",
+  "prompt": "Can you swim? – Yes, I ____.",
   "options": [
    "is",
-   "do",
    "am",
-   "are"
-  ]
+   "do",
+   "can"
+  ],
+  "answer": 3,
+  "explain": "Trả lời Can you ...? là Yes, I can."
  },
  {
   "type": "choice",
-  "prompt": "Practice 252: In Lan's English lesson, these ____ my books.",
-  "answer": 1,
-  "explain": "These đi với are.",
+  "prompt": "Do you like milk? – Yes, I ____.",
   "options": [
+   "am",
+   "do",
    "is",
+   "does"
+  ],
+  "answer": 1,
+  "explain": "Yes, I do."
+ },
+ {
+  "type": "choice",
+  "prompt": "What ____ is it? – It's ten o'clock.",
+  "options": [
+   "colour",
+   "time",
+   "day",
+   "old"
+  ],
+  "answer": 1,
+  "explain": "What time hỏi giờ."
+ },
+ {
+  "type": "choice",
+  "prompt": "My favourite ____ is English.",
+  "options": [
+   "colour",
+   "animal",
+   "subject",
+   "food"
+  ],
+  "answer": 2,
+  "explain": "English là môn học."
+ },
+ {
+  "type": "choice",
+  "prompt": "We play football in the ____.",
+  "options": [
+   "playground",
+   "bedroom",
+   "kitchen",
+   "bathroom"
+  ],
+  "answer": 0,
+  "explain": "Sân chơi là playground."
+ },
+ {
+  "type": "choice",
+  "prompt": "She is wearing a ____ on her head.",
+  "options": [
+   "hat",
+   "shoe",
+   "sock",
+   "glove"
+  ],
+  "answer": 0,
+  "explain": "Hat đội trên đầu."
+ },
+ {
+  "type": "choice",
+  "prompt": "I write with a ____.",
+  "options": [
+   "desk",
+   "pencil",
+   "door",
+   "chair"
+  ],
+  "answer": 1,
+  "explain": "Pencil là bút chì."
+ },
+ {
+  "type": "choice",
+  "prompt": "We use an ____ to rub out pencil marks.",
+  "options": [
+   "apple",
+   "umbrella",
+   "eraser",
+   "orange"
+  ],
+  "answer": 2,
+  "explain": "Eraser là cục tẩy."
+ },
+ {
+  "type": "choice",
+  "prompt": "There are seven days in a ____.",
+  "options": [
+   "week",
+   "year",
+   "month",
+   "day"
+  ],
+  "answer": 0,
+  "explain": "Một tuần có bảy ngày."
+ },
+ {
+  "type": "choice",
+  "prompt": "There are twelve months in a ____.",
+  "options": [
+   "day",
+   "year",
+   "hour",
+   "week"
+  ],
+  "answer": 1,
+  "explain": "Một năm có mười hai tháng."
+ },
+ {
+  "type": "choice",
+  "prompt": "____ is the day after Monday.",
+  "options": [
+   "Saturday",
+   "Tuesday",
+   "Friday",
+   "Sunday"
+  ],
+  "answer": 1,
+  "explain": "Sau thứ Hai là thứ Ba."
+ },
+ {
+  "type": "choice",
+  "prompt": "____ is the first month of the year.",
+  "options": [
+   "December",
+   "July",
+   "June",
+   "January"
+  ],
+  "answer": 3,
+  "explain": "Tháng đầu năm là January."
+ },
+ {
+  "type": "choice",
+  "prompt": "A baby cat is called a ____.",
+  "options": [
+   "duckling",
+   "kitten",
+   "calf",
+   "puppy"
+  ],
+  "answer": 1,
+  "explain": "Mèo con là kitten."
+ },
+ {
+  "type": "choice",
+  "prompt": "A baby dog is called a ____.",
+  "options": [
+   "chick",
+   "kitten",
+   "puppy",
+   "lamb"
+  ],
+  "answer": 2,
+  "explain": "Chó con là puppy."
+ },
+ {
+  "type": "choice",
+  "prompt": "A ____ can fly and has two wings.",
+  "options": [
+   "pig",
+   "fish",
+   "cow",
+   "bird"
+  ],
+  "answer": 3,
+  "explain": "Bird có hai cánh."
+ },
+ {
+  "type": "choice",
+  "prompt": "We brush our ____ every morning.",
+  "options": [
+   "teeth",
+   "hands",
+   "hair",
+   "ears"
+  ],
+  "answer": 0,
+  "explain": "Brush our teeth = đánh răng."
+ },
+ {
+  "type": "choice",
+  "prompt": "We hear with our ____.",
+  "options": [
+   "mouth",
+   "eyes",
+   "ears",
+   "nose"
+  ],
+  "answer": 2,
+  "explain": "Tai dùng để nghe."
+ },
+ {
+  "type": "choice",
+  "prompt": "We smell with our ____.",
+  "options": [
+   "nose",
+   "hands",
+   "eyes",
+   "feet"
+  ],
+  "answer": 0,
+  "explain": "Mũi dùng để ngửi."
+ },
+ {
+  "type": "choice",
+  "prompt": "My grandmother is my father's ____.",
+  "options": [
+   "sister",
+   "mother",
+   "daughter",
+   "aunt"
+  ],
+  "answer": 1,
+  "explain": "Bà nội là mẹ của bố."
+ },
+ {
+  "type": "choice",
+  "prompt": "My uncle is my mother's ____.",
+  "options": [
+   "grandfather",
+   "brother",
+   "son",
+   "father"
+  ],
+  "answer": 1,
+  "explain": "Chú/cậu là anh hoặc em trai của mẹ."
+ },
+ {
+  "type": "choice",
+  "prompt": "There is ____ elephant at the zoo.",
+  "options": [
+   "am",
    "are",
-   "be",
-   "am"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ you like grapes? – Yes, I do.",
-  "answer": 0,
-  "explain": "Câu hỏi Do you like ...?",
-  "options": [
-   "Do",
-   "Are",
-   "Is",
-   "Does"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Can Anna play chess? – Yes, she ____.",
-  "answer": 1,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
-  "options": [
-   "does",
-   "can",
-   "am",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 255: In Mary's English lesson, what do you do at break time? – I ____.",
-  "answer": 0,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "play chess",
-   "ride a bike",
-   "play badminton",
-   "fly a kite"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Is this your car? – Yes, it ____.",
-  "answer": 2,
-  "explain": "Yes, it is.",
-  "options": [
-   "am",
-   "do",
-   "is",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "In Anna's English lesson, what is your favourite colour? – It is green.",
-  "answer": 1,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
-  "options": [
-   "pink",
-   "green",
-   "purple",
-   "yellow"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 258: In Lily's English lesson, where ____ your books? – They are on the desk.",
+   "a",
+   "an"
+  ],
   "answer": 3,
-  "explain": "Books số nhiều dùng are.",
-  "options": [
-   "is",
-   "am",
-   "does",
-   "are"
-  ]
+  "explain": "Elephant bắt đầu bằng âm nguyên âm."
  },
  {
   "type": "choice",
-  "prompt": "Anna ____ two pens.",
-  "answer": 0,
-  "explain": "Tên riêng một người dùng has.",
+  "prompt": "I ____ breakfast at seven o'clock.",
   "options": [
    "has",
+   "having",
+   "am",
+   "have"
+  ],
+  "answer": 3,
+  "explain": "I have breakfast."
+ },
+ {
+  "type": "choice",
+  "prompt": "He ____ to school every day.",
+  "options": [
+   "go",
+   "going",
+   "gone",
+   "goes"
+  ],
+  "answer": 3,
+  "explain": "He goes to school."
+ },
+ {
+  "type": "choice",
+  "prompt": "She ____ two brothers.",
+  "options": [
    "have",
-   "are",
-   "is"
-  ]
+   "is",
+   "having",
+   "has"
+  ],
+  "answer": 3,
+  "explain": "She has two brothers."
  },
  {
   "type": "choice",
-  "prompt": "Choose the correct greeting for Anna in the morning.",
-  "answer": 2,
-  "explain": "Good morning là lời chào buổi sáng.",
+  "prompt": "The sky is ____ on a sunny day.",
   "options": [
-   "Goodbye!",
-   "See you tomorrow!",
-   "Good morning!",
-   "Good night!"
-  ]
+   "blue",
+   "black",
+   "pink",
+   "brown"
+  ],
+  "answer": 0,
+  "explain": "Trời quang thường màu xanh."
  },
  {
   "type": "choice",
-  "prompt": "Jack has a yellow bike. What colour is the bike?",
+  "prompt": "A lemon is usually ____.",
+  "options": [
+   "black",
+   "purple",
+   "blue",
+   "yellow"
+  ],
+  "answer": 3,
+  "explain": "Quả chanh vàng thường màu vàng."
+ },
+ {
+  "type": "choice",
+  "prompt": "We use a ____ to tell the time.",
+  "options": [
+   "bag",
+   "clock",
+   "rubber",
+   "ruler"
+  ],
   "answer": 1,
-  "explain": "What colour hỏi màu sắc.",
-  "options": [
-   "green",
-   "yellow",
-   "red",
-   "blue"
-  ]
+  "explain": "Clock = đồng hồ."
  },
  {
   "type": "choice",
-  "prompt": "Jack has a bike. What does Jack have?",
-  "answer": 0,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
+  "prompt": "Please ____ the door. It is cold outside.",
   "options": [
-   "bike",
-   "cup",
-   "hat",
-   "shirt"
-  ]
+   "write",
+   "close",
+   "draw",
+   "read"
+  ],
+  "answer": 1,
+  "explain": "Close the door = đóng cửa."
  },
  {
   "type": "choice",
-  "prompt": "This is my friend. ____ is very kind.",
-  "answer": 0,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
+  "prompt": "Please ____ your name on the paper.",
   "options": [
-   "They",
-   "He",
-   "It",
-   "She"
-  ]
+   "eat",
+   "write",
+   "drink",
+   "sleep"
+  ],
+  "answer": 1,
+  "explain": "Write your name = viết tên."
+ },
+ {
+  "type": "choice",
+  "prompt": "Please ____ the picture carefully.",
+  "options": [
+   "talk to",
+   "run to",
+   "listen to",
+   "look at"
+  ],
+  "answer": 3,
+  "explain": "Look at the picture = nhìn bức tranh."
  },
  {
   "type": "choice",
@@ -4193,627 +4194,587 @@
  },
  {
   "type": "choice",
-  "prompt": "Bill likes soup. Which food does Bill like?",
-  "answer": 3,
-  "explain": "Tìm món ăn được nhắc tới.",
+  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam's school is big and clean.",
   "options": [
-   "salad",
-   "rice",
-   "pizza",
-   "soup"
-  ]
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: small but clean."
  },
  {
   "type": "choice",
-  "prompt": "This is ____ box.",
+  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nThere are ten classrooms in Nam's school.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 0,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
-  "options": [
-   "a",
-   "the",
-   "an",
-   "some"
-  ]
+  "explain": "Dựa vào đoạn đọc: ten classrooms."
  },
  {
   "type": "choice",
-  "prompt": "Bill ____ my friend.",
-  "answer": 3,
-  "explain": "Tên một người dùng is.",
+  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam does not like his school.",
   "options": [
-   "am",
-   "do",
-   "are",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 352: In Lan's English lesson, these ____ my books.",
-  "answer": 3,
-  "explain": "These đi với are.",
-  "options": [
-   "be",
-   "am",
-   "is",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ you like soup? – Yes, I do.",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 1,
-  "explain": "Câu hỏi Do you like ...?",
-  "options": [
-   "Are",
-   "Do",
-   "Is",
-   "Does"
-  ]
+  "explain": "Dựa vào đoạn đọc: I love my school.."
  },
  {
   "type": "choice",
-  "prompt": "Can Bill listen to music? – Yes, he ____.",
-  "answer": 3,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
+  "prompt": "My name is Nam. This is my school. It is small but clean. There are ten classrooms. My teacher is very kind. I love my school.\n\nTRUE or FALSE?\nNam's teacher is kind.",
   "options": [
-   "does",
-   "is",
-   "am",
-   "can"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 355: In Mary's English lesson, what do you do at break time? – I ____.",
-  "answer": 1,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "play the piano",
-   "listen to music",
-   "sing",
-   "watch TV"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Is this your box? – Yes, it ____.",
-  "answer": 3,
-  "explain": "Yes, it is.",
-  "options": [
-   "am",
-   "do",
-   "are",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "What is your favourite animal? – It is pig.",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 0,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
-  "options": [
-   "pig",
-   "sheep",
-   "goat",
-   "cat"
-  ]
+  "explain": "Dựa vào đoạn đọc: very kind."
  },
  {
   "type": "choice",
-  "prompt": "Practice 358: In Lily's English lesson, where ____ your books? – They are on the desk.",
-  "answer": 1,
-  "explain": "Books số nhiều dùng are.",
+  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nThere is a garden in front of Linh's house.",
   "options": [
-   "does",
-   "are",
-   "am",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Bill ____ two books.",
-  "answer": 1,
-  "explain": "Tên riêng một người dùng has.",
-  "options": [
-   "is",
-   "has",
-   "are",
-   "have"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct greeting for Bill in the morning.",
-  "answer": 1,
-  "explain": "Good morning là lời chào buổi sáng.",
-  "options": [
-   "Good night!",
-   "Good morning!",
-   "See you tomorrow!",
-   "Goodbye!"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Daisy has a black clock. What colour is the clock?",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 0,
-  "explain": "What colour hỏi màu sắc.",
-  "options": [
-   "black",
-   "green",
-   "red",
-   "blue"
-  ]
+  "explain": "Dựa vào đoạn đọc: a garden in front."
  },
  {
   "type": "choice",
-  "prompt": "Daisy has a clock. What does Daisy have?",
-  "answer": 3,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
+  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nLinh lives in a small house.",
   "options": [
-   "book",
-   "lamp",
-   "pen",
-   "clock"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is my daughter. ____ is very kind.",
-  "answer": 3,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
-  "options": [
-   "He",
-   "They",
-   "It",
-   "She"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ is your name? – My name is Daisy.",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 1,
-  "explain": "What is your name? hỏi tên.",
-  "options": [
-   "Who",
-   "What",
-   "How",
-   "Where"
-  ]
+  "explain": "Dựa vào đoạn đọc: a big house."
  },
  {
   "type": "choice",
-  "prompt": "Practice 365: In Mary's English lesson, how old are you? – I am ____ years old.",
-  "answer": 2,
-  "explain": "Câu trả lời tuổi dùng số đếm.",
+  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nThere are three bedrooms.",
   "options": [
-   "twenty",
-   "one",
-   "nineteen",
-   "two"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Look! There is a goat in the picture. What animal is it?",
-  "answer": 2,
-  "explain": "Tên con vật xuất hiện trong lời dẫn.",
-  "options": [
-   "sheep",
-   "cat",
-   "goat",
-   "dog"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Daisy is in the hall. Where is Daisy?",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 1,
-  "explain": "Where hỏi nơi chốn.",
-  "options": [
-   "classroom",
-   "hall",
-   "library",
-   "school yard"
-  ]
+  "explain": "Dựa vào đoạn đọc: two bedrooms."
  },
  {
   "type": "choice",
-  "prompt": "Daisy likes to watch TV. What does Daisy like to do?",
-  "answer": 2,
-  "explain": "Like to + động từ nguyên mẫu.",
+  "prompt": "I am Linh. I live in a big house. It has a living room, a kitchen, and two bedrooms. There is a garden in front of the house. I love my house very much.\n\nTRUE or FALSE?\nLinh's house has a kitchen.",
   "options": [
-   "play the piano",
-   "dance",
-   "watch TV",
-   "sing"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Daisy likes salad. Which food does Daisy like?",
-  "answer": 1,
-  "explain": "Tìm món ăn được nhắc tới.",
-  "options": [
-   "pizza",
-   "salad",
-   "rice",
-   "bread"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is ____ clock.",
-  "answer": 1,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
-  "options": [
-   "the",
-   "a",
-   "some",
-   "an"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Daisy ____ my friend.",
-  "answer": 2,
-  "explain": "Tên một người dùng is.",
-  "options": [
-   "am",
-   "do",
-   "is",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Practice 372: In Lan's English lesson, these ____ my books.",
-  "answer": 1,
-  "explain": "These đi với are.",
-  "options": [
-   "is",
-   "are",
-   "am",
-   "be"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ you like salad? – Yes, I do.",
-  "answer": 1,
-  "explain": "Câu hỏi Do you like ...?",
-  "options": [
-   "Is",
-   "Do",
-   "Does",
-   "Are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Can Daisy watch TV? – Yes, she ____.",
+   "TRUE",
+   "FALSE"
+  ],
   "answer": 0,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
-  "options": [
-   "can",
-   "does",
-   "am",
-   "is"
-  ]
+  "explain": "Dựa vào đoạn đọc: a kitchen."
  },
  {
   "type": "choice",
-  "prompt": "Practice 375: In Mary's English lesson, what do you do at break time? – I ____.",
+  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai is eight years old.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: eight years old."
+ },
+ {
+  "type": "choice",
+  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai's school bag is red.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: blue school bag."
+ },
+ {
+  "type": "choice",
+  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai goes to school with her sister.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: with my brother."
+ },
+ {
+  "type": "choice",
+  "prompt": "Hello! I'm Mai. I'm eight years old. I have a blue school bag and a red pencil case. Every morning, I walk to school with my brother.\n\nTRUE or FALSE?\nMai has a red pencil case.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: red pencil case."
+ },
+ {
+  "type": "choice",
+  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nTom has a cat named Lucky.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: a little dog."
+ },
+ {
+  "type": "choice",
+  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky is brown and white.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: brown and white."
+ },
+ {
+  "type": "choice",
+  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky plays with a red ball.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: yellow ball."
+ },
+ {
+  "type": "choice",
+  "prompt": "My friend Tom has a little dog. Its name is Lucky. Lucky is brown and white. It likes playing with a yellow ball in the garden.\n\nTRUE or FALSE?\nLucky plays in the garden.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: in the garden."
+ },
+ {
+  "type": "choice",
+  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThere are twenty desks.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: twenty desks."
+ },
+ {
+  "type": "choice",
+  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe clock is under the board.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: above the board."
+ },
+ {
+  "type": "choice",
+  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe classroom has two boards.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: one big board."
+ },
+ {
+  "type": "choice",
+  "prompt": "This is my classroom. We have twenty desks and one big board. There is a clock above the board. We read books and draw pictures here.\n\nTRUE or FALSE?\nThe children draw pictures here.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: draw pictures."
+ },
+ {
+  "type": "choice",
+  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy father works at a school.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: at a hospital."
+ },
+ {
+  "type": "choice",
+  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy mother teaches English.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: teaches English."
+ },
+ {
+  "type": "choice",
+  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nWe visit our grandparents on Mondays.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 1,
+  "explain": "Dựa vào đoạn đọc: On Sundays."
+ },
+ {
+  "type": "choice",
+  "prompt": "My father is a doctor. He works at a hospital. My mother is a teacher. She teaches English. On Sundays, we visit my grandparents.\n\nTRUE or FALSE?\nMy father is a doctor.",
+  "options": [
+   "TRUE",
+   "FALSE"
+  ],
+  "answer": 0,
+  "explain": "Dựa vào đoạn đọc: a doctor."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct answer: What is it?",
+  "options": [
+   "It's my friend.",
+   "It's yellow.",
+   "It's a pen.",
+   "It's big."
+  ],
+  "answer": 2,
+  "explain": "What is it? hỏi đồ vật; trả lời It is a pen."
+ },
+ {
+  "type": "choice",
+  "prompt": "Do you have a ruler? – ____",
+  "options": [
+   "Yes, I am.",
+   "No, I am not.",
+   "No, I do.",
+   "Yes, I do."
+  ],
   "answer": 3,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "sing",
-   "play the piano",
-   "dance",
-   "watch TV"
-  ]
+  "explain": "Do you...? → Yes, I do."
  },
  {
   "type": "choice",
-  "prompt": "Is this your clock? – Yes, it ____.",
-  "answer": 2,
-  "explain": "Yes, it is.",
+  "prompt": "What is your name?",
   "options": [
-   "do",
-   "are",
-   "is",
-   "am"
-  ]
+   "My name is Ben.",
+   "Her name is Lan.",
+   "My brother is Peter.",
+   "My surname is Nguyen."
+  ],
+  "answer": 0,
+  "explain": "My name is... trả lời trực tiếp tên của mình."
  },
  {
   "type": "choice",
-  "prompt": "In Anna's English lesson, what is your favourite colour? – It is black.",
+  "prompt": "____ have a pencil? – Yes, I do.",
+  "options": [
+   "Do she",
+   "Do you",
+   "Is he",
+   "Are you"
+  ],
   "answer": 1,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
-  "options": [
-   "blue",
-   "black",
-   "red",
-   "white"
-  ]
+  "explain": "Do you have...?"
  },
  {
   "type": "choice",
-  "prompt": "Practice 378: In Lily's English lesson, where ____ your books? – They are on the desk.",
+  "prompt": "What is this? – ____",
+  "options": [
+   "It's an eraser.",
+   "She is my sister.",
+   "I'm fine.",
+   "It's sunny."
+  ],
+  "answer": 0,
+  "explain": "Câu hỏi What is this? yêu cầu nêu tên đồ vật."
+ },
+ {
+  "type": "choice",
+  "prompt": "How old are you?",
+  "options": [
+   "I have eight books.",
+   "I'm in class 3A.",
+   "I'm eight years old.",
+   "My name is An."
+  ],
+  "answer": 2,
+  "explain": "How old hỏi tuổi."
+ },
+ {
+  "type": "choice",
+  "prompt": "What colour is your ruler?",
+  "options": [
+   "It's green.",
+   "It's long.",
+   "It's in my bag.",
+   "It's a ruler."
+  ],
+  "answer": 0,
+  "explain": "What colour hỏi màu sắc."
+ },
+ {
+  "type": "choice",
+  "prompt": "Is this your pencil?",
+  "options": [
+   "Yes, they are.",
+   "Yes, I am.",
+   "Yes, I do.",
+   "Yes, it is."
+  ],
+  "answer": 3,
+  "explain": "Is this...? → Yes, it is."
+ },
+ {
+  "type": "choice",
+  "prompt": "How many books do you have?",
+  "options": [
+   "I have three books.",
+   "I like books.",
+   "They are blue.",
+   "I am three."
+  ],
+  "answer": 0,
+  "explain": "How many hỏi số lượng."
+ },
+ {
+  "type": "choice",
+  "prompt": "Where is your bag?",
+  "options": [
+   "It's mine.",
+   "It's under the desk.",
+   "It's red.",
+   "It's a bag."
+  ],
   "answer": 1,
-  "explain": "Books số nhiều dùng are.",
-  "options": [
-   "is",
-   "are",
-   "am",
-   "does"
-  ]
+  "explain": "Where hỏi vị trí."
  },
  {
   "type": "choice",
-  "prompt": "Daisy ____ two pens.",
-  "answer": 2,
-  "explain": "Tên riêng một người dùng has.",
+  "prompt": "Can you swim?",
   "options": [
-   "are",
-   "is",
-   "has",
-   "have"
-  ]
+   "Yes, it is.",
+   "Yes, I can.",
+   "Yes, I do.",
+   "Yes, I am."
+  ],
+  "answer": 1,
+  "explain": "Can you...? → Yes, I can."
  },
  {
   "type": "choice",
-  "prompt": "Choose the correct greeting for Daisy in the morning.",
-  "answer": 2,
-  "explain": "Good morning là lời chào buổi sáng.",
+  "prompt": "What do you do at break time?",
   "options": [
-   "See you tomorrow!",
-   "Goodbye!",
-   "Good morning!",
-   "Good night!"
-  ]
+   "I am nine.",
+   "I am fine.",
+   "I play chess.",
+   "I am at home."
+  ],
+  "answer": 2,
+  "explain": "Hỏi hoạt động trong giờ ra chơi."
  },
  {
   "type": "choice",
-  "prompt": "Nick has a white lamp. What colour is the lamp?",
-  "answer": 2,
-  "explain": "What colour hỏi màu sắc.",
+  "prompt": "Choose the correct sentence.",
   "options": [
-   "red",
-   "green",
-   "white",
-   "blue"
-  ]
+   "There are two cats.",
+   "There is two cats.",
+   "There am two cats.",
+   "There are two cat."
+  ],
+  "answer": 0,
+  "explain": "There are + danh từ số nhiều."
  },
  {
   "type": "choice",
-  "prompt": "Nick has a lamp. What does Nick have?",
-  "answer": 2,
-  "explain": "What does ... have? hỏi đồ vật được nhắc tới.",
+  "prompt": "Choose the correct sentence.",
   "options": [
-   "book",
-   "pen",
-   "lamp",
-   "pencil"
-  ]
+   "He have a blue bike.",
+   "He has blue bike.",
+   "He having a blue bike.",
+   "He has a blue bike."
+  ],
+  "answer": 3,
+  "explain": "He has a blue bike."
  },
  {
   "type": "choice",
-  "prompt": "This is my grandson. ____ is very kind.",
-  "answer": 2,
-  "explain": "Chọn đại từ phù hợp với người được nhắc tới.",
+  "prompt": "Choose the incorrect word: She are my sister.",
   "options": [
+   "sister",
+   "my",
    "She",
-   "It",
-   "He",
-   "They"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "____ is your name? – My name is Nick.",
+   "are"
+  ],
   "answer": 3,
-  "explain": "What is your name? hỏi tên.",
-  "options": [
-   "Where",
-   "Who",
-   "How",
-   "What"
-  ]
+  "explain": "She đi với is."
  },
  {
   "type": "choice",
-  "prompt": "Practice 385: In Mary's English lesson, how old are you? – I am ____ years old.",
-  "answer": 3,
-  "explain": "Câu trả lời tuổi dùng số đếm.",
+  "prompt": "Choose the incorrect word: They is in the classroom.",
   "options": [
-   "two",
-   "one",
-   "three",
-   "twenty"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Look! There is a sheep in the picture. What animal is it?",
-  "answer": 2,
-  "explain": "Tên con vật xuất hiện trong lời dẫn.",
-  "options": [
-   "dog",
-   "bird",
-   "sheep",
-   "cat"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Nick is in the school yard. Where is Nick?",
-  "answer": 0,
-  "explain": "Where hỏi nơi chốn.",
-  "options": [
-   "school yard",
-   "playground",
+   "They",
+   "in",
    "classroom",
-   "library"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Nick likes to play the piano. What does Nick like to do?",
-  "answer": 0,
-  "explain": "Like to + động từ nguyên mẫu.",
-  "options": [
-   "play the piano",
-   "swim",
-   "sing",
-   "dance"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Nick likes pizza. Which food does Nick like?",
-  "answer": 0,
-  "explain": "Tìm món ăn được nhắc tới.",
-  "options": [
-   "pizza",
-   "bread",
-   "milk",
-   "rice"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "This is ____ lamp.",
-  "answer": 0,
-  "explain": "Dùng a trước âm phụ âm, an trước âm nguyên âm.",
-  "options": [
-   "a",
-   "an",
-   "some",
-   "the"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Nick ____ my friend.",
+   "is"
+  ],
   "answer": 3,
-  "explain": "Tên một người dùng is.",
-  "options": [
-   "are",
-   "do",
-   "am",
-   "is"
-  ]
+  "explain": "They đi với are."
  },
  {
   "type": "choice",
-  "prompt": "Practice 392: In Lan's English lesson, these ____ my books.",
+  "prompt": "Choose the letter(s) to make a correct word: _ITE",
+  "options": [
+   "P",
+   "R",
+   "L",
+   "K"
+  ],
+  "answer": 3,
+  "explain": "KITE = cái diều."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: PENC_L",
+  "options": [
+   "A",
+   "E",
+   "O",
+   "I"
+  ],
+  "answer": 3,
+  "explain": "PENCIL = bút chì."
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the letter(s) to make a correct word: SCH_OL",
+  "options": [
+   "A",
+   "O",
+   "I",
+   "U"
+  ],
   "answer": 1,
-  "explain": "These đi với are.",
-  "options": [
-   "am",
-   "are",
-   "be",
-   "is"
-  ]
+  "explain": "SCHOOL = trường học."
  },
  {
   "type": "choice",
-  "prompt": "____ you like pizza? – Yes, I do.",
-  "answer": 1,
-  "explain": "Câu hỏi Do you like ...?",
+  "prompt": "Choose the letter(s) to make a correct word: FRI_ND",
   "options": [
-   "Is",
-   "Do",
-   "Are",
-   "Does"
-  ]
+   "I",
+   "A",
+   "E",
+   "O"
+  ],
+  "answer": 2,
+  "explain": "FRIEND = bạn bè."
  },
  {
   "type": "choice",
-  "prompt": "Can Nick play the piano? – Yes, he ____.",
+  "prompt": "The number in the picture is ____.",
+  "options": [
+   "sixty-nine",
+   "sixty-seven",
+   "fifty-two",
+   "fifty-six"
+  ],
   "answer": 0,
-  "explain": "Can hỏi khả năng, trả lời Yes, ... can.",
-  "options": [
-   "can",
-   "does",
-   "am",
-   "is"
-  ]
+  "explain": "69 = sixty-nine.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"148\" font-size=\"110\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">69</text></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Practice 395: In Mary's English lesson, what do you do at break time? – I ____.",
+  "prompt": "The number in the picture is ____.",
+  "options": [
+   "forty-three",
+   "forty-two",
+   "forty-five",
+   "twenty-four"
+  ],
+  "answer": 1,
+  "explain": "42 = forty-two.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">42</text></svg>"
+ },
+ {
+  "type": "choice",
+  "prompt": "The number in the picture is ____.",
+  "options": [
+   "fifty-nine",
+   "seventy-five",
+   "fifty-seven",
+   "fifty-six"
+  ],
   "answer": 2,
-  "explain": "Câu trả lời nêu hoạt động giờ ra chơi.",
-  "options": [
-   "sing",
-   "swim",
-   "play the piano",
-   "dance"
-  ]
+  "explain": "57 = fifty-seven.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">57</text></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Is this your lamp? – Yes, it ____.",
+  "prompt": "The number in the picture is ____.",
+  "options": [
+   "eighty-one",
+   "eighty-two",
+   "eighteen",
+   "eighty-nine"
+  ],
+  "answer": 0,
+  "explain": "81 = eighty-one.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><circle cx=\"175\" cy=\"110\" r=\"90\" fill=\"white\" stroke=\"black\" stroke-width=\"9\"/><text x=\"175\" y=\"145\" font-size=\"106\" text-anchor=\"middle\" font-weight=\"900\" font-family=\"Arial\">81</text></svg>"
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct picture: They are reading together.",
+  "options": [
+   "D. dancing",
+   "B. watching television",
+   "C. drawing pictures",
+   "A. reading books"
+  ],
+  "answer": 3,
+  "explain": "Hình A thể hiện hoạt động reading books.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
+ },
+ {
+  "type": "choice",
+  "prompt": "Choose the correct picture: They are watching TV together.",
+  "options": [
+   "C. drawing pictures",
+   "A. reading books",
+   "B. watching television",
+   "D. dancing"
+  ],
   "answer": 2,
-  "explain": "Yes, it is.",
-  "options": [
-   "am",
-   "do",
-   "is",
-   "are"
-  ]
+  "explain": "Hình B thể hiện hoạt động watching television.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
  },
  {
   "type": "choice",
-  "prompt": "What is your favourite animal? – It is sheep.",
-  "answer": 1,
-  "explain": "Chọn đúng sở thích trong câu trả lời.",
+  "prompt": "Choose the correct picture: They are drawing together.",
   "options": [
-   "cat",
-   "sheep",
-   "bird",
-   "dog"
-  ]
+   "D. dancing",
+   "A. reading books",
+   "B. watching television",
+   "C. drawing pictures"
+  ],
+  "answer": 3,
+  "explain": "Hình C thể hiện hoạt động drawing pictures.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
  },
  {
   "type": "choice",
-  "prompt": "Practice 398: In Lily's English lesson, where ____ your books? – They are on the desk.",
-  "answer": 1,
-  "explain": "Books số nhiều dùng are.",
+  "prompt": "Choose the correct picture: They are dancing together.",
   "options": [
-   "does",
-   "are",
-   "am",
-   "is"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Nick ____ two books.",
-  "answer": 1,
-  "explain": "Tên riêng một người dùng has.",
-  "options": [
-   "have",
-   "has",
-   "is",
-   "are"
-  ]
- },
- {
-  "type": "choice",
-  "prompt": "Choose the correct greeting for Nick in the morning.",
-  "answer": 1,
-  "explain": "Good morning là lời chào buổi sáng.",
-  "options": [
-   "Good night!",
-   "Good morning!",
-   "Goodbye!",
-   "See you tomorrow!"
-  ]
+   "D. dancing",
+   "C. drawing pictures",
+   "B. watching television",
+   "A. reading books"
+  ],
+  "answer": 0,
+  "explain": "Hình D thể hiện hoạt động dancing.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 320\" style=\"width:min(100%,430px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><rect x=\"10\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📖</text><text x=\"25\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">A</text><rect x=\"220\" y=\"8\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"112\" font-size=\"90\" text-anchor=\"middle\">📺</text><text x=\"235\" y=\"33\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">B</text><rect x=\"10\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"107\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">🎨</text><text x=\"25\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">C</text><rect x=\"220\" y=\"162\" width=\"194\" height=\"145\" rx=\"8\" fill=\"#f6f7fc\" stroke=\"#9ba6b7\" stroke-width=\"3\"/><text x=\"317\" y=\"266\" font-size=\"90\" text-anchor=\"middle\">💃</text><text x=\"235\" y=\"187\" font-size=\"19\" font-family=\"Arial\" font-weight=\"bold\">D</text></svg>"
  },
  {
   "type": "fill",
@@ -6017,189 +5978,190 @@
  },
  {
   "type": "fill",
-  "prompt": "My name ____ Lucy.",
-  "answer": "is",
-  "explain": "My name is ..."
+  "prompt": "Look at the picture. The ball is ____nd the box.",
+  "answer": "behi",
+  "explain": "Behind = phía sau. Điền behi để tạo thành behind.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 380 215\" role=\"img\" style=\"width:min(100%,380px);height:auto;background:white;border-radius:12px;border:2px solid #dbe3ee\"><rect width=\"380\" height=\"215\" fill=\"#fff\"/><rect x=\"180\" y=\"82\" width=\"125\" height=\"95\" fill=\"#e5bc79\" stroke=\"#946638\" stroke-width=\"3\"/><circle cx=\"154\" cy=\"104\" r=\"43\" fill=\"#fff\" stroke=\"#222\" stroke-width=\"4\"/><path d=\"M141 82l25 -10 18 20 -13 23 -28 -5z\" fill=\"#252525\"/><path d=\"M180 105l27 -23 12 35 -25 20z\" fill=\"#252525\"/><path d=\"M165 122l-8 22 -27 -8 -8 -22z\" fill=\"#252525\"/><rect x=\"181\" y=\"84\" width=\"124\" height=\"95\" fill=\"#e5bc79\" stroke=\"#946638\" stroke-width=\"3\"/><path d=\"M181 84l-30 -27 113 -20 41 47z\" fill=\"#f2d6a5\" stroke=\"#946638\" stroke-width=\"3\"/></svg>"
  },
  {
   "type": "fill",
-  "prompt": "In Lan's English lesson, ____ is your name? – My name is Lucy.",
-  "answer": "What",
-  "explain": "What is your name?"
+  "prompt": "____t's go to the computer room.",
+  "answer": "Le",
+  "explain": "Let’s go = Chúng ta hãy đi."
  },
  {
   "type": "fill",
-  "prompt": "In Hoa's English lesson, lucy ____ my friend.",
-  "answer": "is",
-  "explain": "Tên riêng số ít + is."
+  "prompt": "Th____ you very much, Huong.",
+  "answer": "ank",
+  "explain": "Thank you = cảm ơn."
  },
  {
   "type": "fill",
-  "prompt": "These ____ my dolls.",
+  "prompt": "Those ____ my papers.",
   "answer": "are",
-  "explain": "These + are."
+  "explain": "Those là số nhiều, đi với are."
  },
  {
   "type": "fill",
-  "prompt": "I ____ a doll.",
-  "answer": "have",
-  "explain": "I have ..."
+  "prompt": "I have a sch____ bag.",
+  "answer": "ool",
+  "explain": "school bag = cặp sách."
  },
  {
   "type": "fill",
-  "prompt": "Lucy ____ a doll.",
-  "answer": "has",
-  "explain": "Tên riêng + has."
+  "prompt": "My sister is n____ years old.",
+  "answer": "ine",
+  "explain": "nine = chín."
  },
  {
   "type": "fill",
-  "prompt": "What ____ is your doll? – It is red.",
-  "answer": "colour",
-  "explain": "What colour ...?"
+  "prompt": "We go to the l____ary to read books.",
+  "answer": "ibr",
+  "explain": "library = thư viện."
  },
  {
   "type": "fill",
-  "prompt": "How ____ are you? – I am eleven.",
-  "answer": "old",
-  "explain": "How old ...?"
+  "prompt": "I have two penc____.",
+  "answer": "ils",
+  "explain": "pencils là dạng số nhiều."
  },
  {
   "type": "fill",
-  "prompt": "In Emma's English lesson, ____ you like apples? – Yes, I do.",
-  "answer": "Do",
-  "explain": "Do you like ...?"
+  "prompt": "My father is a t____her.",
+  "answer": "eac",
+  "explain": "teacher = giáo viên."
  },
  {
   "type": "fill",
-  "prompt": "Where ____ Lucy? – In the bathroom.",
-  "answer": "is",
-  "explain": "Where is ...?"
+  "prompt": "There is a b____ under the table.",
+  "answer": "all",
+  "explain": "ball = quả bóng."
  },
  {
   "type": "fill",
-  "prompt": "This ____ my parents.",
-  "answer": "is",
-  "explain": "This is ..."
+  "prompt": "What c____r is your pen?",
+  "answer": "olou",
+  "explain": "colour = màu sắc."
  },
  {
   "type": "fill",
-  "prompt": "Is this a monkey? – Yes, it ____.",
-  "answer": "is",
-  "explain": "Yes, it is."
+  "prompt": "Complete the word (con voi): ele____ant",
+  "answer": "ph",
+  "explain": "elephant nghĩa là con voi."
  },
  {
   "type": "fill",
-  "prompt": "I can ____ a doll.",
-  "answer": "draw",
-  "explain": "Can + động từ nguyên mẫu."
+  "prompt": "Complete the word (quả chuối): ba____na",
+  "answer": "na",
+  "explain": "banana nghĩa là quả chuối."
  },
  {
   "type": "fill",
-  "prompt": "____ many dolls do you have? – Two.",
-  "answer": "How",
-  "explain": "How many ...?"
+  "prompt": "Complete the word (quả cam): or____ge",
+  "answer": "an",
+  "explain": "orange nghĩa là quả cam."
  },
  {
   "type": "fill",
-  "prompt": "Practice 615: In Mary's English lesson, what do you do at break time? – I ____ chess.",
-  "answer": "play",
-  "explain": "Play football/chess."
+  "prompt": "Complete the word (màu vàng): ye____ow",
+  "answer": "ll",
+  "explain": "yellow nghĩa là màu vàng."
  },
  {
   "type": "fill",
-  "prompt": "Lucy and I ____ friends.",
-  "answer": "are",
-  "explain": "Hai người dùng are."
+  "prompt": "Complete the word (cửa sổ): wi____ow",
+  "answer": "nd",
+  "explain": "window nghĩa là cửa sổ."
  },
  {
   "type": "fill",
-  "prompt": "There ____ a doll on the table.",
-  "answer": "is",
-  "explain": "There is + danh từ số ít."
+  "prompt": "Complete the word (giáo viên): tea____er",
+  "answer": "ch",
+  "explain": "teacher nghĩa là giáo viên."
  },
  {
   "type": "fill",
-  "prompt": "____ is my doll, not yours.",
-  "answer": "This",
-  "explain": "This is ..."
+  "prompt": "Complete the word (bóng đá): foo____all",
+  "answer": "tb",
+  "explain": "football nghĩa là bóng đá."
  },
  {
   "type": "fill",
-  "prompt": "Please ____ down, Lucy.",
-  "answer": "sit",
-  "explain": "Sit down là ngồi xuống."
+  "prompt": "Complete the word (anh/em trai): bro____er",
+  "answer": "th",
+  "explain": "brother nghĩa là anh/em trai."
  },
  {
   "type": "fill",
-  "prompt": "Practice 620: In Daisy's English lesson, what is your favourite animal? – It is a ____.",
-  "answer": "monkey",
-  "explain": "Trả lời bằng tên con vật."
+  "prompt": "Complete the word (sinh nhật): bir____day",
+  "answer": "th",
+  "explain": "birthday nghĩa là sinh nhật."
  },
  {
   "type": "fill",
-  "prompt": "My name ____ Ben.",
-  "answer": "is",
-  "explain": "My name is ..."
+  "prompt": "Complete the word (buổi sáng): mor____ng",
+  "answer": "ni",
+  "explain": "morning nghĩa là buổi sáng."
  },
  {
   "type": "fill",
-  "prompt": "In Lan's English lesson, ____ is your name? – My name is Ben.",
-  "answer": "What",
-  "explain": "What is your name?"
+  "prompt": "Complete the word (quyển vở): note____ok",
+  "answer": "bo",
+  "explain": "notebook nghĩa là quyển vở."
  },
  {
   "type": "fill",
-  "prompt": "In Hoa's English lesson, ben ____ my friend.",
-  "answer": "is",
-  "explain": "Tên riêng số ít + is."
+  "prompt": "Complete the word (cặp sách): school____ag",
+  "answer": "b",
+  "explain": "schoolbag nghĩa là cặp sách."
  },
  {
   "type": "fill",
-  "prompt": "These ____ my robots.",
-  "answer": "are",
-  "explain": "These + are."
+  "prompt": "Complete the word (bánh mì kẹp): san____ich",
+  "answer": "dw",
+  "explain": "sandwich nghĩa là bánh mì kẹp."
  },
  {
   "type": "fill",
-  "prompt": "I ____ a robot.",
-  "answer": "have",
-  "explain": "I have ..."
+  "prompt": "Complete the word (phòng học): class____om",
+  "answer": "ro",
+  "explain": "classroom nghĩa là phòng học."
  },
  {
   "type": "fill",
-  "prompt": "Ben ____ a robot.",
-  "answer": "has",
-  "explain": "Tên riêng + has."
+  "prompt": "Complete the word (bệnh viện): hos____tal",
+  "answer": "pi",
+  "explain": "hospital nghĩa là bệnh viện."
  },
  {
   "type": "fill",
-  "prompt": "What ____ is your robot? – It is blue.",
-  "answer": "colour",
-  "explain": "What colour ...?"
+  "prompt": "Complete the word (máy tính): com____ter",
+  "answer": "pu",
+  "explain": "computer nghĩa là máy tính."
  },
  {
   "type": "fill",
-  "prompt": "How ____ are you? – I am twelve.",
-  "answer": "old",
-  "explain": "How old ...?"
+  "prompt": "Complete the word (con gà): chi____en",
+  "answer": "ck",
+  "explain": "chicken nghĩa là con gà."
  },
  {
   "type": "fill",
-  "prompt": "In Emma's English lesson, ____ you like oranges? – Yes, I do.",
-  "answer": "Do",
-  "explain": "Do you like ...?"
+  "prompt": "Complete the word (cầu vồng): rai____ow",
+  "answer": "nb",
+  "explain": "rainbow nghĩa là cầu vồng."
  },
  {
   "type": "fill",
-  "prompt": "Where ____ Ben? – In the school.",
-  "answer": "is",
-  "explain": "Where is ...?"
+  "prompt": "Complete the word (đẹp): bea____ful",
+  "answer": "uti",
+  "explain": "beautiful nghĩa là đẹp."
  },
  {
   "type": "fill",
-  "prompt": "This ____ my grandparents.",
-  "answer": "is",
-  "explain": "This is ..."
+  "prompt": "Complete the word (bút chì): pen____il",
+  "answer": "c",
+  "explain": "pencil nghĩa là bút chì."
  },
  {
   "type": "fill",
@@ -7175,45 +7137,46 @@
  },
  {
   "type": "fill",
-  "prompt": "____ many lamps do you have? – Two.",
-  "answer": "How",
-  "explain": "How many ...?"
+  "prompt": "L_NG",
+  "answer": "O",
+  "explain": "LONG = dài.",
+  "illustration": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 350 220\" style=\"width:min(100%,350px);height:auto;display:block;margin:auto;background:#fff;border-radius:10px\"><text x=\"175\" y=\"162\" font-size=\"145\" text-anchor=\"middle\">🦒</text></svg>"
  },
  {
   "type": "fill",
-  "prompt": "Practice 795: In Mary's English lesson, what do you do at break time? – I ____ football.",
-  "answer": "play",
-  "explain": "Play football/chess."
+  "prompt": "I __aw a picture.",
+  "answer": "dr",
+  "explain": "draw = vẽ."
  },
  {
   "type": "fill",
-  "prompt": "Nick and I ____ friends.",
-  "answer": "are",
-  "explain": "Hai người dùng are."
+  "prompt": "I'm f__e, thanks.",
+  "answer": "in",
+  "explain": "fine = khỏe, ổn."
  },
  {
   "type": "fill",
-  "prompt": "There ____ a lamp on the table.",
-  "answer": "is",
-  "explain": "There is + danh từ số ít."
+  "prompt": "_ite",
+  "answer": "k",
+  "explain": "kite = diều."
  },
  {
   "type": "fill",
-  "prompt": "____ is my lamp, not yours.",
-  "answer": "This",
-  "explain": "This is ..."
+  "prompt": "My brother is t__l.",
+  "answer": "al",
+  "explain": "tall = cao."
  },
  {
   "type": "fill",
-  "prompt": "Please ____ down, Nick.",
-  "answer": "sit",
-  "explain": "Sit down là ngồi xuống."
+  "prompt": "My house has two bedr__ms.",
+  "answer": "oo",
+  "explain": "bedrooms = phòng ngủ."
  },
  {
   "type": "fill",
-  "prompt": "Practice 800: In Daisy's English lesson, what is your favourite animal? – It is a ____.",
-  "answer": "sheep",
-  "explain": "Trả lời bằng tên con vật."
+  "prompt": "I can r__d a book.",
+  "answer": "ea",
+  "explain": "read = đọc."
  },
  {
   "type": "order",
@@ -14816,38 +14779,38 @@
  },
  {
   "type": "listen",
-  "prompt": "Practice 1596: In Lucy's English lesson, listen and complete: Look at my ____.",
-  "answer": "lamp",
-  "explain": "Nghe câu: “Look at my lamp.” rồi điền từ hoặc cụm từ còn thiếu.",
-  "speech": "Look at my lamp."
+  "prompt": "That is my d____. It’s purple.",
+  "answer": "oll",
+  "explain": "doll = búp bê.",
+  "speech": "That is my doll. It is purple."
  },
  {
   "type": "listen",
-  "prompt": "Practice 1597: In Anna's English lesson, listen and complete: My favourite animal is a ____.",
-  "answer": "sheep",
-  "explain": "Nghe câu: “My favourite animal is a sheep.” rồi điền từ hoặc cụm từ còn thiếu.",
-  "speech": "My favourite animal is a sheep."
+  "prompt": "Listen and complete: I have a _____.",
+  "answer": "pencil",
+  "explain": "Nghe: I have a pencil.",
+  "speech": "I have a pencil."
  },
  {
   "type": "listen",
-  "prompt": "Practice 1598: In Lily's English lesson, listen and complete: My favourite food is ____.",
-  "answer": "pizza",
-  "explain": "Nghe câu: “My favourite food is pizza.” rồi điền từ hoặc cụm từ còn thiếu.",
-  "speech": "My favourite food is pizza."
+  "prompt": "Listen and complete: The kite is _____.",
+  "answer": "yellow",
+  "explain": "Nghe: The kite is yellow.",
+  "speech": "The kite is yellow."
  },
  {
   "type": "listen",
-  "prompt": "Practice 1599: In Emma's English lesson, listen and complete: The ____ is on the desk.",
-  "answer": "lamp",
-  "explain": "Nghe câu: “The lamp is on the desk.” rồi điền từ hoặc cụm từ còn thiếu.",
-  "speech": "The lamp is on the desk."
+  "prompt": "Listen and complete: My sister is ____ years old.",
+  "answer": "seven",
+  "explain": "Nghe: My sister is seven years old.",
+  "speech": "My sister is seven years old."
  },
  {
   "type": "listen",
-  "prompt": "Practice 1600: In Daisy's English lesson, listen and complete: ____ and I are classmates.",
-  "answer": "Nick",
-  "explain": "Nghe câu: “Nick and I are classmates.” rồi điền từ hoặc cụm từ còn thiếu.",
-  "speech": "Nick and I are classmates."
+  "prompt": "Listen and complete: We play in the _____.",
+  "answer": "playground",
+  "explain": "Nghe: We play in the playground.",
+  "speech": "We play in the playground."
  },
  {
   "type": "picture",
