@@ -79,6 +79,17 @@
 .tat-picture-dialog button{display:block;margin:0 0 8px auto;border:0;background:#e6eff5;border-radius:50%;width:40px;height:40px;font-size:21px;cursor:pointer}
 #tatZoomEmoji{font-size:160px;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif}
 @media(max-width:620px){.tat-picture-grid{gap:8px}.tat-image-choice{padding:4px 28px 4px 4px}.tat-select-picture{min-height:132px}.tat-picture-art{font-size:60px}.tat-picture-zoom{width:27px;height:30px;font-size:14px}.tat-card-letter{font-size:16px;left:6px;top:6px}}
+<style>
+/* Gợi ý cách đọc IPA ngay trong phần Giải thích của kết quả thi (desktop + điện thoại). */
+.tat-ipa-help{font-size:13px;color:#cfeaff;margin:5px auto 8px;line-height:1.5;text-align:center}
+.tat-ipa-symbol{display:inline;border:0;border-bottom:1.5px dashed #ffd36a;background:rgba(255,207,92,.12);color:#ffdf8e;border-radius:4px;padding:0 3px;font:inherit;line-height:inherit;cursor:help;white-space:nowrap}
+.tat-ipa-symbol:hover,.tat-ipa-symbol:focus-visible{background:#ffdb83;color:#173146;outline:2px solid #fff;outline-offset:2px}
+#tatIpaTooltip{position:fixed;z-index:200000;box-sizing:border-box;width:max-content;max-width:min(340px,calc(100vw - 20px));padding:11px 14px;border:1px solid #f6cf67;border-radius:11px;background:#f5fbff;color:#183448;box-shadow:0 12px 35px rgba(0,0,0,.36);font:14px/1.5 Arial,sans-serif;text-align:left;pointer-events:none;overflow-wrap:break-word}
+#tatIpaTooltip[hidden]{display:none!important}
+#tatIpaTooltip .tat-ipa-meaning{font-weight:750;color:#124f81;margin-bottom:4px}
+#tatIpaTooltip .tat-ipa-mouth{margin-top:4px}
+#tatIpaTooltip .tat-ipa-caution{margin-top:6px;font-size:12px;color:#536778}
+@media(max-width:520px){#tatIpaTooltip{font-size:13px;max-width:calc(100vw - 22px)}.tat-ipa-help{font-size:12px}}
 </style></head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-3" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 3</a><span>TAT / Lớp 3 / Thi thử Cấp trường</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 3</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -91,7 +102,7 @@
  <div class="ioe-pay-qr"><img id="ioePayQr" alt="Mã VietQR thanh toán AGRIBANK" width="180" height="220"/><span>Quét bằng ứng dụng ngân hàng</span></div>
 </div>
 <div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
-</section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp trường – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.remove('hidden')">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ IOE LỚP 3</h2><div class="welcome-year">200 câu hỏi · 30 phút · 5 lượt thi miễn phí/ tài khoản</div></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP TRƯỜNG</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><div class="tat-result-tabs" role="tablist" aria-label="Phân loại câu trả lời"><button type="button" id="tatTabCorrect" class="tat-result-tab active" role="tab" aria-selected="true" onclick="tatSwitchResultTab('correct')">✅ Câu đúng <span id="tatCorrectCount">0</span></button><button type="button" id="tatTabWrong" class="tat-result-tab" role="tab" aria-selected="false" onclick="tatSwitchResultTab('wrong')">❌ Câu sai <span id="tatWrongCount">0</span></button></div><div id="correctReview" class="wrong-review tat-review-panel" role="tabpanel"></div><div id="wrongReview" class="wrong-review tat-review-panel hidden" role="tabpanel"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
+</section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp trường – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.remove('hidden')">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ IOE LỚP 3</h2><div class="welcome-year">200 câu hỏi · 30 phút · 5 lượt thi miễn phí/ tài khoản</div></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP TRƯỜNG</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><p class="tat-ipa-help">💡 Rê chuột lên phiên âm như /uː/, /ʊ/ trong phần giải thích để xem cách đọc gần đúng bằng tiếng Việt. Trên điện thoại, chạm vào phiên âm.</p><div class="tat-result-tabs" role="tablist" aria-label="Phân loại câu trả lời"><button type="button" id="tatTabCorrect" class="tat-result-tab active" role="tab" aria-selected="true" onclick="tatSwitchResultTab('correct')">✅ Câu đúng <span id="tatCorrectCount">0</span></button><button type="button" id="tatTabWrong" class="tat-result-tab" role="tab" aria-selected="false" onclick="tatSwitchResultTab('wrong')">❌ Câu sai <span id="tatWrongCount">0</span></button></div><div id="correctReview" class="wrong-review tat-review-panel" role="tabpanel"></div><div id="wrongReview" class="wrong-review tat-review-panel hidden" role="tabpanel"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
 'use strict';
 
 /* TAT: Phần phân tích BỔ SUNG; không thay thế lời giải hiện có. */
@@ -293,6 +304,121 @@ function norm(s){return String(s).normalize('NFKC').trim().toLowerCase().replace
 function saveCurrent(){if(finished)return;let q=questions[current];if(q.submitted)return;let value=q.type==='order'?[...selection]:isChoice(q)?chosen:typed;let complete=q.type==='order'?selection.length===q.parts.length:isChoice(q)?chosen!==null:String(value).trim()!=='';q.user=complete?value:null;q.submitted=complete;q.correct=complete&&(isChoice(q)?value===q.answer:q.type==='order'?norm(selection.map(i=>q.tiles[i].text).join(' '))===norm(q.answer):norm(value)===norm(q.answer));updateScore();}
 function updateScore(){const el=$('liveScore');if(el)el.textContent=questions.filter(q=>q.correct).length*10;}
 function submitAnswer(){/* Chỉ khóa đáp án khi chuyển câu hoặc nộp bài. */}
+
+/* Tra nhanh IPA: hiển thị chú giải tiếng Việt gần đúng, KHÔNG thay thế IPA chuẩn. */
+const TAT_IPA_GUIDE=Object.freeze({
+ 'uː':['“u” dài','Chu tròn môi, giữ tiếng “u” lâu; ví dụ âm gạch chân trong food.'],
+ 'ʊ':['“u” ngắn, thả lỏng','Môi tròn nhẹ, âm ngắn hơn /uː/; ví dụ trong good.'],
+ 'iː':['“i” dài','Kéo âm “i” và hơi căng môi như khi mỉm cười.'],
+ 'ɪ':['“i” ngắn','Âm “i” ngắn, lưỡi thả lỏng hơn /iː/.'],
+ 'e':['“e” ngắn','Miệng mở vừa, giống “e” nhưng ngắn; ví dụ bed, pen.'],
+ 'æ':['“e-a” mở rộng','Mở miệng rộng hơn khi nói “e”; âm nằm giữa “e” và “a”, như cat.'],
+ 'ʌ':['“â” ngắn','Miệng mở vừa, âm gần “â” nhưng ngắn và không tròn môi; như cup.'],
+ 'ɒ':['“o” ngắn','Giọng Anh–Anh: mở miệng, tròn môi nhẹ; âm gần “o” ngắn trong hot.'],
+ 'ɑː':['“a” dài','Há miệng rộng, kéo dài âm “a”; ví dụ trong father.'],
+ 'ɔː':['“o” dài, tròn môi','Hạ hàm vừa, tròn môi và kéo âm; ví dụ law.'],
+ 'ə':['“ơ” rất nhẹ','Âm trung tính, đọc nhẹ và nhanh trong âm tiết không nhấn.'],
+ 'ɜː':['“ơ” dài','Lưỡi ở giữa miệng, giữ âm “ơ” lâu hơn âm /ə/.'],
+ 'ɚ':['“ơ” có âm r (Mỹ)','Đưa đầu lưỡi hơi cong về sau, không cuộn quá mạnh.'],
+ 'ɝ':['“ơ” nhấn, có âm r (Mỹ)','Kéo âm “ơ” có màu r; thường ở âm tiết được nhấn.'],
+ 'eɪ':['“ây”','Bắt đầu gần “e” rồi chuyển lên “i” nhẹ, như name.'],
+ 'aɪ':['“ai”','Mở miệng ở âm “a”, lướt nhanh sang âm “i”, như bike.'],
+ 'oʊ':['“âu/ô-u”','Bắt đầu gần âm “ô”, khép dần môi về “u”; như show (giọng Mỹ).'],
+ 'əʊ':['“âu/ô-u”','Bắt đầu bằng âm “ơ” nhẹ, trượt sang “u”; như go (giọng Anh–Anh).'],
+ 'aʊ':['“ao” chuyển sang “u”','Mở miệng như nói “a”, lướt tới “u”; như now.'],
+ 'ɔɪ':['“oi”','Bắt đầu bằng âm “o” tròn môi rồi chuyển sang “i”; như boy.'],
+ 'ʃ':['“sh” / “s” gió','Môi hơi chu, đẩy hơi liên tục; như âm đầu trong she.'],
+ 'ʒ':['“gi” rung nhẹ','Tương tự /ʃ/ nhưng có rung dây thanh; như trong vision.'],
+ 'tʃ':['“ch” bật hơi','Bắt đầu bằng t rồi bật ra “ch”, có luồng hơi; như chair.'],
+ 'dʒ':['“ch” có rung giọng','Gần “ch” nhưng bật nhẹ và rung dây thanh; như jam.'],
+ 'θ':['“th” thổi hơi','Đặt đầu lưỡi giữa hai hàm răng, thổi hơi nhẹ, không rung cổ; như think.'],
+ 'ð':['“th” rung giọng','Đặt đầu lưỡi giữa hai hàm răng, đẩy hơi và rung giọng; như they.'],
+ 's':['“s” không rung','Giống âm “s” xì hơi, không rung cổ; như see.'],
+ 'z':['“d/z” có rung','Gần âm “d” tiếng Bắc (âm z), xì hơi đồng thời rung cổ; như zoo.'],
+ 'k':['“k/c” bật nhẹ','Âm “c/k” vô thanh, bật hơi từ phía sau lưỡi; như cat.'],
+ 'g':['“g” rung giọng','Giống “g” trong ga nhưng phát âm ngắn, có rung cổ; như go.'],
+ 'j':['“y”','Gần âm “y” trong yêu, nối sang nguyên âm sau; như yes.'],
+ 'p':['“p” bật hơi','Khép hai môi rồi bật hơi mạnh; như pen.'],
+ 'b':['“b”','Khép hai môi và bật ra với rung giọng; như boy.'],
+ 't':['“t” bật hơi','Chạm đầu lưỡi lên lợi trên rồi bật ra; như tea.'],
+ 'd':['“đ” ngắn','Đầu lưỡi chạm lợi trên, bật ra có rung; như dog.'],
+ 'f':['“ph” thổi hơi','Răng trên đặt lên môi dưới, thổi hơi; như fish.'],
+ 'v':['“v” rung','Răng trên chạm môi dưới, có rung giọng; như van.'],
+ 'h':['“h” nhẹ','Thở hơi qua thanh quản, không rung cổ; như hat.'],
+ 'l':['“l”','Đầu lưỡi chạm lợi trên, bật âm “l” rõ; như leg.'],
+ 'r':['“r” tiếng Anh','Cong lưỡi nhẹ ra sau, không rung đầu lưỡi như r tiếng Việt; như red.'],
+ 'm':['“m”','Khép môi, phát âm qua mũi; như mum.'],
+ 'n':['“n”','Đầu lưỡi chạm lợi trên, hơi thoát qua mũi; như nine.'],
+ 'ŋ':['“ng”','Âm “ng” cuối trong “sang”, phát ra từ phía sau lưỡi; như sing.'],
+ 'w':['“u” lướt','Chu môi như nói “u” rồi chuyển nhanh vào nguyên âm sau; như we.'],
+ 'juː':['“iu” dài','Bắt đầu với âm “y” /j/, rồi nối sang “u” dài /uː/; như pupil.']
+});
+function tatFormatExplainIPA(source){
+ const text=String(source??'');
+ const ipaPattern=/\/([^/\s<>]{1,16})\//g;
+ let html='',last=0,match;
+ while((match=ipaPattern.exec(text))!==null){
+  const phoneme=match[1];
+  if(!Object.prototype.hasOwnProperty.call(TAT_IPA_GUIDE,phoneme))continue;
+  html+=escapeHtml(text.slice(last,match.index));
+  const escaped=escapeHtml(phoneme);
+  html+=`<button type="button" class="tat-ipa-symbol" data-ipa="${escaped}" aria-label="Phiên âm /${escaped}/: xem cách đọc gần đúng">/${escaped}/</button>`;
+  last=match.index+match[0].length;
+ }
+ return html+escapeHtml(text.slice(last));
+}
+let tatIpaPinned=null;
+let tatIpaAnchor=null;
+function tatGetIpaTooltip(){
+ let tip=document.getElementById('tatIpaTooltip');
+ if(!tip){tip=document.createElement('div');tip.id='tatIpaTooltip';tip.setAttribute('role','tooltip');tip.hidden=true;document.body.appendChild(tip)}
+ return tip;
+}
+function tatShowIpaTooltip(button){
+ const entry=TAT_IPA_GUIDE[button?.dataset?.ipa];if(!entry)return;
+ const tip=tatGetIpaTooltip(),ipa=button.dataset.ipa;
+ tip.innerHTML=`<div class="tat-ipa-meaning">/${escapeHtml(ipa)}/ — Đọc gần đúng: ${escapeHtml(entry[0])}</div><div class="tat-ipa-mouth">${escapeHtml(entry[1])}</div><div class="tat-ipa-caution">Lưu ý: cách ghi tiếng Việt chỉ giúp hình dung, không hoàn toàn giống âm tiếng Anh.</div>`;
+ tip.hidden=false;tatIpaAnchor=button;
+ // Tooltip nằm trong khung hình, không bị cắt bởi vùng cuộn kết quả.
+ const anchor=button.getBoundingClientRect();
+ const width=tip.offsetWidth,height=tip.offsetHeight;
+ const left=Math.max(10,Math.min(window.innerWidth-width-10,anchor.left+anchor.width/2-width/2));
+ const above=anchor.top-height-10;
+ const top=above>=10?above:Math.min(window.innerHeight-height-10,anchor.bottom+12);
+ tip.style.left=Math.max(10,left)+'px';tip.style.top=Math.max(10,top)+'px';
+}
+function tatHideIpaTooltip(force=false){
+ if(tatIpaPinned&&!force)return;
+ const tip=document.getElementById('tatIpaTooltip');if(tip)tip.hidden=true;
+ tatIpaAnchor=null;if(force)tatIpaPinned=null;
+}
+document.addEventListener('pointerover',e=>{
+ const button=e.target.closest?.('.tat-ipa-symbol');
+ if(button&&e.pointerType!=='touch'&&!tatIpaPinned)tatShowIpaTooltip(button);
+});
+document.addEventListener('pointerout',e=>{
+ const button=e.target.closest?.('.tat-ipa-symbol');
+ if(button&&e.pointerType!=='touch'&&!tatIpaPinned)tatHideIpaTooltip();
+});
+document.addEventListener('focusin',e=>{
+ const button=e.target.closest?.('.tat-ipa-symbol');
+ if(button&&!tatIpaPinned)tatShowIpaTooltip(button);
+});
+document.addEventListener('focusout',e=>{
+ if(e.target.closest?.('.tat-ipa-symbol')&&!tatIpaPinned)tatHideIpaTooltip();
+});
+document.addEventListener('click',e=>{
+ const button=e.target.closest?.('.tat-ipa-symbol');
+ if(button){
+  e.preventDefault();
+  if(tatIpaPinned===button){tatHideIpaTooltip(true)}
+  else{tatIpaPinned=button;tatShowIpaTooltip(button)}
+ }else if(tatIpaPinned)tatHideIpaTooltip(true);
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')tatHideIpaTooltip(true)});
+window.addEventListener('scroll',()=>tatHideIpaTooltip(true),true);
+window.addEventListener('resize',()=>tatHideIpaTooltip(true));
+
 function tatSwitchResultTab(tab){
  const isCorrect=tab==='correct';
  $('correctReview').classList.toggle('hidden',!isCorrect);
@@ -307,7 +433,7 @@ function finish(auto){if(!auto&&!confirm('Bạn muốn nộp bài và xem kết 
  const reviewed=questions.map((q,i)=>({q,i})).filter(({q})=>q.submitted);
  const right=reviewed.filter(({q})=>q.correct),wrong=reviewed.filter(({q})=>!q.correct);
  const userAnswerText=q=>q.type==='order'?(q.user||[]).map(j=>q.tiles[j].text).join(' '):isChoice(q)?(q.user===null?'Chưa trả lời':('ABCD'[q.user]+'. '+tatOptionText(q,q.user))):q.user;
- const itemHtml=({q,i},correct)=>`<section class="wrong-item ${correct?'tat-correct-item':''}"><h3>Câu ${i+1} — ${correct?'✅ Đúng':'❌ Sai'}</h3><p><b>Đề bài:</b> ${escapeHtml(tatPrintQuestion(q))}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswerText(q)||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${escapeHtml(ioeGiaiThichTiengViet(q))}</p>${q.type==='order'&&tatPhanTichBoSung(q)?`<div class="tat-extra-explain" style="white-space:pre-line;margin-top:10px;padding:12px;border-left:3px solid #f6bb55;background:rgba(255,255,255,.06);border-radius:6px;line-height:1.7">${escapeHtml(tatPhanTichBoSung(q))}</div>`:''}</section>`;
+ const itemHtml=({q,i},correct)=>`<section class="wrong-item ${correct?'tat-correct-item':''}"><h3>Câu ${i+1} — ${correct?'✅ Đúng':'❌ Sai'}</h3><p><b>Đề bài:</b> ${escapeHtml(tatPrintQuestion(q))}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswerText(q)||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${tatFormatExplainIPA(ioeGiaiThichTiengViet(q))}</p>${q.type==='order'&&tatPhanTichBoSung(q)?`<div class="tat-extra-explain" style="white-space:pre-line;margin-top:10px;padding:12px;border-left:3px solid #f6bb55;background:rgba(255,255,255,.06);border-radius:6px;line-height:1.7">${escapeHtml(tatPhanTichBoSung(q))}</div>`:''}</section>`;
  $('correctReview').innerHTML=right.length?right.map(entry=>itemHtml(entry,true)).join(''):'<p class="review-empty">Chưa có câu trả lời đúng.</p>';
  $('wrongReview').innerHTML=wrong.length?wrong.map(entry=>itemHtml(entry,false)).join(''):'<p class="review-empty">🎉 Không có câu trả lời sai!</p>';
  $('tatCorrectCount').textContent=right.length;$('tatWrongCount').textContent=wrong.length;
