@@ -103,6 +103,13 @@
 #tatIpaTooltip .tat-ipa-mouth{margin-top:4px}
 #tatIpaTooltip .tat-ipa-caution{margin-top:6px;font-size:12px;color:#536778}
 @media(max-width:520px){#tatIpaTooltip{font-size:13px;max-width:calc(100vw - 22px)}.tat-ipa-help{font-size:12px}}
+
+/* Giới hạn xem kết quả chỉ áp dụng cho tài khoản thường. */
+.tat-result-access{margin:10px auto 13px;padding:11px 14px;max-width:770px;border:1px solid #83abc7;border-radius:9px;background:#17384f;color:#e9f3ff;text-align:center;font-size:15px;line-height:1.5}
+.tat-result-access.tat-result-access-premium{border-color:#f6c95e;color:#ffdc81;background:#283e4d}
+.tat-result-access.tat-result-access-regular{border-color:#83abc7}
+.tat-result-access strong{color:#ffdc81;font-weight:800;font-variant-numeric:tabular-nums}
+@media(max-width:520px){.tat-result-access{font-size:13px;margin:8px 0 11px;padding:9px 10px}}
 </style></head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-3" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 3</a><span>TAT / Lớp 3 / Thi thử Cấp trường</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 3</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -115,7 +122,7 @@
  <div class="ioe-pay-qr"><img id="ioePayQr" alt="Mã VietQR thanh toán AGRIBANK" width="180" height="220"/><span>Quét bằng ứng dụng ngân hàng</span></div>
 </div>
 <div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
-</section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp trường – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.remove('hidden')">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ IOE LỚP 3</h2><div class="welcome-year">200 câu hỏi · 30 phút · 5 lượt thi miễn phí/ tài khoản</div></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP TRƯỜNG</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><p class="tat-ipa-help">💡 Rê chuột hoặc chạm vào phiên âm để xem cách đọc gần đúng bằng tiếng Việt. Nhấn 🔊 ngay cạnh phiên âm để nghe âm; trong bảng chú giải còn có nút nghe từ ví dụ.</p><div class="tat-result-tabs" role="tablist" aria-label="Phân loại câu trả lời"><button type="button" id="tatTabCorrect" class="tat-result-tab active" role="tab" aria-selected="true" onclick="tatSwitchResultTab('correct')">✅ Câu đúng <span id="tatCorrectCount">0</span></button><button type="button" id="tatTabWrong" class="tat-result-tab" role="tab" aria-selected="false" onclick="tatSwitchResultTab('wrong')">❌ Câu sai <span id="tatWrongCount">0</span></button></div><div id="correctReview" class="wrong-review tat-review-panel" role="tabpanel"></div><div id="wrongReview" class="wrong-review tat-review-panel hidden" role="tabpanel"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
+</section></div></div><header class="top"><h1>🏆 Vòng thi thử cấp trường – Năm học <span class="school-year"></span></h1><div class="timer">⏰ <b id="clock">30:00</b></div><div class="score-live" aria-live="polite">⭐ Điểm hiện tại: <b id="liveScore">0</b> / 2000</div></header><div class="bar"><button class="nav arrow" onclick="jumpPage(-1)">◀</button><span id="navigation"></span><button class="nav arrow" onclick="jumpPage(1)">▶</button></div><main class="main"><div class="meta"><span id="progress"></span><button class="secondary" onclick="finish(false)">Nộp bài</button></div><div id="question"></div><div id="feedback"></div><div class="question-controls"><button class="secondary prev-question" onclick="move(-1)">← Câu trước</button><button class="next-question" onclick="move(1)">CÂU TIẾP THEO ➜</button></div><button class="action hidden" id="submit" onclick="submitAnswer()">LƯU ĐÁP ÁN</button><div id="reviewActions" class="hidden" style="text-align:center;margin:18px 0"><button class="action" onclick="restart()">↻ LÀM ĐỀ MỚI</button> <button class="secondary" onclick="tatOpenResultReview()">Xem kết quả</button></div></main><div class="overlay entrance" id="start"><section class="welcome" aria-label="Trang bắt đầu thi thử"><div class="welcome-head"><div class="welcome-emblem" aria-hidden="true">🏆</div><div><div class="welcome-small">HỆ THỐNG LUYỆN THI TIẾNG ANH TRỰC TUYẾN</div><h2>THI THỬ IOE LỚP 3</h2><div class="welcome-year">200 câu hỏi · 30 phút · 5 lượt thi miễn phí/ tài khoản</div></div></div><div class="welcome-ribbon">CHÀO MỪNG ĐẾN VỚI VÒNG THI THỬ CẤP TRƯỜNG</div><div class="welcome-body"><div class="welcome-form"><input type="hidden" id="studentName" value=""><input type="hidden" id="studentClass" value=""></div></div><div class="welcome-bottom"><button class="action welcome-start" onclick="begin()">▶ VÀO THI</button><button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><div>Chúc các em bình tĩnh, tự tin và làm bài thật tốt!</div></div></section></div><div class="overlay hidden" id="result"><div class="modal result-modal"><h2>🏅 KẾT QUẢ THI THỬ</h2><div class="score-final" id="finalScore">Tổng điểm: 0 / 2000</div><div class="stats"><div class="stat">Đúng<b id="correct"></b></div><div class="stat">Sai<b id="incorrect"></b></div><div class="stat">Chưa làm<b id="missing"></b></div></div><p id="scoreline"></p><div id="tatResultAccess" class="tat-result-access" role="status" aria-live="off"></div><p class="tat-ipa-help">💡 Rê chuột hoặc chạm vào phiên âm để xem cách đọc gần đúng bằng tiếng Việt. Nhấn 🔊 ngay cạnh phiên âm để nghe âm; trong bảng chú giải còn có nút nghe từ ví dụ.</p><div class="tat-result-tabs" role="tablist" aria-label="Phân loại câu trả lời"><button type="button" id="tatTabCorrect" class="tat-result-tab active" role="tab" aria-selected="true" onclick="tatSwitchResultTab('correct')">✅ Câu đúng <span id="tatCorrectCount">0</span></button><button type="button" id="tatTabWrong" class="tat-result-tab" role="tab" aria-selected="false" onclick="tatSwitchResultTab('wrong')">❌ Câu sai <span id="tatWrongCount">0</span></button></div><div id="correctReview" class="wrong-review tat-review-panel" role="tabpanel"></div><div id="wrongReview" class="wrong-review tat-review-panel hidden" role="tabpanel"></div><button class="action" onclick="restart()">LÀM ĐỀ MỚI</button> <button class="secondary" onclick="document.getElementById('result').classList.add('hidden');render()">Xem lại bài</button></div></div><script>
 'use strict';
 
 /* TAT: Phần phân tích BỔ SUNG; không thay thế lời giải hiện có. */
@@ -252,6 +259,50 @@ function tatOptionText(q,i){return q.type==='picture4'?(q.optionNames?.[i]||q.op
 function tatPrintQuestion(q){return q.prompt+(q.type==='find_error'?' '+String(q.markedSentence||'').replace(/\[\[(.*?)\]\]/g,'$1'):'')}
 let questions=[],current=0,page=0,remaining=1800,timer=null,started=false,selection=[],typed='',chosen=null,finished=false;
 let examDeadline=0,autoReturnTimer=null;
+const TAT_RESULT_FREE_MS=5*60*1000;
+let tatResultDeadline=0,tatResultViewTimer=null,tatResultUnlimited=false;
+const tatPortalUrl='../../../index.html#lop-3';
+function tatStopResultViewTimer(){
+ clearInterval(tatResultViewTimer);tatResultViewTimer=null;
+}
+function tatBackToPortal(){
+ tatStopResultViewTimer();tatResultDeadline=0;
+ window.ioeExamActive=false;
+ // Quay về cổng thi TAT lớp 3, không trở lại màn hình kết quả.
+ window.location.replace(tatPortalUrl);
+}
+function tatUpdateResultViewTimer(){
+ if(!finished || tatResultUnlimited)return;
+ const left=Math.max(0,tatResultDeadline-Date.now());
+ const info=document.getElementById('tatResultAccess');
+ if(left===0){tatBackToPortal();return;}
+ const seconds=Math.ceil(left/1000),min=Math.floor(seconds/60),sec=String(seconds%60).padStart(2,'0');
+ if(info)info.innerHTML=`⏳ Tài khoản thường: còn <strong>${min}:${sec}</strong> để xem kết quả và lời giải. Hết 5 phút sẽ tự trở về cổng thi.`;
+}
+function tatBeginResultView(){
+ tatStopResultViewTimer();
+ // Trạng thái Premium lấy từ Firebase Auth + Firestore đã được xác minh.
+ tatResultUnlimited=typeof window.ioeHasActivePremium==='function' && window.ioeHasActivePremium();
+ const info=document.getElementById('tatResultAccess');
+ if(tatResultUnlimited){
+  tatResultDeadline=0;
+  info.className='tat-result-access tat-result-access-premium';
+  info.textContent='⭐ PREMIUM — Xem kết quả, đáp án và lời giải không giới hạn thời gian.';
+  return;
+ }
+ tatResultDeadline=Date.now()+TAT_RESULT_FREE_MS;
+ info.className='tat-result-access tat-result-access-regular';
+ tatUpdateResultViewTimer();
+ tatResultViewTimer=setInterval(tatUpdateResultViewTimer,1000);
+}
+function tatOpenResultReview(){
+ if(!finished)return;
+ if(!tatResultUnlimited && tatResultDeadline && Date.now()>=tatResultDeadline){tatBackToPortal();return;}
+ document.getElementById('result').classList.remove('hidden');
+ tatUpdateResultViewTimer();
+}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)tatUpdateResultViewTimer();});
+window.addEventListener('pageshow',()=>tatUpdateResultViewTimer());
 window.ioeReturnToStart=()=>{if(!started || finished)restart()};
 window.ioeForceReturnToStart=()=>{restart();};
 let ioeStarting=false;
@@ -267,7 +318,7 @@ async function begin(){
  }catch(e){alert(e.message||'Không thể bắt đầu lượt thi. Vui lòng thử lại.');}
  finally{ioeStarting=false;btn.disabled=false;btn.textContent='▶ VÀO THI';}
 }
-function restart(){clearInterval(timer);clearTimeout(autoReturnTimer);window.ioeExamActive=false;started=false;finished=false;examDeadline=0;$('result').classList.add('hidden');$('reviewActions').classList.add('hidden');$('start').classList.remove('hidden');return;}
+function restart(){clearInterval(timer);clearTimeout(autoReturnTimer);tatStopResultViewTimer();tatResultDeadline=0;tatResultUnlimited=false;window.ioeExamActive=false;started=false;finished=false;examDeadline=0;$('result').classList.add('hidden');$('reviewActions').classList.add('hidden');$('start').classList.remove('hidden');return;}
 function startExam(){questions=shuffle([].concat(...QUESTION_TYPES.map(t=>{
   const candidates=shuffle(Q.filter(q=>q.type===t));
   const chosen=[], seenExact=new Set(), seenPattern=new Set();
@@ -488,7 +539,7 @@ function tatSwitchResultTab(tab){
  $('tatTabWrong').setAttribute('aria-selected',String(!isCorrect));
  const panel=$(isCorrect?'correctReview':'wrongReview');panel.scrollTop=0;
 }
-function finish(auto){if(!auto&&!confirm('Bạn muốn nộp bài và xem kết quả?'))return;saveCurrent();clearInterval(timer);finished=true;let ok=questions.filter(q=>q.correct).length,done=questions.filter(q=>q.submitted).length;$('correct').textContent=ok;$('incorrect').textContent=done-ok;$('missing').textContent=200-done;$('finalScore').textContent=`🏆 Tổng điểm: ${ok*10} / 2000 (${ok} câu đúng × 10 điểm)`;$('scoreline').textContent=`Điểm quy đổi: ${(ok/200*100).toFixed(1)}/100 • ${auto?'Đã hết thời gian.':'Đã nộp bài.'} Chọn Câu đúng hoặc Câu sai để xem đáp án và lời giải.`;
+function finish(auto){if(finished)return;if(!auto&&!confirm('Bạn muốn nộp bài và xem kết quả?'))return;saveCurrent();clearInterval(timer);finished=true;let ok=questions.filter(q=>q.correct).length,done=questions.filter(q=>q.submitted).length;$('correct').textContent=ok;$('incorrect').textContent=done-ok;$('missing').textContent=200-done;$('finalScore').textContent=`🏆 Tổng điểm: ${ok*10} / 2000 (${ok} câu đúng × 10 điểm)`;$('scoreline').textContent=`Điểm quy đổi: ${(ok/200*100).toFixed(1)}/100 • ${auto?'Đã hết thời gian.':'Đã nộp bài.'} Chọn Câu đúng hoặc Câu sai để xem đáp án và lời giải.`;
  const reviewed=questions.map((q,i)=>({q,i})).filter(({q})=>q.submitted);
  const right=reviewed.filter(({q})=>q.correct),wrong=reviewed.filter(({q})=>!q.correct);
  const userAnswerText=q=>q.type==='order'?(q.user||[]).map(j=>q.tiles[j].text).join(' '):isChoice(q)?(q.user===null?'Chưa trả lời':('ABCD'[q.user]+'. '+tatOptionText(q,q.user))):q.user;
@@ -496,5 +547,5 @@ function finish(auto){if(!auto&&!confirm('Bạn muốn nộp bài và xem kết 
  $('correctReview').innerHTML=right.length?right.map(entry=>itemHtml(entry,true)).join(''):'<p class="review-empty">Chưa có câu trả lời đúng.</p>';
  $('wrongReview').innerHTML=wrong.length?wrong.map(entry=>itemHtml(entry,false)).join(''):'<p class="review-empty">🎉 Không có câu trả lời sai!</p>';
  $('tatCorrectCount').textContent=right.length;$('tatWrongCount').textContent=wrong.length;
- tatSwitchResultTab(wrong.length?'wrong':'correct');$('result').classList.remove('hidden');$('reviewActions').classList.remove('hidden');if(auto){autoReturnTimer=setTimeout(()=>{if(finished)restart()},15000)}if(window.ioeSaveResult)window.ioeSaveResult({score:ok*10,correct:ok,answered:done,total:200,finishedAt:new Date().toISOString()})}
+ tatSwitchResultTab(wrong.length?'wrong':'correct');$('result').classList.remove('hidden');$('reviewActions').classList.remove('hidden');tatBeginResultView();if(window.ioeSaveResult)window.ioeSaveResult({score:ok*10,correct:ok,answered:done,total:200,finishedAt:new Date().toISOString()})}
 </script><script type="module" src="./ioe-auth.js"></script><div id="tatPictureZoom" class="tat-picture-overlay hidden" role="dialog" aria-modal="true" aria-label="Phóng to hình minh họa" onclick="if(event.target===this)tatClosePictureZoom()"><div class="tat-picture-dialog"><button onclick="tatClosePictureZoom()" type="button" aria-label="Đóng phóng to">✕</button><span id="tatZoomEmoji" aria-hidden="true"></span><p>Hình phóng to</p></div></div></body></html>
