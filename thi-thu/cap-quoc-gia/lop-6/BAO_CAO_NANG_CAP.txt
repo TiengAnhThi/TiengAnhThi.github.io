@@ -1,5 +1,0 @@
-TAT - IOE LOP 6 CAP QUOC GIA - NANG CAP THEO ANH MAU
-2000 cau; 200 cau moi luot thi; giu nguyen cac cap khac.
-Dot nang cap: 80 cau doc hieu moi (20 doan doc), 60 cau bien doi tu co ngu canh.
-Kiem tra tu dong: JSON, dap an, dong bo HTML/JSON, cau trung nguyen van, tinh toan so luong.
-Gioi han: chua co kiem dinh su pham thu cong tat ca 2000 cau; khong nen coi day la chung nhan chinh thuc.
