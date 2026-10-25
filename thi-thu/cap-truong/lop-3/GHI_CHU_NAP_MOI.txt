@@ -1,0 +1,5 @@
+CAP TRUONG LOP 3: 2000 cau moi (400 trac nghiem, 400 dien tu, 400 sap xep, 400 nghe, 400 hinh).
+Tham khao 111 anh trong file anh thi thu cap truong lop 3 (2).zip.
+Cau hoi tu bien soan, khong chep nguyen van anh. Gioi han chu de: mau sac, so dem, do vat, con vat, truong lop, ngay trong tuan, can, has, is.
+Da kiem tra 2000 de bai khong trung nguyen van; khong dong nghia voi kiem dinh tung cau thu cong.
+Chi sua trang cap truong lop 3 va ngan hang JSON tuong ung; cac trang khac giu nguyen.

@@ -1,0 +1,1 @@
+Cấp trường lớp 3: 2.000 câu thay mới, 5 dạng x 400. Nội dung ngắn, từ vựng cơ bản; tham khảo định dạng 23 ảnh do người dùng gửi. Không chép nguyên văn 2.000 câu từ ảnh. Chưa kiểm định từng câu với giáo viên.
