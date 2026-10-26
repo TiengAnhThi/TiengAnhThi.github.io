@@ -110,6 +110,24 @@
 .tat-result-access.tat-result-access-regular{border-color:#83abc7}
 .tat-result-access strong{color:#ffdc81;font-weight:800;font-variant-numeric:tabular-nums}
 @media(max-width:520px){.tat-result-access{font-size:13px;margin:8px 0 11px;padding:9px 10px}}
+
+/* Bảng so sánh 4 đáp án trong phần giải thích của câu phát âm. */
+.tat-pron-compare{margin-top:14px;padding:12px 13px;border:1px solid #6c91ae;border-radius:10px;background:rgba(255,255,255,.05)}
+.tat-pron-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:0 0 10px;color:#ffe39a;font-weight:800}
+.tat-pron-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tat-pron-card{padding:10px 11px;border-radius:9px;border:1px solid #6386a0;background:#17384f;color:#edf6ff;text-align:left}
+.tat-pron-card.correct{border-color:#4ed38b;background:rgba(34,83,63,.5);box-shadow:inset 0 0 0 1px rgba(88,235,154,.18)}
+.tat-pron-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+.tat-pron-word{font-size:18px;font-weight:800;line-height:1.45}
+.tat-pron-word u{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px;color:#ffd87f}
+.tat-pron-tag{font-size:11px;font-weight:800;border-radius:999px;padding:3px 8px;background:#284f69;color:#d7f1ff;white-space:nowrap}
+.tat-pron-tag.correct{background:#2d7150;color:#e9fff0}
+.tat-pron-ipa{font-size:14px;line-height:1.6;color:#d8e8f5}
+.tat-pron-tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
+.tat-pron-btn{border:1px solid #8bb1c9;background:#264f6e;color:#fff;border-radius:7px;padding:6px 10px;cursor:pointer;font:bold 12px/1.35 Arial,sans-serif;touch-action:manipulation}
+.tat-pron-btn:hover,.tat-pron-btn:focus-visible,.tat-pron-btn[aria-pressed="true"]{background:#f0c45e;color:#173447;outline:2px solid #fff4}
+.tat-pron-hint{margin-top:6px;font-size:12px;color:#bcd0df}
+@media(max-width:760px){.tat-pron-list{grid-template-columns:1fr}.tat-pron-word{font-size:17px}}
 </style></head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-3" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 3</a><span>TAT / Lớp 3 / Thi thử Cấp trường</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 3</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -461,6 +479,54 @@ function tatFormatExplainIPA(source){
  }
  return html+escapeHtml(text.slice(last));
 }
+function tatExtractPronGroups(q){
+ const text=String(ioeGiaiThichTiengViet(q)||'');
+ const odd=(text.match(/được phát âm\s+(.+?);/i)||[])[1]?.trim()||'';
+ const rest=(text.match(/trong ba từ còn lại phần đó phát âm\s+(.+?)(?:\.|;|$)/i)||[])[1]?.trim()||'';
+ return {odd,rest};
+}
+function tatSpeakWord(word,trigger){
+ if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
+ const txt=String(word||'').trim();if(!txt)return;
+ speechSynthesis.cancel();
+ if(window.tatWordSpeakTrigger&&window.tatWordSpeakTrigger!==trigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ window.tatWordSpeakTrigger=trigger||null;
+ if(trigger)trigger.setAttribute('aria-pressed','true');
+ const u=new SpeechSynthesisUtterance(txt);u.lang='en-US';u.rate=0.88;u.pitch=1;
+ const v=tatEnglishVoice('female')||tatEnglishVoice('male');if(v)u.voice=v;
+ const finish=()=>{if(trigger)trigger.removeAttribute('aria-pressed');if(window.tatWordSpeakTrigger===trigger)window.tatWordSpeakTrigger=null;};
+ u.onend=finish;u.onerror=finish;speechSynthesis.speak(u);
+}
+function tatSpeakWordList(words,trigger){
+ if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
+ const list=(Array.isArray(words)?words:[]).map(w=>String(w||'').trim()).filter(Boolean);if(!list.length)return;
+ speechSynthesis.cancel();
+ if(window.tatWordSpeakTrigger&&window.tatWordSpeakTrigger!==trigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ window.tatWordSpeakTrigger=trigger||null;
+ if(trigger)trigger.setAttribute('aria-pressed','true');
+ const voice=tatEnglishVoice('female')||tatEnglishVoice('male');
+ let idx=0;
+ const finish=()=>{if(trigger)trigger.removeAttribute('aria-pressed');if(window.tatWordSpeakTrigger===trigger)window.tatWordSpeakTrigger=null;};
+ const next=()=>{
+   if(idx>=list.length){finish();return;}
+   const u=new SpeechSynthesisUtterance(list[idx]);u.lang='en-US';u.rate=0.88;u.pitch=1;if(voice)u.voice=voice;
+   u.onend=()=>{idx+=1;setTimeout(next,160)};
+   u.onerror=()=>{idx+=1;setTimeout(next,160)};
+   speechSynthesis.speak(u);
+ };
+ next();
+}
+function tatRenderPronunciationCompare(q){
+ if(!q||q.type!=='pronunciation'||!Array.isArray(q.options)||q.options.length!==4)return '';
+ const groups=tatExtractPronGroups(q);
+ const cards=q.options.map((word,i)=>{
+   const label='ABCD'[i];
+   const soundText=(i===q.answer?groups.odd:groups.rest)||'—';
+   return `<div class="tat-pron-card ${i===q.answer?'correct':''}"><div class="tat-pron-head"><div class="tat-pron-word">${label}. ${tatUnderlineSpelling(word,q.underline?.[i]||'')}</div><span class="tat-pron-tag ${i===q.answer?'correct':''}">${i===q.answer?'Khác âm':'Cùng nhóm'}</span></div><div class="tat-pron-ipa"><b>Âm phần gạch chân:</b> ${tatFormatExplainIPA(soundText)}</div><div class="tat-pron-tools"><button type="button" class="tat-pron-btn tat-word-speak" data-word="${escapeHtml(word)}" aria-label="Nghe từ ${escapeHtml(word)}">🔊 Nghe từ</button></div>${i===q.answer?'<div class="tat-pron-hint">Đây là đáp án có phần gạch chân phát âm khác với 3 từ còn lại.</div>':''}</div>`;
+ }).join('');
+ const wordsJson=escapeHtml(JSON.stringify(q.options));
+ return `<div class="tat-pron-compare"><div class="tat-pron-title"><span>🎧 So sánh 4 đáp án để đối chiếu phiên âm và cách đọc</span><button type="button" class="tat-pron-btn tat-word-seq" data-words='${wordsJson}' aria-label="Nghe lần lượt bốn đáp án">▶ Nghe 4 đáp án</button></div><div class="tat-pron-list">${cards}</div></div>`;
+}
 let tatIpaPinned=null;
 let tatIpaAnchor=null;
 function tatGetIpaTooltip(){
@@ -518,6 +584,19 @@ document.addEventListener('click',e=>{
   tatPlayIpa(playButton.dataset.ipa,playButton.dataset.mode||'sound',playButton);
   return;
  }
+ const wordButton=e.target.closest?.('.tat-word-speak');
+ if(wordButton){
+  e.preventDefault();e.stopPropagation();
+  tatSpeakWord(wordButton.dataset.word||'',wordButton);
+  return;
+ }
+ const seqButton=e.target.closest?.('.tat-word-seq');
+ if(seqButton){
+  e.preventDefault();e.stopPropagation();
+  let words=[];try{words=JSON.parse(seqButton.dataset.words||'[]')}catch(err){}
+  tatSpeakWordList(words,seqButton);
+  return;
+ }
  const button=e.target.closest?.('.tat-ipa-symbol');
  if(button){
   e.preventDefault();
@@ -543,7 +622,7 @@ function finish(auto){if(finished)return;if(!auto&&!confirm('Bạn muốn nộp 
  const reviewed=questions.map((q,i)=>({q,i})).filter(({q})=>q.submitted);
  const right=reviewed.filter(({q})=>q.correct),wrong=reviewed.filter(({q})=>!q.correct);
  const userAnswerText=q=>q.type==='order'?(q.user||[]).map(j=>q.tiles[j].text).join(' '):isChoice(q)?(q.user===null?'Chưa trả lời':('ABCD'[q.user]+'. '+tatOptionText(q,q.user))):q.user;
- const itemHtml=({q,i},correct)=>`<section class="wrong-item ${correct?'tat-correct-item':''}"><h3>Câu ${i+1} — ${correct?'✅ Đúng':'❌ Sai'}</h3><p><b>Đề bài:</b> ${escapeHtml(tatPrintQuestion(q))}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswerText(q)||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${tatFormatExplainIPA(ioeGiaiThichTiengViet(q))}</p>${q.type==='order'&&tatPhanTichBoSung(q)?`<div class="tat-extra-explain" style="white-space:pre-line;margin-top:10px;padding:12px;border-left:3px solid #f6bb55;background:rgba(255,255,255,.06);border-radius:6px;line-height:1.7">${escapeHtml(tatPhanTichBoSung(q))}</div>`:''}</section>`;
+ const itemHtml=({q,i},correct)=>`<section class="wrong-item ${correct?'tat-correct-item':''}"><h3>Câu ${i+1} — ${correct?'✅ Đúng':'❌ Sai'}</h3><p><b>Đề bài:</b> ${escapeHtml(tatPrintQuestion(q))}</p><p class="given"><b>Bạn đã trả lời:</b> ${escapeHtml(userAnswerText(q)||'Chưa trả lời')}</p><p class="expected"><b>Đáp án đúng:</b> ${escapeHtml(answerText(q))}</p><p><b>Giải thích:</b> ${tatFormatExplainIPA(ioeGiaiThichTiengViet(q))}</p>${q.type==='pronunciation'?tatRenderPronunciationCompare(q):''}${q.type==='order'&&tatPhanTichBoSung(q)?`<div class="tat-extra-explain" style="white-space:pre-line;margin-top:10px;padding:12px;border-left:3px solid #f6bb55;background:rgba(255,255,255,.06);border-radius:6px;line-height:1.7">${escapeHtml(tatPhanTichBoSung(q))}</div>`:''}</section>`;
  $('correctReview').innerHTML=right.length?right.map(entry=>itemHtml(entry,true)).join(''):'<p class="review-empty">Chưa có câu trả lời đúng.</p>';
  $('wrongReview').innerHTML=wrong.length?wrong.map(entry=>itemHtml(entry,false)).join(''):'<p class="review-empty">🎉 Không có câu trả lời sai!</p>';
  $('tatCorrectCount').textContent=right.length;$('tatWrongCount').textContent=wrong.length;
