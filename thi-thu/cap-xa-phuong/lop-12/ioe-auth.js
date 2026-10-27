@@ -105,6 +105,11 @@ let paymentDismissed=false;
 let authCheckVersion=0;
 const withTimeout=(promise,ms)=>Promise.race([promise,new Promise((_,reject)=>setTimeout(()=>reject(new Error('Kết nối Firestore quá thời gian chờ. Vui lòng kiểm tra mạng và tải lại trang.')),ms))]);
 function premiumEndMs(){const v=profile?.premiumUntil;return v?.toMillis?.() || (typeof v==='string'?Date.parse(v):0) || 0;}
+function hasUltimateFlag(){return profile?.ultimate===true;}
+// Đọc trạng thái gói thực tế từ hồ sơ Firestore; không dùng nhãn hiển thị hay localStorage.
+window.ioeHasUltimate=()=>!!me && sessionOwned && hasUltimateFlag();
+window.ioeHasActivePremium=()=>!!me && sessionOwned && (hasUltimateFlag() || premiumEndMs()>Date.now());
+window.ioeGetPlanType=()=>!me||!sessionOwned?'free':(hasUltimateFlag()?'ultimate':(premiumEndMs()>Date.now()?'premium':'free'));
 function showPayment(){
  paymentDismissed=false;
  $('ioeGateUpgrade').classList.add('ioe-hide');
