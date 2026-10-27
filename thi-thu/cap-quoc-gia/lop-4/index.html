@@ -259,6 +259,16 @@
 #tatIpaTooltip::after{content:"";position:absolute;bottom:-7px;left:calc(50% - 7px);width:12px;height:12px;background:#10283c;border-right:1.5px solid #8fb8d4;border-bottom:1.5px solid #8fb8d4;transform:rotate(45deg)}
 #tatIpaTooltip.tat-ipa-tip-below::after{bottom:auto;top:-7px;transform:rotate(225deg)}
 @media(max-width:550px){#tatIpaTooltip{font-size:13px;min-width:160px;max-width:calc(100vw - 22px)}#tatIpaTooltip .tat-ipa-main{font-size:20px}}
+</style><style>
+/* Minh hoạ người và thể thao bằng SVG: hiển thị thống nhất trên mọi thiết bị. */
+.tat-athlete-face,.tat-athlete-sport{display:inline-flex;align-items:center;justify-content:center;flex:none;line-height:1}
+.tat-athlete-face{width:64px;height:64px}
+.tat-athlete-sport{width:50px;height:50px}
+.tat-athlete-face svg,.tat-athlete-sport svg{display:block;width:100%;height:100%}
+.tat-athlete-info{min-width:0}
+.tat-zoom-dialog .tat-athlete-face{width:91px;height:91px}
+.tat-zoom-dialog .tat-athlete-sport{width:83px;height:83px}
+@media(max-width:640px){.tat-athlete-face{width:45px;height:45px}.tat-athlete-sport{width:39px;height:39px}.tat-athlete{gap:6px}.tat-zoom-dialog .tat-athlete-face{width:65px;height:65px}.tat-zoom-dialog .tat-athlete-sport{width:59px;height:59px}}
 </style></head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-4" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 4</a><span>TAT / Lớp 4 / Thi thử Cấp quốc gia</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 4</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -521,8 +531,75 @@ function tatActionVisual(action){
  if(action==='sit')return `<svg class="tat-action-sit-svg" viewBox="0 0 145 125" role="img" aria-label="Một bạn đang ngồi trên ghế" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><path d="M24 39 V94 M24 81 H87 M44 84 V114 M87 84 V114" stroke="#252d34" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="54" cy="29" r="15" fill="#273947"/><path d="M53 47 L60 77 L91 78 L102 108 M57 56 L82 68 L109 68" fill="none" stroke="#273947" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 112 H126" stroke="#d9e0e6" stroke-width="3"/></svg>`;
  return escapeHtml(TAT_ACTION_GLYPHS[action]||'❔');
 }
+// Minh hoạ SVG độc lập font emoji, tránh ô vuông trên các hệ điều hành.
+// Giới tính xác định theo dữ liệu/tên, KHÔNG dựa trên thứ tự ô đáp án.
+const TAT_MALE_NAMES=new Set(['john','peter','sam','ben','max','tom','jack','nam','tony','david','minh','nick','alex']);
+const TAT_FEMALE_NAMES=new Set(['tracy','mary','lily','julia','linda','mai','hoa','huong','anna','emma','linh','lan','lucy','jenny','jane','mia','grace']);
+function tatPlayerGender(player){
+ const explicit=String(player?.gender||'').trim().toLowerCase();
+ if(['male','female','neutral'].includes(explicit))return explicit;
+ const name=String(player?.name||'').trim().toLowerCase();
+ if(TAT_MALE_NAMES.has(name))return 'male';
+ if(TAT_FEMALE_NAMES.has(name))return 'female';
+ return 'neutral'; // Tên chưa xác định không bị gán sai thành nam hoặc nữ.
+}
+function tatAvatarSvg(player){
+ const gender=tatPlayerGender(player);
+ const shirt=gender==='female'?'#e87780':gender==='male'?'#3a91c4':'#65a6a1';
+ const hair=gender==='female'
+   ?'<path d="M24 47 Q19 17 49 15 Q77 13 78 48 L72 78 L27 78Z" fill="#613d32"/>'
+   :gender==='male'
+   ?'<path d="M27 43 Q19 19 44 19 L68 16 L64 23 L77 24 L68 34 L69 43Z" fill="#553a2f"/>'
+   :'<path d="M26 41 Q22 19 48 18 Q74 18 74 42Z" fill="#62534a"/>';
+ return `<svg class="tat-portrait-svg" viewBox="0 0 100 100" role="img" aria-label="${escapeHtml(player?.name||'Học sinh')}" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="47" fill="#e5f4fe" stroke="#bed9eb" stroke-width="2"/><path d="M17 94 Q20 69 42 69 H58 Q80 69 83 94Z" fill="${shirt}"/><path d="M43 65 H57 V77 Q50 83 43 77Z" fill="#e6af84"/>${hair}<ellipse cx="50" cy="48" rx="23" ry="29" fill="#f3c394"/><circle cx="27" cy="49" r="4" fill="#efba8b"/><circle cx="73" cy="49" r="4" fill="#efba8b"/><path d="M32 36 Q48 15 70 35 L68 29 Q45 8 30 28Z" fill="#51382f"/><ellipse cx="41" cy="50" rx="3" ry="4" fill="#17354a"/><ellipse cx="59" cy="50" rx="3" ry="4" fill="#17354a"/><path d="M42 63 Q50 69 58 63" fill="none" stroke="#ac594e" stroke-width="3" stroke-linecap="round"/><circle cx="36" cy="60" r="4" fill="#e99e88" opacity=".6"/><circle cx="64" cy="60" r="4" fill="#e99e88" opacity=".6"/>${gender==='female'?'<path d="M27 40 Q20 59 28 76 M74 40 Q80 59 72 76" fill="none" stroke="#613d32" stroke-width="8" stroke-linecap="round"/>':''}</svg>`;
+}
+function tatSportSvg(sportName){
+ const sport=String(sportName||'').toLowerCase().trim();
+ let art='';
+ switch(sport){
+ case 'badminton':
+  art='<g transform="rotate(-28 44 46)"><ellipse cx="44" cy="37" rx="20" ry="27" fill="#ebf7fd" stroke="#296b9d" stroke-width="5"/><path d="M25 37 H63 M29 25 H59 M29 48 H59 M36 12 V62 M45 11 V63 M54 14 V59" stroke="#8bb6d2" stroke-width="2"/><path d="M44 64 V93" stroke="#6d492c" stroke-width="7" stroke-linecap="round"/></g><path d="M74 31 L91 12 L96 40Z" fill="#f7f4e6" stroke="#657b86" stroke-width="2"/><circle cx="74" cy="31" r="7" fill="#e1b446"/><path d="M85 19 L91 35 M91 12 L93 37" stroke="#a3b5c1" stroke-width="2"/>';
+  break;
+ case 'table tennis':
+  art='<path d="M15 81 H93" stroke="#4b778a" stroke-width="5"/><rect x="15" y="70" width="80" height="9" rx="3" fill="#549cba"/><path d="M55 70 V83" stroke="white" stroke-width="3"/><g transform="rotate(-22 43 43)"><ellipse cx="39" cy="38" rx="20" ry="26" fill="#e84d41" stroke="#6b3431" stroke-width="4"/><path d="M39 63 V91" stroke="#b17a49" stroke-width="9" stroke-linecap="round"/></g><circle cx="77" cy="29" r="8" fill="#fff" stroke="#cbd8e0" stroke-width="2"/>';
+  break;
+ case 'skating':
+  art='<path d="M25 32 L59 33 L69 59 L86 66 L90 80 L18 80 L18 60 Q20 51 25 32Z" fill="#f4a951" stroke="#a96837" stroke-width="3"/><path d="M25 35 L53 35 L60 57 L22 57Z" fill="#51a2cb"/><path d="M29 42 H53 M32 49 H57" stroke="#f6ffff" stroke-width="3"/><path d="M18 81 H91" stroke="#344e61" stroke-width="5"/><circle cx="28" cy="89" r="7" fill="#6786a9" stroke="#28435c" stroke-width="2"/><circle cx="47" cy="89" r="7" fill="#6786a9" stroke="#28435c" stroke-width="2"/><circle cx="67" cy="89" r="7" fill="#6786a9" stroke="#28435c" stroke-width="2"/><circle cx="85" cy="89" r="7" fill="#6786a9" stroke="#28435c" stroke-width="2"/>';
+  break;
+ case 'football':
+  art='<circle cx="55" cy="52" r="37" fill="#fff" stroke="#536271" stroke-width="3"/><path d="M55 32 L72 44 L66 61 H44 L37 44Z" fill="#253541"/><path d="M55 32 L49 16 M72 44 L87 35 M66 61 L74 77 M44 61 L37 78 M37 44 L22 34" stroke="#253541" stroke-width="4"/><path d="M18 47 Q21 31 31 23 M78 81 Q66 92 54 89" fill="none" stroke="#dbe5ed" stroke-width="3"/>';
+  break;
+ case 'basketball':
+  art='<circle cx="55" cy="52" r="38" fill="#f1912f" stroke="#bd5e18" stroke-width="3"/><path d="M55 14 V90 M17 52 H93 M29 24 C62 52 62 52 29 79 M81 24 C48 52 48 52 81 79" fill="none" stroke="#70391e" stroke-width="4"/>';
+  break;
+ case 'volleyball':
+  art='<circle cx="55" cy="52" r="38" fill="#f8f2d9" stroke="#517e99" stroke-width="3"/><path d="M55 15 Q32 40 50 67 Q65 82 88 65 M25 23 Q67 25 76 53 Q82 72 67 87 M20 69 Q33 40 58 42 Q81 39 90 46" fill="none" stroke="#4d9cc4" stroke-width="7"/><path d="M55 15 Q32 40 50 67 Q65 82 88 65" fill="none" stroke="#cfbd62" stroke-width="3"/>';
+  break;
+ case 'tennis':
+  art='<circle cx="55" cy="52" r="38" fill="#c7e754" stroke="#77963c" stroke-width="3"/><path d="M28 24 Q58 52 28 79 M82 24 Q52 52 82 79" fill="none" stroke="#fdfcf4" stroke-width="6"/>';
+  break;
+ case 'baseball':
+  art='<circle cx="55" cy="52" r="37" fill="#fffdfa" stroke="#71808c" stroke-width="3"/><path d="M30 23 Q51 52 30 82 M80 23 Q59 52 80 82" fill="none" stroke="#cf4545" stroke-width="3"/><path d="M34 32 L41 29 M36 42 L44 39 M35 53 L43 54 M34 64 L42 67 M34 75 L40 78 M76 32 L70 29 M74 42 L66 39 M75 53 L67 54 M76 64 L68 67 M76 75 L70 78" stroke="#cf4545" stroke-width="3" stroke-linecap="round"/>';
+  break;
+ case 'cycling':
+  art='<circle cx="25" cy="75" r="18" fill="none" stroke="#4e697a" stroke-width="4"/><circle cx="84" cy="75" r="18" fill="none" stroke="#4e697a" stroke-width="4"/><path d="M25 75 L45 45 L58 75 L25 75 M58 75 L84 75 L65 36 L45 45" fill="none" stroke="#ed874d" stroke-width="5" stroke-linejoin="round"/><path d="M38 42 H51 M63 36 L74 32" stroke="#304b60" stroke-width="5" stroke-linecap="round"/><circle cx="58" cy="75" r="5" fill="#243e53"/>';
+  break;
+ case 'swimming':
+  art='<path d="M11 76 Q23 65 35 76 T59 76 T83 76 T107 76 M11 91 Q23 80 35 91 T59 91 T83 91 T107 91" fill="none" stroke="#43a9d0" stroke-width="6" stroke-linecap="round"/><circle cx="48" cy="31" r="13" fill="#f4b987" stroke="#805544" stroke-width="2"/><path d="M41 49 L70 63 L91 41" fill="none" stroke="#e5754a" stroke-width="10" stroke-linecap="round"/><path d="M30 63 L48 47" stroke="#e5754a" stroke-width="9" stroke-linecap="round"/>';
+  break;
+ case 'running':
+  art='<circle cx="59" cy="18" r="12" fill="#e9ad79"/><path d="M54 38 L44 57 L66 65 L77 43 M44 57 L28 87 M65 64 L88 87 M51 43 L26 49" fill="none" stroke="#378fc0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 91 H38 M77 92 H99 M16 56 H29" stroke="#b1bec8" stroke-width="4" stroke-linecap="round"/>';
+  break;
+ case 'dancing':
+  art='<circle cx="56" cy="19" r="11" fill="#f3ba91"/><path d="M47 34 L65 34 L74 69 L38 69Z" fill="#e9758a"/><path d="M51 67 L39 91 M60 67 L73 91 M44 40 L21 26 M68 40 L83 25" fill="none" stroke="#cc8d6f" stroke-width="7" stroke-linecap="round"/><path d="M86 13 V31 Q80 35 81 42 Q91 49 96 37 V18 L106 22" fill="none" stroke="#5693bc" stroke-width="4"/>';
+  break;
+ default:
+  art='<circle cx="55" cy="45" r="27" fill="#f2cc76" stroke="#986f36" stroke-width="3"/><path d="M35 25 H75 V55 Q75 77 55 85 Q35 77 35 55Z" fill="#f5b44b" stroke="#986f36" stroke-width="3"/><path d="M35 30 H21 Q20 56 40 60 M75 30 H89 Q91 56 70 60" fill="none" stroke="#986f36" stroke-width="6"/><path d="M55 82 V96 M40 96 H70" stroke="#986f36" stroke-width="5"/>';
+ }
+ return `<svg class="tat-sport-svg" viewBox="0 0 110 110" role="img" aria-label="${escapeHtml(sportName||'Sport')}" xmlns="http://www.w3.org/2000/svg">${art}</svg>`;
+}
 function tatPlayerScene(q){
- return `<div class="tat-false-scene" role="img" aria-label="Bốn bạn có tên và môn thể thao khác nhau">${(q.players||[]).map((p,i)=>`<div class="tat-athlete"><span class="tat-athlete-face" aria-hidden="true">${i%2===0?'👦':'👧'}</span><div class="tat-athlete-info"><span class="tat-athlete-name">${escapeHtml(p.name)}</span><span class="tat-athlete-sport" aria-label="${escapeHtml(p.sport)}">${escapeHtml(p.emoji)}</span></div></div>`).join('')}</div>`;
+ return `<div class="tat-false-scene" role="group" aria-label="Bốn bạn có tên và môn thể thao khác nhau">${(q.players||[]).map(p=>`<div class="tat-athlete"><span class="tat-athlete-face">${tatAvatarSvg(p)}</span><div class="tat-athlete-info"><span class="tat-athlete-name">${escapeHtml(p.name)}</span><span class="tat-athlete-sport">${tatSportSvg(p.sport)}</span></div></div>`).join('')}</div>`;
 }
 function tatBoxShape(x,y){return `<g><path d="M${x} ${y+20} L${x+105} ${y+20} L${x+113} ${y+104} L${x+5} ${y+104} Z" fill="#e9c28a" stroke="#94632f" stroke-width="3"/><path d="M${x} ${y+20} L${x+27} ${y} L${x+129} ${y} L${x+105} ${y+20} Z" fill="#f8ddae" stroke="#94632f" stroke-width="3"/><path d="M${x+105} ${y+20} L${x+129} ${y} L${x+136} ${y+84} L${x+113} ${y+104} Z" fill="#c6975f" stroke="#94632f" stroke-width="3"/></g>`}
 function tatSpatialScene(q){
