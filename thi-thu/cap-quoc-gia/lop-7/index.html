@@ -15,6 +15,19 @@ img.emoji{height:1em;width:1em;margin:0 .04em;vertical-align:-0.12em}
 .tat-action-emoji{font-size:52px;line-height:1.1;display:inline-flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
 .tat-lan6-place-glyphs img.emoji,.tat-picture-art img.emoji,.tat-action-glyph img.emoji,.tat-animal-glyph img.emoji,.tat-cartoon-star img.emoji,.tat-cartoon-prop img.emoji,.visual img.emoji{height:1em;width:1em}
 
+
+/* Local illustration assets: consistent on Windows/Android/iOS and in zoom. */
+.tat-local-action{display:block;width:min(90%,196px);height:142px;object-fit:contain;margin:auto}
+.tat-local-emoji{display:inline-block;width:var(--tat-art-size,auto);max-width:100%;height:auto;object-fit:contain;vertical-align:middle}
+.tat-animal-glyph .tat-local-emoji{width:min(40vw,144px);height:auto}
+.tat-cartoon-scene .tat-local-emoji{width:min(17vw,78px);height:auto}
+.tat-lan6-place-glyphs .tat-local-emoji{width:78px;height:78px}
+.tat-portrait .tat-local-emoji,.tat-lan6-portrait .tat-local-emoji{width:110px;height:110px}
+.tat-picture-art .tat-local-emoji{width:min(27vw,124px);height:124px}
+.tat-action-glyph .tat-local-action{max-height:142px}
+.tat-art-label{display:block;font-size:18px;color:#213f53;line-height:1.3;padding:8px}
+@media(max-width:600px){.tat-local-action{height:105px;width:min(100%,140px)}.tat-lan6-place-glyphs .tat-local-emoji{width:57px;height:57px}.tat-picture-art .tat-local-emoji{height:92px}}
+
 </style><style>.ioe-account{position:sticky;top:0;z-index:9;background:#102e46;color:white;padding:9px 16px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-bottom:2px solid #e9b65c}.ioe-account button,.ioe-account a{background:#ffd66e;color:#17354b;border:0;border-radius:8px;padding:9px 13px;font-weight:700;cursor:pointer;text-decoration:none}.ioe-gate{position:fixed;inset:0;z-index:30;background:#091c30eF;display:flex;justify-content:center;align-items:center;padding:15px}.ioe-box{background:#fff;color:#203b50;max-width:490px;width:100%;padding:27px;border-radius:16px;line-height:1.6}.ioe-box button{padding:12px;border:0;border-radius:9px;background:#1668bf;color:#fff;font-weight:bold;cursor:pointer}.ioe-box button:disabled{opacity:.5}.ioe-box a{color:#1262b0}.ioe-hide{display:none!important}.ioe-payment{margin-top:15px;border:1px solid #d9e5ef;background:#f2f8ff;padding:18px;border-radius:12px}.ioe-payment h3{margin:0 0 9px;color:#0f4979}.ioe-price{font-size:27px;font-weight:800;color:#d16a11}.ioe-payment p{margin:9px 0}.ioe-payment code{overflow-wrap:anywhere}.ioe-payment button{margin:5px 5px 5px 0}.ioe-payment .ioe-outline{background:#e5edf6;color:#163b5c}</style><style>
 /* Thanh toán gọn: nằm trong màn hình, cuộn nội bộ khi thiết bị thấp */
 .ioe-gate{overflow-y:auto;align-items:center}
@@ -275,7 +288,6 @@ img.emoji{height:1em;width:1em;margin:0 .04em;vertical-align:-0.12em}
 .tat-zoom-dialog .tat-athlete-sport{width:83px;height:83px}
 @media(max-width:640px){.tat-athlete-face{width:45px;height:45px}.tat-athlete-sport{width:39px;height:39px}.tat-athlete{gap:6px}.tat-zoom-dialog .tat-athlete-face{width:65px;height:65px}.tat-zoom-dialog .tat-athlete-sport{width:59px;height:59px}}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
 </head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-7" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 7</a><span>TAT / Lớp 7 / Thi thử Cấp quốc gia</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 7</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -535,9 +547,24 @@ const DOLL_SVG="<svg viewBox=\"0 0 180 170\" width=\"170\" height=\"160\" role=\
 
 
 const TAT_ACTION_GLYPHS=Object.freeze({'sit':'🪑🧑','stand':'🧍','run':'🏃','jump':'🤸','wave':'🙋','sleep':'🛌','read':'👧📖','write':'✍️📝','eat':'🧑🍽️','drink':'🥤','swim':'🏊','dance':'💃','walk':'🚶','clap':'👏','listen':'👂🎵','sing':'🎤','draw':'🎨','brush':'🪥😁','kick':'⚽🦵','wash':'🧼🙌','cook':'🍳','cycle':'🚴','plant':'🪴','play':'⚽','recycle':'♻️','study':'📚'});
-function tatApplyEmojiFallback(root){
- if(!root||!window.twemoji)return;
- try{window.twemoji.parse(root,{folder:'svg',ext:'.svg'});}catch(_e){}
+function tatApplyEmojiFallback(_root){/* Images already bundled locally. */}
+
+
+/* TAT art assets packaged locally: no external emoji font, CDN or network required. */
+const TAT_LOCAL_ART_ROOT='../../../assets/tat-visuals/';
+const TAT_LOCAL_ACTIONS=new Set(['sit','stand','run','jump','wave','sleep','read','write','eat','drink','swim','dance','walk','clap','listen','sing','draw','brush','kick','wash','cook','cycle','plant','play','recycle','study']);
+function tatEmojiAsset(symbol){
+ const key=Array.from(String(symbol||'')).map(c=>c.codePointAt(0).toString(16)).join('-');
+ return TAT_LOCAL_ART_ROOT+key+'.png';
+}
+function tatLocalGlyph(symbol,size=74){
+ const value=String(symbol||'');
+ return `<img src="${tatEmojiAsset(value)}" alt="${escapeHtml(value)}" class="tat-local-emoji" width="${Number(size)||74}" height="${Number(size)||74}" loading="eager" draggable="false">`;
+}
+function tatLocalAction(action){
+ const key=String(action||'').toLowerCase();
+ if(!TAT_LOCAL_ACTIONS.has(key))return `<strong class="tat-art-label">${escapeHtml(key)}</strong>`;
+ return `<img src="${TAT_LOCAL_ART_ROOT}action-${key}.png" class="tat-local-action" alt="${escapeHtml(key)}" loading="eager" draggable="false">`;
 }
 
 function tatSymbolVisual(symbol,size=74){
@@ -556,14 +583,7 @@ function tatSymbolVisual(symbol,size=74){
  if(value==='🪁')return svg(`<path d="M60 22 L89 48 L60 74 L31 48 Z" fill="#ee4d4d" stroke="#233" stroke-width="4"/><path d="M60 22 L60 74 M31 48 H89" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/><path d="M60 74 C59 87 68 90 73 101" fill="none" stroke="#444" stroke-width="3" stroke-linecap="round"/><path d="M72 101 l8 4 l-5 -10" fill="none" stroke="#f0b431" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`,'kite');
  return `<span>${escapeHtml(value)}</span>`;
 }
-function tatActionVisual(action){
- if(action==='sit')return `<svg class="tat-action-sit-svg" viewBox="0 0 145 125" role="img" aria-label="Một bạn đang ngồi trên ghế" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><path d="M24 39 V94 M24 81 H87 M44 84 V114 M87 84 V114" stroke="#252d34" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="54" cy="29" r="15" fill="#273947"/><path d="M53 47 L60 77 L91 78 L102 108 M57 56 L82 68 L109 68" fill="none" stroke="#273947" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 112 H126" stroke="#d9e0e6" stroke-width="3"/></svg>`;
- if(action==='brush')return `<svg class="tat-action-brush-svg" viewBox="0 0 145 125" role="img" aria-label="Đánh răng" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><g transform="translate(2,0)">${tatSymbolVisual('🪥',64).replace('<svg ','<svg x="10" y="28" ').replace('</svg>','')}</g></svg>`;
- if(action==='eat')return `<svg class="tat-action-eat-svg" viewBox="0 0 145 125" role="img" aria-label="Ăn trưa" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><circle cx="45" cy="62" r="22" fill="#ffd24d" stroke="#111" stroke-width="5"/><path d="M28 57 v18 M62 57 v18" stroke="#6a4a22" stroke-width="6" stroke-linecap="round"/><path d="M28 40 q18 -18 36 0" fill="#7b4b2e"/><path d="M38 67 q7 9 14 0" fill="none" stroke="#d77765" stroke-width="4" stroke-linecap="round"/><circle cx="98" cy="62" r="22" fill="#f7f7f7" stroke="#adb9c7" stroke-width="4"/><circle cx="98" cy="62" r="13" fill="none" stroke="#d6dde5" stroke-width="3"/><path d="M77 42 V84 M71 42 V58 M83 42 V58 M89 42 V84" stroke="#23384a" stroke-width="5" stroke-linecap="round"/><path d="M117 42 V84 M117 42 C124 44 126 52 121 58 C126 64 124 73 117 76" fill="none" stroke="#23384a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
- if(action==='write')return `<svg class="tat-action-write-svg" viewBox="0 0 145 125" role="img" aria-label="Viết" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><rect x="78" y="30" width="34" height="52" rx="3" fill="#ffffff" stroke="#707f90" stroke-width="4"/><path d="M84 41 H105 M84 51 H104 M84 61 H101" stroke="#a4b1bd" stroke-width="3" stroke-linecap="round"/><path d="M40 76 L64 52 L74 62 L50 86 L38 88Z" fill="#f2bf4b" stroke="#8e5d18" stroke-width="4" stroke-linejoin="round"/><path d="M61 55 L45 39" stroke="#d14c47" stroke-width="10" stroke-linecap="round"/><path d="M74 62 L86 50" stroke="#ffd89c" stroke-width="6" stroke-linecap="round"/></svg>`;
- if(action==='wash')return `<svg class="tat-action-wash-svg" viewBox="0 0 145 125" role="img" aria-label="Rửa tay" xmlns="http://www.w3.org/2000/svg"><rect x="13" y="8" width="120" height="109" rx="8" fill="#fff"/><g transform="translate(4,4)">${tatSymbolVisual('🧼',60).replace('<svg ','<svg x="12" y="24" ').replace('</svg>','')}</g><path d="M88 44 C84 58 92 73 103 73 C112 73 119 66 119 57 C119 52 117 48 114 44" fill="none" stroke="#f6a22d" stroke-width="8" stroke-linecap="round"/><path d="M86 45 C80 58 84 82 102 90" fill="none" stroke="#f4c96f" stroke-width="8" stroke-linecap="round"/><path d="M98 36 l9 -8 M107 36 l9 -8 M116 36 l9 -8" stroke="#f5822a" stroke-width="6" stroke-linecap="round"/></svg>`;
- return `<span class="tat-action-emoji">${escapeHtml(TAT_ACTION_GLYPHS[action]||String(action||'').toUpperCase())}</span>`;
-}
+function tatActionVisual(action){return tatLocalAction(action);}
 
 // Minh hoạ SVG độc lập font emoji, tránh ô vuông trên các hệ điều hành.
 // Giới tính xác định theo dữ liệu/tên, KHÔNG dựa trên thứ tự ô đáp án.
@@ -637,7 +657,7 @@ function tatPlayerScene(q){
 }
 function tatBoxShape(x,y){return `<g><path d="M${x} ${y+20} L${x+105} ${y+20} L${x+113} ${y+104} L${x+5} ${y+104} Z" fill="#e9c28a" stroke="#94632f" stroke-width="3"/><path d="M${x} ${y+20} L${x+27} ${y} L${x+129} ${y} L${x+105} ${y+20} Z" fill="#f8ddae" stroke="#94632f" stroke-width="3"/><path d="M${x+105} ${y+20} L${x+129} ${y} L${x+136} ${y+84} L${x+113} ${y+104} Z" fill="#c6975f" stroke="#94632f" stroke-width="3"/></g>`}
 function tatSpatialScene(q){
- const e=escapeHtml(q.objectEmoji||'⚽');const mark=(x,y,size=62)=>`<text x="${x}" y="${y}" text-anchor="middle" font-size="${size}" font-family="Segoe UI Emoji, Apple Color Emoji, Noto Color Emoji, sans-serif">${e}</text>`;
+ const e=String(q.objectEmoji||'⚽');const mark=(x,y,size=62)=>`<image href="${tatEmojiAsset(e)}" x="${x-size/2}" y="${y-size}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"/>`;
  const svgHead='<svg class="tat-spatial-svg" viewBox="0 0 320 226" role="img" aria-label="Vị trí đồ vật so với chiếc hộp" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="318" height="224" rx="10" fill="#e9f6ff"/><path d="M0 181 H320 V226 H0" fill="#cfe7ba"/><ellipse cx="163" cy="210" rx="90" ry="10" fill="#315c6733"/>';
  const pos=q.position;let inner='';
  if(pos==='under')inner=tatBoxShape(98,14)+mark(160,205,58);
@@ -662,7 +682,7 @@ function tatOpenSceneZoom(id){const src=document.getElementById(id);const zoom=d
 function tatCloseSceneZoom(){document.getElementById('tatSceneZoom')?.classList.add('hidden')}
 
 
-function tatSceneEmojiVisual(symbol,size=74){ return tatSymbolVisual(symbol,size); }
+function tatSceneEmojiVisual(symbol,size=74){return tatLocalGlyph(symbol,size);}
 function tatUsesPromptBlankInput(q){
  return !!q && (q.type==='fill' || q.type==='listen') && /_{2,}/.test(String(q.prompt||''));
 }
@@ -688,7 +708,7 @@ function tatPromptBlankEdit(input){
 
 
 function tatLan6AgeScene(q){
- return tatSceneBlock(`<div class="tat-lan6-age-photo" role="img" aria-label="${escapeHtml(q.person)}, ${q.age} tuổi"><span class="tat-lan6-portrait" aria-hidden="true">${escapeHtml(q.emoji)}</span><span class="tat-lan6-age-number">${q.age}</span><span class="tat-lan6-person">${escapeHtml(q.person)}</span></div>`,'age');
+ return tatSceneBlock(`<div class="tat-lan6-age-photo" role="img" aria-label="${escapeHtml(q.person)}, ${q.age} tuổi"><span class="tat-lan6-portrait" aria-hidden="true">${tatSceneEmojiVisual(q.emoji,106)}</span><span class="tat-lan6-age-number">${q.age}</span><span class="tat-lan6-person">${escapeHtml(q.person)}</span></div>`,'age');
 }
 function tatLan6Scene(q){
  return tatSceneBlock(`<div class="tat-lan6-place" role="img" aria-label="Hình minh họa địa điểm"><div class="tat-lan6-place-glyphs" aria-hidden="true">${(q.sceneEmojis||[]).map(x=>tatSceneEmojiVisual(x)).join('')}</div></div>`,'place');
