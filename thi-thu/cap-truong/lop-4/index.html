@@ -240,6 +240,25 @@
 .tat-ipa-word:focus-visible{border-radius:4px}
 .tat-ipa-word-hint{padding-bottom:4px;margin-bottom:5px;color:#174e78;font-weight:800;border-bottom:1px solid #cde0ec}
 .tat-sound-reference .tat-ipa-word{color:#ffdc82}
+
+/* 27-10-2026: Tooltip IPA tại đúng PHẦN GẠCH CHÂN; không tô sáng cả từ. */
+.tat-ipa-target{display:inline;position:relative;cursor:help;touch-action:manipulation;border-radius:3px}
+.tat-ipa-target u{color:inherit;text-underline-offset:5px;text-decoration-thickness:2px;text-decoration-color:#ffdc73}
+.tat-ipa-target:hover u,.tat-ipa-target:focus-visible u{color:#fff1ae;background:rgba(255,220,110,.17)}
+.tat-ipa-target:focus-visible{outline:2px solid #ffd66a;outline-offset:3px}
+#tatIpaTooltip{width:max-content;min-width:185px;max-width:min(315px,calc(100vw - 20px));background:#10283c;color:#f5faff;border:1.5px solid #8fb8d4;border-radius:10px;box-shadow:0 14px 36px rgba(0,0,0,.56);padding:11px 13px;font:13px/1.55 Arial,sans-serif}
+#tatIpaTooltip .tat-ipa-word-hint{color:#f5fbff;border-bottom:1px solid rgba(194,221,243,.25);font-weight:650;padding-bottom:5px;margin:0 0 5px}
+#tatIpaTooltip .tat-ipa-full{font-weight:500;color:#cbebff;margin-left:5px}
+#tatIpaTooltip .tat-ipa-main{font-size:22px;line-height:1.15;font-weight:800;color:#ffe17c;margin:4px 0 6px}
+#tatIpaTooltip .tat-ipa-meaning{font-weight:600;color:#ffdf89;font-size:13px;margin:3px 0}
+#tatIpaTooltip .tat-ipa-mouth{color:#f0f5fb;font-size:12px;margin-top:5px}
+#tatIpaTooltip .tat-ipa-caution,#tatIpaTooltip .tat-ipa-audio-note{color:#bdcfdd;font-size:11px}
+#tatIpaTooltip .tat-ipa-play{background:#2d587a;border:1px solid #91b7d0;color:white}
+#tatIpaTooltip .tat-ipa-play:hover,#tatIpaTooltip .tat-ipa-play:focus-visible{background:#f5d66d;color:#173145}
+#tatIpaTooltip .tat-ipa-audio-status{color:#d4e4f0}
+#tatIpaTooltip::after{content:"";position:absolute;bottom:-7px;left:calc(50% - 7px);width:12px;height:12px;background:#10283c;border-right:1.5px solid #8fb8d4;border-bottom:1.5px solid #8fb8d4;transform:rotate(45deg)}
+#tatIpaTooltip.tat-ipa-tip-below::after{bottom:auto;top:-7px;transform:rotate(225deg)}
+@media(max-width:550px){#tatIpaTooltip{font-size:13px;min-width:160px;max-width:calc(100vw - 22px)}#tatIpaTooltip .tat-ipa-main{font-size:20px}}
 </style></head><body><div id="tat-back" style="position:relative;z-index:9999;background:#17334d;padding:10px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font:600 14px Arial,sans-serif;color:white"><a href="../../../index.html#lop-4" style="color:white;text-decoration:none;background:#315d86;padding:9px 13px;border-radius:9px">← TAT · Các cấp thi lớp 4</a><span>TAT / Lớp 4 / Thi thử Cấp trường</span></div><div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập IOE lớp 4</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi thử tối đa 5 lần trên mỗi tài khoản.</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
 <div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
 <div class="ioe-pay-layout">
@@ -698,16 +717,21 @@ function tatSoundForOption(q,i){
  }
  return '';
 }
+/* Chỉ phần gạch chân là vùng kích hoạt chú giải; từ/đáp án gốc không bị thay đổi. */
+function tatUnderlineWithIPA(word,underlined,ipa){
+ const text=String(word??''),chunk=String(underlined??'');
+ const pos=text.toLowerCase().indexOf(chunk.toLowerCase());
+ if(!chunk||pos<0||!ipa||!Object.prototype.hasOwnProperty.call(TAT_IPA_GUIDE,ipa))return tatUnderlineSpelling(text,chunk);
+ const label=TAT_IPA_GUIDE[ipa][0];
+ return escapeHtml(text.slice(0,pos))+
+   `<span class="tat-ipa-word tat-ipa-target" tabindex="0" data-ipa="${escapeHtml(ipa)}" data-word="${escapeHtml(text)}" aria-label="Phần gạch chân ${escapeHtml(chunk)} của ${escapeHtml(text)}, phiên âm /${escapeHtml(ipa)}/, ${escapeHtml(label)}"><u>${escapeHtml(text.slice(pos,pos+chunk.length))}</u></span>`+
+   escapeHtml(text.slice(pos+chunk.length));
+}
 function tatPronOptionHTML(q,word,i){
- const ipa=tatSoundForOption(q,i),markup=tatUnderlineSpelling(word,q.underline?.[i]||'');
- if(!ipa||!Object.prototype.hasOwnProperty.call(TAT_IPA_GUIDE,ipa))return markup;
- const hint=TAT_IPA_GUIDE[ipa][0];
- return `<span class="tat-ipa-word" tabindex="0" data-ipa="${escapeHtml(ipa)}" data-word="${escapeHtml(word)}" title="/${escapeHtml(ipa)}/ — ${escapeHtml(hint)}" aria-label="${escapeHtml(word)}, IPA /${escapeHtml(ipa)}/. Rê chuột hoặc chạm để xem cách đọc">${markup}</span>`;
+ return tatUnderlineWithIPA(word,q.underline?.[i]||'',tatSoundForOption(q,i));
 }
 function tatPronReferenceHTML(q){
- const ipa=String(q.refSound||'');
- if(!ipa||!Object.prototype.hasOwnProperty.call(TAT_IPA_GUIDE,ipa))return tatUnderlineSpelling(q.refWord,q.refUnderline);
- return `<span class="tat-ipa-word" tabindex="0" data-ipa="${escapeHtml(ipa)}" data-word="${escapeHtml(q.refWord)}" title="/${escapeHtml(ipa)}/ — ${escapeHtml(TAT_IPA_GUIDE[ipa][0])}" aria-label="Từ mẫu ${escapeHtml(q.refWord)}, phiên âm /${escapeHtml(ipa)}/">${tatUnderlineSpelling(q.refWord,q.refUnderline)}</span>`;
+ return tatUnderlineWithIPA(q.refWord,q.refUnderline,String(q.refSound||''));
 }
 
 function tatFormatExplainIPA(source){
@@ -781,20 +805,28 @@ function tatGetIpaTooltip(){
  if(!tip){tip=document.createElement('div');tip.id='tatIpaTooltip';tip.setAttribute('role','tooltip');tip.hidden=true;document.body.appendChild(tip)}
  return tip;
 }
+const TAT_IPA_FULL_WORDS=Object.freeze({
+ 'think':'θɪŋk','bath':'bæθ','father':'ˈfɑːðər','this':'ðɪs','they':'ðeɪ',
+ 'moon':'muːn','book':'bʊk','foot':'fʊt','food':'fuːd','good':'ɡʊd',
+ 'bike':'baɪk','time':'taɪm','milk':'mɪlk','hen':'hen','bed':'bed','he':'hiː',
+ 'see':'siː','sea':'siː','pea':'piː','cat':'kæt','dog':'dɒɡ','fish':'fɪʃ'
+});
 function tatShowIpaTooltip(button){
  const entry=TAT_IPA_GUIDE[button?.dataset?.ipa];if(!entry)return;
  const tip=tatGetIpaTooltip(),ipa=button.dataset.ipa;
  const audio=TAT_IPA_AUDIO[ipa];
  const word=button.dataset.word||'';
- const wordHeader=word?`<div class="tat-ipa-word-hint">${escapeHtml(word)} — /${escapeHtml(ipa)}/</div>`:'';
- tip.innerHTML=`${wordHeader}<div class="tat-ipa-meaning">/${escapeHtml(ipa)}/ — Đọc gần đúng: ${escapeHtml(entry[0])}</div><div class="tat-ipa-mouth">${escapeHtml(entry[1])}</div><div class="tat-ipa-audio-tools"><button type="button" class="tat-ipa-play" data-ipa="${escapeHtml(ipa)}" data-mode="sound" aria-label="Nghe riêng âm /${escapeHtml(ipa)}/">🔊 Nghe âm</button><button type="button" class="tat-ipa-play" data-ipa="${escapeHtml(ipa)}" data-mode="example" aria-label="Nghe ví dụ ${escapeHtml(audio.word)}">▶ Nghe từ: ${escapeHtml(audio.word)}</button></div>${word?`<button type="button" class="tat-ipa-play tat-word-speak" data-word="${escapeHtml(word)}" aria-label="Nghe từ ${escapeHtml(word)}">🔊 Nghe từ này</button>`:``}<div class="tat-ipa-audio-status" role="status" aria-live="polite"></div><div class="tat-ipa-audio-note">${audio.note?escapeHtml(audio.note)+' ':''}Giọng tổng hợp ${audio.accent}; âm có thể khác đôi chút so với người bản ngữ.</div><div class="tat-ipa-caution">Cách ghi tiếng Việt chỉ để hình dung, không hoàn toàn giống âm tiếng Anh.</div>`;
+ const full=word?TAT_IPA_FULL_WORDS[word.toLowerCase()]:null;
+ const wordHeader=word?`<div class="tat-ipa-word-hint"><strong>${escapeHtml(word)}</strong>${full?`<span class="tat-ipa-full">/${escapeHtml(full)}/</span>`:''}</div>`:'';
+ tip.innerHTML=`${wordHeader}<div class="tat-ipa-main">/${escapeHtml(ipa)}/</div><div class="tat-ipa-meaning">Đọc gần đúng: ${escapeHtml(entry[0])}</div><div class="tat-ipa-mouth">${escapeHtml(entry[1])}</div><div class="tat-ipa-audio-tools"><button type="button" class="tat-ipa-play" data-ipa="${escapeHtml(ipa)}" data-mode="sound" aria-label="Nghe riêng âm /${escapeHtml(ipa)}/">🔊 Nghe âm</button>${word?`<button type="button" class="tat-ipa-play tat-word-speak" data-word="${escapeHtml(word)}" aria-label="Nghe từ ${escapeHtml(word)}">▶ Nghe ${escapeHtml(word)}</button>`:`<button type="button" class="tat-ipa-play" data-ipa="${escapeHtml(ipa)}" data-mode="example">▶ Ví dụ: ${escapeHtml(audio.word)}</button>`}</div><div class="tat-ipa-audio-status" role="status" aria-live="polite"></div><div class="tat-ipa-caution">Cách đọc tiếng Việt chỉ mang tính gần đúng.</div>`;
  tip.hidden=false;tatIpaAnchor=button;
- // Tooltip nằm trong khung hình, không bị cắt bởi vùng cuộn kết quả.
  const anchor=button.getBoundingClientRect();
  const width=tip.offsetWidth,height=tip.offsetHeight;
  const left=Math.max(10,Math.min(window.innerWidth-width-10,anchor.left+anchor.width/2-width/2));
- const above=anchor.top-height-10;
- const top=above>=10?above:Math.min(window.innerHeight-height-10,anchor.bottom+12);
+ const above=anchor.top-height-12;
+ const below=above<10;
+ tip.classList.toggle('tat-ipa-tip-below',below);
+ const top=below?Math.min(Math.max(10,window.innerHeight-height-10),anchor.bottom+13):above;
  tip.style.left=Math.max(10,left)+'px';tip.style.top=Math.max(10,top)+'px';
 }
 function tatHideIpaTooltip(force=false){
