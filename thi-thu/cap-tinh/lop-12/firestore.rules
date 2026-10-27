@@ -6,7 +6,7 @@ service cloud.firestore {
   function isAdmin() { return signedIn() && request.auth.uid == 'UID_ADMIN_THAT'; }
   match /ioe_users/{uid} {
    allow read: if isAdmin() || (signedIn() && request.auth.uid == uid);
-   allow create: if signedIn() && request.auth.uid == uid && request.resource.data.keys().hasOnly(['email','name','createdAt','premiumUntil']) && request.resource.data.premiumUntil == null && request.resource.data.createdAt == request.time;
+   allow create: if signedIn() && request.auth.uid == uid && request.resource.data.keys().hasOnly(['email','name','createdAt','premiumUntil','ultimate']) && request.resource.data.premiumUntil == null && request.resource.data.ultimate == false && request.resource.data.createdAt == request.time;
    allow update, delete: if isAdmin();
   }
   match /ioe_results/{id} {

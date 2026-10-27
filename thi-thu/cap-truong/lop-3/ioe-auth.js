@@ -100,12 +100,16 @@ function show(message){$('ioeGate').classList.remove('ioe-hide');$('ioeGateText'
 const MAX_ATTEMPTS=5;
 let usedAttempts=0;
 let premiumActive=false;
+let ultimateActive=false;
 let paymentDismissed=false;
 let authCheckVersion=0;
 const withTimeout=(promise,ms)=>Promise.race([promise,new Promise((_,reject)=>setTimeout(()=>reject(new Error('Kết nối Firestore quá thời gian chờ. Vui lòng kiểm tra mạng và tải lại trang.')),ms))]);
 function premiumEndMs(){const v=profile?.premiumUntil;return v?.toMillis?.() || (typeof v==='string'?Date.parse(v):0) || 0;}
+function hasUltimateFlag(){return profile?.ultimate===true;}
 // Đọc trạng thái gói thực tế từ hồ sơ Firestore; không dùng nhãn hiển thị hay localStorage.
-window.ioeHasActivePremium=()=>!!me && sessionOwned && premiumEndMs()>Date.now();
+window.ioeHasUltimate=()=>!!me && sessionOwned && hasUltimateFlag();
+window.ioeHasActivePremium=()=>!!me && sessionOwned && (hasUltimateFlag() || premiumEndMs()>Date.now());
+window.ioeGetPlanType=()=>!me||!sessionOwned?'free':(hasUltimateFlag()?'ultimate':(premiumEndMs()>Date.now()?'premium':'free'));
 function showPayment(){
  paymentDismissed=false;
  $('ioeGateUpgrade').classList.add('ioe-hide');
@@ -126,15 +130,19 @@ function hidePayment(){$('ioePayment').classList.add('ioe-hide');$('ioeGateTitle
 window.ioeClosePayment=()=>{paymentDismissed=true;hidePayment();$('ioeGate').classList.add('ioe-hide');if(window.ioeExamActive!==true && typeof window.ioeReturnToStart==='function')window.ioeReturnToStart();};
 window.ioeCopyBank=()=>navigator.clipboard.writeText('4603205297466').then(()=>{$('ioePayNotice').textContent='Đã sao chép số tài khoản.';}).catch(()=>{$('ioePayNotice').textContent='Số tài khoản: 4603205297466';});
 window.ioeCopyMemo=()=>navigator.clipboard.writeText($('ioePayMemo').textContent).then(()=>{$('ioePayNotice').textContent='Đã sao chép nội dung chuyển khoản.';}).catch(()=>{$('ioePayNotice').textContent='Hãy sao chép nội dung chuyển khoản hiển thị phía trên.';});
-window.ioeCheckPayment=async()=>{if(!me||!db)return;status('Đang kiểm tra trạng thái Premium…');try{const snap=await getDoc(doc(db,'ioe_users',me.uid));if(snap.exists())profile=snap.data();refresh();if(!premiumActive)status('Chưa có Premium đang hoạt động. Vui lòng đợi quản trị viên xác nhận.');}catch(e){status('Không kiểm tra được Premium: '+e.message);}};
+window.ioeCheckPayment=async()=>{if(!me||!db)return;status('Đang kiểm tra trạng thái Premium…');try{const snap=await getDoc(doc(db,'ioe_users',me.uid));if(snap.exists())profile=snap.data();refresh();if(!(premiumActive||ultimateActive))status('Chưa có Premium đang hoạt động. Vui lòng đợi quản trị viên xác nhận.');}catch(e){status('Không kiểm tra được Premium: '+e.message);}};
 function refresh(){
  premiumActive=premiumEndMs()>Date.now();
- window.ioeAllowed=!!me && sessionOwned && (premiumActive||usedAttempts<MAX_ATTEMPTS);
+ ultimateActive=hasUltimateFlag();
+ window.ioeAllowed=!!me && sessionOwned && (ultimateActive||premiumActive||usedAttempts<MAX_ATTEMPTS);
  const remain=Math.max(0,MAX_ATTEMPTS-usedAttempts);
- $('ioeIdentity').textContent=`${me.displayName||me.email||'Học viên'} • ${premiumActive?'Premium đến '+new Date(premiumEndMs()).toLocaleDateString('vi-VN'):'Còn '+remain+'/5 lượt miễn phí'}`;
- $('ioePremium').style.display=premiumActive?'none':'';
- $('ioePremiumBadge').classList.toggle('ioe-hide',!premiumActive);
- $('ioeWelcomePremium').classList.toggle('ioe-hide',!me||premiumActive);
+ const badge=$('ioePremiumBadge');
+ if(ultimateActive){$('ioeIdentity').textContent=`${me.displayName||me.email||'Học viên'} • Ultimate vĩnh viễn — không giới hạn thời gian`;}
+ else{$('ioeIdentity').textContent=`${me.displayName||me.email||'Học viên'} • ${premiumActive?'Premium đến '+new Date(premiumEndMs()).toLocaleDateString('vi-VN'):'Còn '+remain+'/5 lượt miễn phí'}`;}
+ $('ioePremium').style.display=(premiumActive||ultimateActive)?'none':'';
+ if(badge){badge.textContent=ultimateActive?'💎 ULTIMATE':'⭐ PREMIUM';badge.title=ultimateActive?'Tài khoản Ultimate đang hoạt động':'Tài khoản Premium đang hoạt động';}
+ $('ioePremiumBadge').classList.toggle('ioe-hide',!(premiumActive||ultimateActive));
+ $('ioeWelcomePremium').classList.toggle('ioe-hide',!me||premiumActive||ultimateActive);
  $('ioeGateUpgrade').classList.add('ioe-hide');
  $('ioeLogin').style.display='none';
  if(window.ioeAllowed){hidePayment();$('ioeGate').classList.add('ioe-hide');status('');}
@@ -144,6 +152,7 @@ function refresh(){
 window.ioeClaimAttempt=async()=>{
  if(!me||!db)throw new Error('Bạn cần đăng nhập Google trước khi thi.');
  if(!sessionOwned)throw new Error('Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.');
+ if(hasUltimateFlag()){ultimateActive=true;return 'Ultimate';}
  if(premiumEndMs()>Date.now()){premiumActive=true;return 'Premium';}
  const uid=me.uid;
  const ref=doc(db,'ioe_attempts',uid);
@@ -181,7 +190,7 @@ else{
    $('ioePremiumBadge').classList.add('ioe-hide');
    $('ioeWelcomePremium').classList.add('ioe-hide');$('ioeGateUpgrade').classList.add('ioe-hide');
 
-   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để thi thử tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';}status('');return;}
+   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để thi thử tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';}status('');ultimateActive=false;premiumActive=false;return;}
    $('ioeIdentity').textContent=user.displayName||user.email||'Đã đăng nhập Google';
    show('Đã đăng nhập Google. Đang kiểm tra số lượt thi…');
    status('Đang xác minh phiên đăng nhập và Cloud Firestore…');
@@ -193,7 +202,7 @@ else{
     let snap=await withTimeout(getDoc(ref),12000);
     if(checkVersion!==authCheckVersion)return;
     if(!snap.exists()){
-     await setDoc(ref,{email:user.email||'',name:user.displayName||'',createdAt:serverTimestamp(),premiumUntil:null});
+     await setDoc(ref,{email:user.email||'',name:user.displayName||'',createdAt:serverTimestamp(),premiumUntil:null,ultimate:false});
      snap=await withTimeout(getDoc(ref),12000);
      if(checkVersion!==authCheckVersion)return;
     }
