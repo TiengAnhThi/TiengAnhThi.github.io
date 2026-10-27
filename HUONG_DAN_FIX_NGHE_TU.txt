@@ -1,0 +1,32 @@
+TAT IOE - SUA LOI NUT 'NGHE TU' TRONG BANG CHU GIAI IPA
+Ngay cap nhat: 27/10/2026
+
+1. Loi goc: nut 'Nghe tu' cung co class tat-ipa-play va tat-word-speak,
+   nhung handler xu ly tat-ipa-play truoc, do do khong goi doc ca tu.
+2. Da sua thu tu xu ly o 48 trang thi (lop 1-12, 4 cap).
+3. Da them thong bao trang thai phat, quan ly luong phat va fallback cho
+   lop 3 cap truong (186 tu trong 2 dang phat am) khi thieu giong TTS.
+4. File MP3 du phong: thi-thu/cap-truong/lop-3/ipa-audio/grade3_pronunciation_words.mp3.
+   Am thanh du phong la giong tong hop, khong phai ban thu nguoi ban ngu.
+5. Khong thay doi bat ky file cau hoi JSON, quy tac cham diem, Firebase,
+   Premium, hay file MP3 IPA cu.
+
+HUONG DAN CAP NHAT QUA GITHUB WEB:
+- Giai nen ZIP cap nhat.
+- Giu dung cay thu muc tu 'thi-thu/...'.
+- Upload cac file index.html vao cac thu muc cap/lop tuong ung.
+- Upload them grade3_pronunciation_words.mp3 vao thu muc ipa-audio
+  cua lop 3 cap truong. Khong can upload lai 90 file IPA hien co.
+- Commit changes, doi GitHub Pages deploy, sau do Ctrl+F5.
+
+GOI RIENG LOP 3 CAP TRUONG:
+- Chi can upload hai file: index.html va grade3_pronunciation_words.mp3.
+- Luong nghe tren may tinh co giong doc tieng Anh da duoc uu tien.
+- Neu trinh duyet khong co giong doc tieng Anh, ban MP3 du phong se phat.
+
+KIEM TRA:
+- Node.js --check: 48/48 trang HTML khong loi cu phap JS.
+- Chromium (test UI co mo phong audio): bam Nghe tu rice -> dung file du
+  phong, bam Nghe am /aɪ/ -> dung file 16_sound.mp3.
+- Chromium (test tong hop giong doc): bam Nghe tu rice -> goi speechSynthesis.
+- So sanh goc: chi 48 index.html thay doi + 1 file mp3 moi.

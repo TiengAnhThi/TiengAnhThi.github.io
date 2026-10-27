@@ -756,17 +756,93 @@ function tatExtractPronGroups(q){
  const sounds=[...text.matchAll(/\/([^/\s]+)\//g)].map(m=>m[0]);
  return {odd:sounds[0]||'',rest:sounds[1]||''};
 }
+/* Phát từ tiếng Anh: ưu tiên giọng trình duyệt, fallback MP3 gộp (nếu có). */
+let tatWordUtterance=null;
+let tatWordAudio=null;
+let tatWordSpeakId=0;
+let tatWordTimeout=null;
+function tatWordStatus(message){
+ const status=document.querySelector('#tatIpaTooltip .tat-ipa-audio-status');
+ if(status)status.textContent=message;
+}
+function tatStopWordSpeech(){
+ tatWordSpeakId+=1;
+ if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}
+ if(tatWordAudio){try{tatWordAudio.pause();tatWordAudio.onended=null;tatWordAudio.ontimeupdate=null;}catch(e){}tatWordAudio=null;}
+ if(window.speechSynthesis){try{speechSynthesis.cancel();}catch(e){}}
+ tatWordUtterance=null;
+ if(window.tatWordSpeakTrigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ window.tatWordSpeakTrigger=null;
+}
+function tatPlayFallbackWord(word,trigger,token){
+ const index=(typeof tatSchoolAudioWords!=='undefined')?tatSchoolAudioWords:null;
+ const section=index&&index[word.toLowerCase()];
+ if(!section)return false;
+ if(window.speechSynthesis){try{speechSynthesis.cancel();}catch(e){}}
+ const start=section[0],end=start+section[1]+0.025;
+ const audio=new Audio('ipa-audio/grade3_pronunciation_words.mp3');
+ audio.preload='auto';
+ tatWordAudio=audio;
+ let completed=false;
+ function finish(error){
+  if(completed||token!==tatWordSpeakId)return;
+  completed=true;
+  audio.pause();tatWordAudio=null;
+  if(trigger)trigger.removeAttribute('aria-pressed');
+  window.tatWordSpeakTrigger=null;
+  tatWordStatus(error?'Không phát được âm thanh từ. Hãy kiểm tra tệp MP3 trên GitHub.':'Đã nghe từ “'+word+'”.');
+ }
+ audio.ontimeupdate=()=>{if(audio.currentTime>=end)finish(false);};
+ audio.onended=()=>finish(false);
+ audio.onerror=()=>finish(true);
+ try{
+  audio.currentTime=start;
+  const playPromise=audio.play();
+  if(playPromise?.catch)playPromise.catch(()=>finish(true));
+  tatWordStatus('🔊 Đang phát từ “'+word+'”…');
+ }catch(e){finish(true)}
+ return true;
+}
 function tatSpeakWord(word,trigger){
- if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
  const txt=String(word||'').trim();if(!txt)return;
- speechSynthesis.cancel();
- if(window.tatWordSpeakTrigger&&window.tatWordSpeakTrigger!==trigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ tatStopWordSpeech();
+ const token=tatWordSpeakId;
  window.tatWordSpeakTrigger=trigger||null;
  if(trigger)trigger.setAttribute('aria-pressed','true');
- const u=new SpeechSynthesisUtterance(txt);u.lang='en-US';u.rate=0.88;u.pitch=1;
- const v=tatEnglishVoice('female')||tatEnglishVoice('male');if(v)u.voice=v;
- const finish=()=>{if(trigger)trigger.removeAttribute('aria-pressed');if(window.tatWordSpeakTrigger===trigger)window.tatWordSpeakTrigger=null;};
- u.onend=finish;u.onerror=finish;speechSynthesis.speak(u);
+ if(tatIpaAudio){try{tatIpaAudio.pause();tatIpaAudio.currentTime=0;}catch(e){}}
+ if(tatIpaAudioTrigger)tatIpaAudioTrigger.removeAttribute('aria-pressed');
+ tatWordStatus('Đang chuẩn bị đọc từ “'+txt+'”…');
+ const fail=(message)=>{
+  if(token!==tatWordSpeakId)return;
+  if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}
+  if(tatPlayFallbackWord(txt,trigger,token))return;
+  if(trigger)trigger.removeAttribute('aria-pressed');
+  window.tatWordSpeakTrigger=null;
+  tatWordStatus(message||'Không phát được từ. Hãy kiểm tra giọng tiếng Anh trên Chrome hoặc Edge.');
+ };
+ if(!window.speechSynthesis||typeof SpeechSynthesisUtterance==='undefined'){
+  fail('Trình duyệt không hỗ trợ giọng đọc và không có âm thanh dự phòng.');return;
+ }
+ try{
+  const voices=speechSynthesis.getVoices()||[];
+  const english=voices.filter(v=>/^en([-_]|$)/i.test(v.lang));
+  // Nếu thiếu giọng tiếng Anh, ưu tiên file âm thanh dự phòng của lớp 3 cấp trường.
+  if(!english.length&&typeof tatSchoolAudioWords!=='undefined'&&tatSchoolAudioWords[txt.toLowerCase()]){
+    fail();return;
+  }
+  let started=false;
+  const utterance=new SpeechSynthesisUtterance(txt);
+  tatWordUtterance=utterance; // giữ tham chiếu để tránh GC ngắt giọng đọc giữa chừng
+  utterance.lang='en-US';utterance.rate=.88;utterance.pitch=1;utterance.volume=1;
+  const voice=tatEnglishVoice('female')||tatEnglishVoice('male');if(voice)utterance.voice=voice;
+  utterance.onstart=()=>{if(token!==tatWordSpeakId)return;started=true;if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}tatWordStatus('🔊 Đang đọc từ “'+txt+'”…');};
+  utterance.onend=()=>{if(token!==tatWordSpeakId)return;if(trigger)trigger.removeAttribute('aria-pressed');window.tatWordSpeakTrigger=null;tatWordUtterance=null;tatWordStatus('Đã nghe từ “'+txt+'”.');};
+  utterance.onerror=()=>fail('Trình duyệt không đọc được từ.');
+  // speak() chạy đồng bộ từ thao tác bấm để đáp ứng chính sách autoplay.
+  speechSynthesis.speak(utterance);
+  if(speechSynthesis.paused)speechSynthesis.resume();
+  tatWordTimeout=setTimeout(()=>{if(token===tatWordSpeakId&&!started)fail('Giọng đọc không phản hồi.');},1900);
+ }catch(e){fail('Không thể khởi động giọng đọc.');}
 }
 function tatSpeakWordList(words,trigger){
  if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
@@ -859,16 +935,17 @@ document.addEventListener('focusout',e=>{
  }
 });
 document.addEventListener('click',e=>{
- const playButton=e.target.closest?.('.tat-ipa-speak, .tat-ipa-play');
- if(playButton){
-  e.preventDefault();e.stopPropagation();
-  tatPlayIpa(playButton.dataset.ipa,playButton.dataset.mode||'sound',playButton);
-  return;
- }
+ // Nút Nghe từ có class tat-ipa-play để dùng kiểu giao diện IPA; phải ưu tiên xử lý từ trước âm riêng.
  const wordButton=e.target.closest?.('.tat-word-speak');
  if(wordButton){
   e.preventDefault();e.stopPropagation();
   tatSpeakWord(wordButton.dataset.word||'',wordButton);
+  return;
+ }
+ const playButton=e.target.closest?.('.tat-ipa-speak, .tat-ipa-play');
+ if(playButton){
+  e.preventDefault();e.stopPropagation();
+  tatPlayIpa(playButton.dataset.ipa,playButton.dataset.mode||'sound',playButton);
   return;
  }
  const seqButton=e.target.closest?.('.tat-word-seq');

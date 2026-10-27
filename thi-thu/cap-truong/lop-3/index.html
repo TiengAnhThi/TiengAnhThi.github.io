@@ -738,17 +738,94 @@ function tatExtractPronGroups(q){
  const rest=(text.match(/trong ba từ còn lại phần đó phát âm\s+(.+?)(?:\.|;|$)/i)||[])[1]?.trim()||'';
  return {odd,rest};
 }
+const tatSchoolAudioWords=Object.freeze({"ache":[0.1,0.389],"age":[0.779,0.471],"apple":[1.539,0.452],"baby":[2.281,0.52],"bag":[3.092,0.475],"bath":[3.857,0.436],"be":[4.583,0.401],"beach":[5.274,0.459],"bed":[6.022,0.446],"big":[6.758,0.418],"bike":[7.466,0.449],"book":[8.206,0.361],"brother":[8.857,0.485],"brown":[9.632,0.505],"bus":[10.427,0.416],"busy":[11.133,0.465],"buzz":[11.888,0.496],"cage":[12.674,0.529],"cake":[13.493,0.433],"cap":[14.216,0.46],"cat":[14.966,0.422],"cent":[15.678,0.52],"chair":[16.488,0.468],"character":[17.246,0.711],"cheese":[18.247,0.511],"chemistry":[19.048,0.704],"chicken":[20.042,0.55],"chin":[20.881,0.445],"chinese":[21.617,0.722],"chocolate":[22.629,0.649],"chorus":[23.568,0.54],"cinema":[24.397,0.499],"circle":[25.187,0.558],"city":[26.034,0.472],"clown":[26.796,0.587],"cold":[27.673,0.564],"complete":[28.527,0.691],"computer":[29.508,0.706],"cook":[30.504,0.357],"cry":[31.151,0.489],"cube":[31.929,0.449],"cup":[32.669,0.416],"cut":[33.375,0.378],"cute":[34.043,0.435],"dad":[34.768,0.436],"dance":[35.495,0.518],"desk":[36.302,0.431],"dog":[37.023,0.456],"down":[37.769,0.479],"dry":[38.538,0.415],"duck":[39.244,0.353],"easy":[39.886,0.437],"echo":[40.614,0.484],"face":[41.388,0.515],"father":[42.192,0.596],"fish":[43.079,0.448],"five":[43.817,0.575],"fly":[44.682,0.553],"food":[45.524,0.476],"foot":[46.29,0.405],"fun":[46.985,0.488],"game":[47.763,0.503],"gentle":[48.555,0.535],"get":[49.381,0.386],"giant":[50.057,0.562],"giraffe":[50.909,0.537],"girl":[51.736,0.415],"glass":[52.441,0.486],"go":[53.217,0.414],"goat":[53.92,0.419],"good":[54.629,0.347],"green":[55.265,0.46],"grow":[56.016,0.426],"gym":[56.732,0.446],"hat":[57.468,0.454],"he":[58.212,0.388],"headache":[58.89,0.582],"his":[59.761,0.483],"home":[60.534,0.533],"hood":[61.357,0.396],"hope":[62.043,0.501],"hot":[62.834,0.465],"is":[63.588,0.414],"jam":[64.292,0.5],"july":[65.083,0.581],"king":[65.953,0.494],"kite":[66.738,0.443],"lake":[67.471,0.463],"large":[68.224,0.621],"late":[69.135,0.463],"lazy":[69.888,0.552],"leg":[70.73,0.487],"lip":[71.507,0.455],"lunch":[72.251,0.537],"magic":[73.079,0.595],"map":[73.964,0.522],"me":[74.776,0.453],"milk":[75.518,0.537],"mine":[76.346,0.575],"moon":[77.211,0.522],"mother":[78.023,0.533],"mouse":[78.846,0.526],"mouth":[79.662,0.5],"music":[80.452,0.583],"name":[81.325,0.585],"net":[82.2,0.46],"nice":[82.95,0.536],"noon":[83.776,0.532],"nose":[84.598,0.598],"not":[85.486,0.493],"note":[86.269,0.474],"now":[87.033,0.528],"nut":[87.85,0.437],"orange":[88.577,0.546],"page":[89.413,0.513],"paper":[90.215,0.516],"peach":[91.022,0.425],"pen":[91.736,0.445],"pencil":[92.471,0.569],"pig":[93.33,0.376],"plane":[93.996,0.55],"pot":[94.836,0.417],"pupil":[95.543,0.474],"red":[96.307,0.508],"rice":[97.105,0.527],"rope":[97.922,0.534],"rose":[98.746,0.63],"sad":[99.666,0.494],"school":[100.45,0.524],"sea":[101.263,0.407],"see":[101.96,0.407],"she":[102.657,0.436],"sheep":[103.383,0.495],"ship":[104.168,0.474],"shoe":[104.932,0.44],"shop":[105.662,0.54],"show":[106.492,0.496],"shower":[107.278,0.534],"shy":[108.102,0.52],"sister":[108.913,0.579],"sit":[109.781,0.411],"six":[110.482,0.524],"sky":[111.297,0.523],"snake":[112.11,0.563],"snow":[112.963,0.546],"spoon":[113.799,0.529],"sun":[114.618,0.484],"swim":[115.392,0.599],"teacher":[116.282,0.516],"teeth":[117.087,0.389],"ten":[117.766,0.454],"thank":[118.51,0.565],"their":[119.365,0.512],"there":[120.167,0.505],"these":[120.962,0.56],"they":[121.812,0.492],"thin":[122.594,0.484],"think":[123.369,0.532],"this":[124.19,0.457],"three":[124.937,0.429],"throw":[125.656,0.507],"time":[126.453,0.52],"tooth":[127.263,0.4],"top":[127.952,0.464],"town":[128.707,0.498],"tree":[129.495,0.436],"uniform":[130.22,0.727],"use":[131.237,0.419],"watch":[131.946,0.524],"we":[132.76,0.437],"white":[133.487,0.495],"window":[134.272,0.596],"wish":[135.158,0.448],"wood":[135.896,0.433],"wool":[136.619,0.423],"yard":[137.332,0.585],"year":[138.207,0.543],"yellow":[139.04,0.531],"yellowish":[139.861,0.682],"yes":[140.833,0.491],"yoghurt":[141.614,0.649],"young":[142.553,0.553],"zebra":[143.396,0.508],"zero":[144.194,0.541],"zip":[145.025,0.471],"zoo":[145.786,0.458]});
+/* Phát từ tiếng Anh: ưu tiên giọng trình duyệt, fallback MP3 gộp (nếu có). */
+let tatWordUtterance=null;
+let tatWordAudio=null;
+let tatWordSpeakId=0;
+let tatWordTimeout=null;
+function tatWordStatus(message){
+ const status=document.querySelector('#tatIpaTooltip .tat-ipa-audio-status');
+ if(status)status.textContent=message;
+}
+function tatStopWordSpeech(){
+ tatWordSpeakId+=1;
+ if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}
+ if(tatWordAudio){try{tatWordAudio.pause();tatWordAudio.onended=null;tatWordAudio.ontimeupdate=null;}catch(e){}tatWordAudio=null;}
+ if(window.speechSynthesis){try{speechSynthesis.cancel();}catch(e){}}
+ tatWordUtterance=null;
+ if(window.tatWordSpeakTrigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ window.tatWordSpeakTrigger=null;
+}
+function tatPlayFallbackWord(word,trigger,token){
+ const index=(typeof tatSchoolAudioWords!=='undefined')?tatSchoolAudioWords:null;
+ const section=index&&index[word.toLowerCase()];
+ if(!section)return false;
+ if(window.speechSynthesis){try{speechSynthesis.cancel();}catch(e){}}
+ const start=section[0],end=start+section[1]+0.025;
+ const audio=new Audio('ipa-audio/grade3_pronunciation_words.mp3');
+ audio.preload='auto';
+ tatWordAudio=audio;
+ let completed=false;
+ function finish(error){
+  if(completed||token!==tatWordSpeakId)return;
+  completed=true;
+  audio.pause();tatWordAudio=null;
+  if(trigger)trigger.removeAttribute('aria-pressed');
+  window.tatWordSpeakTrigger=null;
+  tatWordStatus(error?'Không phát được âm thanh từ. Hãy kiểm tra tệp MP3 trên GitHub.':'Đã nghe từ “'+word+'”.');
+ }
+ audio.ontimeupdate=()=>{if(audio.currentTime>=end)finish(false);};
+ audio.onended=()=>finish(false);
+ audio.onerror=()=>finish(true);
+ try{
+  audio.currentTime=start;
+  const playPromise=audio.play();
+  if(playPromise?.catch)playPromise.catch(()=>finish(true));
+  tatWordStatus('🔊 Đang phát từ “'+word+'”…');
+ }catch(e){finish(true)}
+ return true;
+}
 function tatSpeakWord(word,trigger){
- if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
  const txt=String(word||'').trim();if(!txt)return;
- speechSynthesis.cancel();
- if(window.tatWordSpeakTrigger&&window.tatWordSpeakTrigger!==trigger)window.tatWordSpeakTrigger.removeAttribute('aria-pressed');
+ tatStopWordSpeech();
+ const token=tatWordSpeakId;
  window.tatWordSpeakTrigger=trigger||null;
  if(trigger)trigger.setAttribute('aria-pressed','true');
- const u=new SpeechSynthesisUtterance(txt);u.lang='en-US';u.rate=0.88;u.pitch=1;
- const v=tatEnglishVoice('female')||tatEnglishVoice('male');if(v)u.voice=v;
- const finish=()=>{if(trigger)trigger.removeAttribute('aria-pressed');if(window.tatWordSpeakTrigger===trigger)window.tatWordSpeakTrigger=null;};
- u.onend=finish;u.onerror=finish;speechSynthesis.speak(u);
+ if(tatIpaAudio){try{tatIpaAudio.pause();tatIpaAudio.currentTime=0;}catch(e){}}
+ if(tatIpaAudioTrigger)tatIpaAudioTrigger.removeAttribute('aria-pressed');
+ tatWordStatus('Đang chuẩn bị đọc từ “'+txt+'”…');
+ const fail=(message)=>{
+  if(token!==tatWordSpeakId)return;
+  if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}
+  if(tatPlayFallbackWord(txt,trigger,token))return;
+  if(trigger)trigger.removeAttribute('aria-pressed');
+  window.tatWordSpeakTrigger=null;
+  tatWordStatus(message||'Không phát được từ. Hãy kiểm tra giọng tiếng Anh trên Chrome hoặc Edge.');
+ };
+ if(!window.speechSynthesis||typeof SpeechSynthesisUtterance==='undefined'){
+  fail('Trình duyệt không hỗ trợ giọng đọc và không có âm thanh dự phòng.');return;
+ }
+ try{
+  const voices=speechSynthesis.getVoices()||[];
+  const english=voices.filter(v=>/^en([-_]|$)/i.test(v.lang));
+  // Nếu thiếu giọng tiếng Anh, ưu tiên file âm thanh dự phòng của lớp 3 cấp trường.
+  if(!english.length&&typeof tatSchoolAudioWords!=='undefined'&&tatSchoolAudioWords[txt.toLowerCase()]){
+    fail();return;
+  }
+  let started=false;
+  const utterance=new SpeechSynthesisUtterance(txt);
+  tatWordUtterance=utterance; // giữ tham chiếu để tránh GC ngắt giọng đọc giữa chừng
+  utterance.lang='en-US';utterance.rate=.88;utterance.pitch=1;utterance.volume=1;
+  const voice=tatEnglishVoice('female')||tatEnglishVoice('male');if(voice)utterance.voice=voice;
+  utterance.onstart=()=>{if(token!==tatWordSpeakId)return;started=true;if(tatWordTimeout){clearTimeout(tatWordTimeout);tatWordTimeout=null;}tatWordStatus('🔊 Đang đọc từ “'+txt+'”…');};
+  utterance.onend=()=>{if(token!==tatWordSpeakId)return;if(trigger)trigger.removeAttribute('aria-pressed');window.tatWordSpeakTrigger=null;tatWordUtterance=null;tatWordStatus('Đã nghe từ “'+txt+'”.');};
+  utterance.onerror=()=>fail('Trình duyệt không đọc được từ.');
+  // speak() chạy đồng bộ từ thao tác bấm để đáp ứng chính sách autoplay.
+  speechSynthesis.speak(utterance);
+  if(speechSynthesis.paused)speechSynthesis.resume();
+  tatWordTimeout=setTimeout(()=>{if(token===tatWordSpeakId&&!started)fail('Giọng đọc không phản hồi.');},1900);
+ }catch(e){fail('Không thể khởi động giọng đọc.');}
 }
 function tatSpeakWordList(words,trigger){
  if(!window.speechSynthesis){alert('Trình duyệt không hỗ trợ phát âm từ. Hãy dùng Chrome hoặc Edge.');return;}
@@ -838,16 +915,17 @@ document.addEventListener('focusout',e=>{
  }
 });
 document.addEventListener('click',e=>{
- const playButton=e.target.closest?.('.tat-ipa-speak, .tat-ipa-play');
- if(playButton){
-  e.preventDefault();e.stopPropagation();
-  tatPlayIpa(playButton.dataset.ipa,playButton.dataset.mode||'sound',playButton);
-  return;
- }
+ // Nút Nghe từ có class tat-ipa-play để dùng kiểu giao diện IPA; phải ưu tiên xử lý từ trước âm riêng.
  const wordButton=e.target.closest?.('.tat-word-speak');
  if(wordButton){
   e.preventDefault();e.stopPropagation();
   tatSpeakWord(wordButton.dataset.word||'',wordButton);
+  return;
+ }
+ const playButton=e.target.closest?.('.tat-ipa-speak, .tat-ipa-play');
+ if(playButton){
+  e.preventDefault();e.stopPropagation();
+  tatPlayIpa(playButton.dataset.ipa,playButton.dataset.mode||'sound',playButton);
   return;
  }
  const seqButton=e.target.closest?.('.tat-word-seq');
