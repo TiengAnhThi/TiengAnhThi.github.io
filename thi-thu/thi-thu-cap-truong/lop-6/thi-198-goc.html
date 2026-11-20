@@ -20,12 +20,12 @@
 </div>
 <div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
 </section></div></div>
-<header class="banner"><div class="banner-icon">🏆</div><div><div class="eyebrow">HỆ THỐNG TAT · THI THỬ CẤP TRƯỜNG</div><h1>THI 198 CÂU HỎI GỐC · LỚP 6</h1><p>198 ảnh đề gốc · 30 phút · Nút ANSWER xác nhận từng câu</p></div><div class="clock" aria-live="off">⏱ <b id="clock">30:00</b></div></header>
+<header class="banner"><div class="banner-icon">🏆</div><div><div class="eyebrow">HỆ THỐNG TAT · THI THỬ CẤP TRƯỜNG</div><h1>THI 198 CÂU HỎI GỐC · LỚP 6</h1><p>198 câu gốc · 30 phút · ANSWER khóa đáp án và tự chuyển câu</p></div><div class="clock" aria-live="off">⏱ <b id="clock">30:00</b></div></header>
 <main>
 <section class="welcome" id="welcome">
  <div class="ribbon">CHÀO MỪNG ĐẾN VỚI BÀI THI 198 CÂU GỐC</div>
  <div class="welcome-inner"><div class="welcome-icon">📜</div><h2>Làm bài trực tiếp trên 198 ảnh gốc</h2>
- <p>Đọc câu hỏi trong ảnh, chọn A–D hoặc nhập từ/câu, sau đó nhấn <b>ANSWER</b> để xác nhận. Có đồng hồ, chuyển câu, lưu tiến độ trong lượt thi và xem lại bài sau khi nộp.</p>
+ <p>Đọc đề gốc trong ảnh và trả lời trực tiếp ở bên dưới: chọn A–D, TRUE/FALSE, điền từ hoặc chạm thẻ sắp xếp câu. Nhấn <b>ANSWER</b> để khóa đáp án và <b>tự động sang câu tiếp theo</b>. Có đồng hồ, kết quả và xem lại từng câu.</p>
  <div class="notice"><b>Về chấm điểm:</b> 198 ảnh không đi kèm đáp án chuẩn và một số câu nghe không có tệp âm thanh gốc. TAT sẽ không tự tạo đáp án giả hoặc chấm sai các câu chưa có đáp án xác minh. Bạn có thể tự đánh dấu đúng/sai khi xem lại; khi quản trị viên bổ sung đáp án chuẩn, hệ thống tự chấm các câu đó.</div>
  <button id="begin" class="start-btn" type="button">▶ BẮT ĐẦU THI 198 CÂU</button>
  <button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button>
@@ -33,20 +33,22 @@
  </div>
 </section>
 <section id="exam" class="hidden" aria-label="Bài thi 198 câu gốc">
- <div class="exam-tools"><span id="progress" aria-live="polite">Câu 1/198</span><span id="savedCount">Đã xác nhận 0/198</span><button type="button" id="finishBtn" class="finish-btn">Nộp bài</button></div>
+ <div class="exam-tools"><span id="progress" aria-live="polite">Câu 1/198</span><span id="savedCount">Đã xác nhận 0/198</span><button type="button" id="finishBtn" class="finish-btn">Nộp bài</button></div><div class="progress-track" role="progressbar" aria-label="Tiến độ bài thi"><div id="progressFill" class="progress-fill"></div></div>
  <div class="nav-bar"><button type="button" id="pagePrev" class="nav-arrow" aria-label="10 câu trước">◀</button><div id="nav" class="nav-items" aria-label="Chọn số câu"></div><button type="button" id="pageNext" class="nav-arrow" aria-label="10 câu tiếp">▶</button></div>
  <article class="exam-card">
   <div class="question-top"><strong id="questionTitle">Câu 1</strong><span class="source-label">Ảnh đề gốc do bạn cung cấp</span></div>
   <div class="screenshot-frame"><img id="questionImage" src="./mau-198/cau-001.webp" alt="Câu hỏi gốc số 1"><p id="imageError" class="hidden image-error" role="alert">Không tải được ảnh câu hỏi. Hãy kiểm tra thư mục mau-198.</p></div>
-  <p class="image-note">Nút ANSWER xuất hiện bên trong ảnh chỉ là ảnh chụp. Hãy sử dụng nút ANSWER vàng bên dưới để gửi câu trả lời.</p>
+  <p class="image-note">Đề gốc được giữ nguyên trong ảnh. Chỉ nút ANSWER màu vàng <b>bên dưới phần trả lời</b> mới xác nhận câu và chuyển sang câu kế tiếp.</p>
   <fieldset class="answer-form"><legend>Trả lời câu hỏi</legend>
-   <div class="mode-switch" role="group" aria-label="Chọn dạng trả lời"><button type="button" class="mode" data-mode="choice">A / B / C / D</button><button type="button" class="mode" data-mode="text">Điền từ / câu</button><button type="button" class="mode" data-mode="order">Sắp xếp từ</button></div>
+   <p id="answerType" class="answer-type">Chọn đáp án trong ảnh</p>
+   <details class="mode-help"><summary>Chọn cách trả lời khác nếu ảnh không khớp</summary><div class="mode-switch" role="group" aria-label="Chọn dạng trả lời"><button type="button" class="mode" data-mode="choice">A / B / C / D</button><button type="button" class="mode" data-mode="tf">Đúng / Sai</button><button type="button" class="mode" data-mode="text">Điền từ / câu</button><button type="button" class="mode" data-mode="order">Sắp xếp từ</button></div></details>
    <div id="choiceBox" class="choice-box"><button type="button" data-choice="A">A</button><button type="button" data-choice="B">B</button><button type="button" data-choice="C">C</button><button type="button" data-choice="D">D</button></div>
+   <div id="tfBox" class="choice-box tf-box hidden"><button type="button" data-choice="TRUE">✔ TRUE (ĐÚNG)</button><button type="button" data-choice="FALSE">✖ FALSE (SAI)</button></div>
    <div id="textBox" class="hidden"><label for="textAnswer">Nhập từ, cụm từ hoặc câu trả lời theo ảnh</label><textarea id="textAnswer" rows="2" spellcheck="false" placeholder="Nhập đáp án của bạn..."></textarea></div>
-   <div id="orderBox" class="hidden"><label for="tileSource">Nhập các thẻ từ trong ảnh, phân tách bằng dấu |</label><div class="tile-setup"><input id="tileSource" type="text" placeholder="Ví dụ: hobby | new friends? | meeting"><button type="button" id="makeTiles">Tạo thẻ</button></div><div id="tileBank" class="tile-bank" aria-label="Các thẻ chưa chọn"></div><div class="tile-answer-label">Thứ tự đã xếp (chạm vào thẻ để bỏ):</div><div id="tileSelected" class="tile-selected" aria-label="Các thẻ đã xếp"></div><label for="orderAnswer">Hoặc nhập trực tiếp câu hoàn chỉnh</label><textarea id="orderAnswer" rows="2" placeholder="Nhập câu đã sắp xếp..."></textarea></div>
+   <div id="orderBox" class="hidden"><p class="order-instructions">Chạm các thẻ dưới đây theo thứ tự đúng để tạo câu hoàn chỉnh.</p><details class="tile-custom"><summary>Điều chỉnh thẻ nếu ảnh bị đọc thiếu</summary><label for="tileSource">Nhập các thẻ từ, phân tách bằng dấu |</label><div class="tile-setup"><input id="tileSource" type="text" placeholder="Ví dụ: hobby | new friends? | meeting"><button type="button" id="makeTiles">Tạo thẻ</button></div></details><div id="tileBank" class="tile-bank" aria-label="Các thẻ chưa chọn"></div><div class="tile-answer-label">Thứ tự đã xếp (chạm vào thẻ để bỏ):</div><div id="tileSelected" class="tile-selected" aria-label="Các thẻ đã xếp"></div><label for="orderAnswer">Hoặc nhập trực tiếp câu hoàn chỉnh</label><textarea id="orderAnswer" rows="2" placeholder="Nhập câu đã sắp xếp..."></textarea></div>
   </fieldset>
-  <div class="controls"><button type="button" id="prev" class="prev-btn">← CÂU TRƯỚC</button><button type="button" id="answerBtn" class="answer-btn">ANSWER</button><button type="button" id="next" class="next-btn">CÂU TIẾP THEO ➜</button></div>
-  <p id="answerStatus" class="answer-status" role="status" aria-live="polite"></p>
+  <div class="controls"><button type="button" id="answerBtn" class="answer-btn" aria-label="Khóa đáp án và tự chuyển câu kế tiếp">ANSWER</button></div>
+  <p id="answerStatus" class="answer-status" role="status" aria-live="polite"></p><p id="metaNotice" class="hidden meta-warning" role="alert"></p>
  </article>
 </section>
 <section id="results" class="hidden" aria-label="Kết quả và xem lại">

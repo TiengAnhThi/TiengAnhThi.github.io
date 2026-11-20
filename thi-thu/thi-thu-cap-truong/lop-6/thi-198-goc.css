@@ -7,3 +7,18 @@
 @media(max-width:680px){.banner{gap:12px}.banner-icon{font-size:30px;padding:10px}.clock{font-size:19px}.exam-card{padding:10px}.nav-item,.nav-arrow{min-width:33px;padding:7px 5px}.nav-items{gap:4px}.controls{gap:10px}.answer-btn{order:0;flex:1 1 100%;max-width:320px}.prev-btn,.next-btn{order:1;flex:1 1 120px;font-size:13px}.choice-box{grid-template-columns:repeat(2,minmax(0,1fr))}.results-body{padding:15px}.ioe-pay-layout{grid-template-columns:1fr}.ioe-pay-qr{justify-items:start}.toplink{font-size:12px}}
 
 #ioeClosePayment{display:none}#ioeGate:has(#ioePayment:not(.ioe-hide)) #ioeClosePayment{display:inline-block}
+
+/* TAT v3: ANSWER duy nhất, tự chuyển câu; dạng câu gốc được tự nhận diện. */
+.controls{justify-content:center!important;gap:0!important}
+.controls .answer-btn{min-width:min(92vw,280px);width:min(92vw,320px)}
+.progress-track{height:9px;background:#12293f;border:1px solid #64819a;border-radius:99px;margin:9px 2px 15px;overflow:hidden}
+.progress-fill{width:0%;height:100%;background:linear-gradient(90deg,#f6bd45,#ffde77);transition:width .18s}
+.answer-type{font-size:18px;font-weight:900;color:#204568;margin:7px 0 14px}
+.mode-help,.tile-custom{margin:9px 0;padding:9px 11px;background:#eaf0f8;border-radius:8px;border:1px solid #c9d7e7}
+.mode-help summary,.tile-custom summary{cursor:pointer;color:#3c6180;font-size:13px;font-weight:700}
+.mode-help .mode-switch{margin:10px 0 0}
+.choice-box.tf-box{grid-template-columns:repeat(2,minmax(0,1fr))}
+.choice-box.tf-box button{font-size:17px}
+.order-instructions{font-weight:700;color:#284a69;margin:6px 0 13px}
+.meta-warning{padding:12px;border:1px solid #e9ac5b;border-radius:8px;background:#fff2d6;color:#794614}
+@media(max-width:680px){.controls .answer-btn{min-width:0;flex:1 1 100%;max-width:320px}.answer-type{font-size:16px}.choice-box.tf-box button{font-size:13px;padding:12px 6px}}
