@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TAT | Thi 198 câu hỏi gốc · Lớp 6 cấp trường</title>
+<link rel="stylesheet" href="./thi-198-goc.css">
+</head>
+<body>
+<div class="toplink"><a href="./index.html">← Thi thử 6.000 câu</a><span>TAT / Lớp 6 / 198 câu hỏi gốc</span><a href="../../../index.html#lop-6">Chọn cấp lớp 6</a></div>
+<div class="ioe-account"><span id="ioeIdentity">Đang kết nối Firebase…</span><div><button id="ioePremium" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button> <span id="ioePremiumBadge" class="ioe-premium-badge ioe-hide" title="Tài khoản Premium đang hoạt động">⭐ PREMIUM</span> <button id="ioeLogout" onclick="ioeLogout()">Đăng xuất</button></div></div><div class="ioe-gate" id="ioeGate"><div class="ioe-box"><div class="ioe-gate-heading"><h2 id="ioeGateTitle">Đăng nhập TAT lớp 6</h2><button type="button" id="ioeClosePayment" class="ioe-close-payment" onclick="ioeClosePayment()" aria-label="Đóng cửa sổ thanh toán">✕</button></div><p id="ioeGateText">Đăng nhập Google để thi bộ 198 câu gốc (dùng chung số lượt TAT).</p><button id="ioeLogin" onclick="ioeLogin()">Đăng nhập bằng Google</button><button type="button" id="ioeGateUpgrade" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button><p id="ioeGateStatus"></p><section id="ioePayment" class="ioe-payment ioe-hide" aria-label="Thanh toán Premium">
+<div class="ioe-pay-head"><div><h3>⭐ Gia hạn Premium</h3><strong class="ioe-price">50.000đ <small>/ 30 ngày</small></strong></div><span class="ioe-pay-chip">Hết 5 lượt miễn phí</span></div>
+<div class="ioe-pay-layout">
+ <div class="ioe-pay-details">
+  <div class="ioe-pay-field"><span>Ngân hàng</span><b>AGRIBANK</b></div>
+  <div class="ioe-pay-field"><span>Chủ tài khoản</span><b>VU THANH TUYEN</b></div>
+  <div class="ioe-pay-field"><span>Số tài khoản</span><b>4603205297466</b><button type="button" onclick="ioeCopyBank()">Sao chép STK</button></div>
+  <div class="ioe-pay-field"><span>Nội dung chuyển khoản</span><b id="ioePayMemo">—</b><button type="button" onclick="ioeCopyMemo()">Sao chép mã</button></div>
+ </div>
+ <div class="ioe-pay-qr"><img id="ioePayQr" alt="Mã VietQR thanh toán AGRIBANK" width="180" height="220"/><span>Quét bằng ứng dụng ngân hàng</span></div>
+</div>
+<div class="ioe-pay-footer"><p>Kiểm tra người nhận, số tiền và nội dung trước khi chuyển khoản. Premium được kích hoạt sau khi quản trị viên xác nhận.</p><p class="ioe-pay-email">Tài khoản Google: <span id="ioePayEmail"></span></p><div class="ioe-pay-actions"><a class="ioe-zalo" href="https://zalo.me/0397072918" target="_blank" rel="noopener noreferrer">💬 Liên hệ Zalo</a><button type="button" class="ioe-outline" onclick="ioeCheckPayment()">↻ Kiểm tra kích hoạt</button></div><p id="ioePayNotice" role="status"></p></div>
+</section></div></div>
+<header class="banner"><div class="banner-icon">🏆</div><div><div class="eyebrow">HỆ THỐNG TAT · THI THỬ CẤP TRƯỜNG</div><h1>THI 198 CÂU HỎI GỐC · LỚP 6</h1><p>198 ảnh đề gốc · 30 phút · Nút ANSWER xác nhận từng câu</p></div><div class="clock" aria-live="off">⏱ <b id="clock">30:00</b></div></header>
+<main>
+<section class="welcome" id="welcome">
+ <div class="ribbon">CHÀO MỪNG ĐẾN VỚI BÀI THI 198 CÂU GỐC</div>
+ <div class="welcome-inner"><div class="welcome-icon">📜</div><h2>Làm bài trực tiếp trên 198 ảnh gốc</h2>
+ <p>Đọc câu hỏi trong ảnh, chọn A–D hoặc nhập từ/câu, sau đó nhấn <b>ANSWER</b> để xác nhận. Có đồng hồ, chuyển câu, lưu tiến độ trong lượt thi và xem lại bài sau khi nộp.</p>
+ <div class="notice"><b>Về chấm điểm:</b> 198 ảnh không đi kèm đáp án chuẩn và một số câu nghe không có tệp âm thanh gốc. TAT sẽ không tự tạo đáp án giả hoặc chấm sai các câu chưa có đáp án xác minh. Bạn có thể tự đánh dấu đúng/sai khi xem lại; khi quản trị viên bổ sung đáp án chuẩn, hệ thống tự chấm các câu đó.</div>
+ <button id="begin" class="start-btn" type="button">▶ BẮT ĐẦU THI 198 CÂU</button>
+ <button type="button" id="ioeWelcomePremium" class="ioe-upgrade-cta ioe-hide" onclick="ioeShowPayment()">⭐ Nâng cấp Premium</button>
+ <p class="welcome-hint">Dùng chung tài khoản, lượt thi và quyền lợi Ultimate/Premium với TAT.</p>
+ </div>
+</section>
+<section id="exam" class="hidden" aria-label="Bài thi 198 câu gốc">
+ <div class="exam-tools"><span id="progress" aria-live="polite">Câu 1/198</span><span id="savedCount">Đã xác nhận 0/198</span><button type="button" id="finishBtn" class="finish-btn">Nộp bài</button></div>
+ <div class="nav-bar"><button type="button" id="pagePrev" class="nav-arrow" aria-label="10 câu trước">◀</button><div id="nav" class="nav-items" aria-label="Chọn số câu"></div><button type="button" id="pageNext" class="nav-arrow" aria-label="10 câu tiếp">▶</button></div>
+ <article class="exam-card">
+  <div class="question-top"><strong id="questionTitle">Câu 1</strong><span class="source-label">Ảnh đề gốc do bạn cung cấp</span></div>
+  <div class="screenshot-frame"><img id="questionImage" src="./mau-198/cau-001.webp" alt="Câu hỏi gốc số 1"><p id="imageError" class="hidden image-error" role="alert">Không tải được ảnh câu hỏi. Hãy kiểm tra thư mục mau-198.</p></div>
+  <p class="image-note">Nút ANSWER xuất hiện bên trong ảnh chỉ là ảnh chụp. Hãy sử dụng nút ANSWER vàng bên dưới để gửi câu trả lời.</p>
+  <fieldset class="answer-form"><legend>Trả lời câu hỏi</legend>
+   <div class="mode-switch" role="group" aria-label="Chọn dạng trả lời"><button type="button" class="mode" data-mode="choice">A / B / C / D</button><button type="button" class="mode" data-mode="text">Điền từ / câu</button><button type="button" class="mode" data-mode="order">Sắp xếp từ</button></div>
+   <div id="choiceBox" class="choice-box"><button type="button" data-choice="A">A</button><button type="button" data-choice="B">B</button><button type="button" data-choice="C">C</button><button type="button" data-choice="D">D</button></div>
+   <div id="textBox" class="hidden"><label for="textAnswer">Nhập từ, cụm từ hoặc câu trả lời theo ảnh</label><textarea id="textAnswer" rows="2" spellcheck="false" placeholder="Nhập đáp án của bạn..."></textarea></div>
+   <div id="orderBox" class="hidden"><label for="tileSource">Nhập các thẻ từ trong ảnh, phân tách bằng dấu |</label><div class="tile-setup"><input id="tileSource" type="text" placeholder="Ví dụ: hobby | new friends? | meeting"><button type="button" id="makeTiles">Tạo thẻ</button></div><div id="tileBank" class="tile-bank" aria-label="Các thẻ chưa chọn"></div><div class="tile-answer-label">Thứ tự đã xếp (chạm vào thẻ để bỏ):</div><div id="tileSelected" class="tile-selected" aria-label="Các thẻ đã xếp"></div><label for="orderAnswer">Hoặc nhập trực tiếp câu hoàn chỉnh</label><textarea id="orderAnswer" rows="2" placeholder="Nhập câu đã sắp xếp..."></textarea></div>
+  </fieldset>
+  <div class="controls"><button type="button" id="prev" class="prev-btn">← CÂU TRƯỚC</button><button type="button" id="answerBtn" class="answer-btn">ANSWER</button><button type="button" id="next" class="next-btn">CÂU TIẾP THEO ➜</button></div>
+  <p id="answerStatus" class="answer-status" role="status" aria-live="polite"></p>
+ </article>
+</section>
+<section id="results" class="hidden" aria-label="Kết quả và xem lại">
+ <div class="ribbon">KẾT QUẢ BÀI THI 198 CÂU GỐC</div>
+ <div class="results-body"><h2>🏅 Bài thi đã nộp</h2><div id="resultSummary" class="summary"></div>
+ <p class="notice">Các câu chưa có đáp án được xác minh được ghi <b>chưa chấm</b>, không tính là sai. Phần đánh dấu đúng/sai thủ công chỉ để người học tự đối chiếu, không phải điểm chính thức.</p>
+ <div id="resultAccess" class="result-access"></div>
+ <div class="review-tools"><label for="reviewFilter">Lọc câu: </label><select id="reviewFilter"><option value="all">Tất cả</option><option value="unanswered">Chưa trả lời</option><option value="ungraded">Chưa chấm</option><option value="correct">Đúng</option><option value="wrong">Sai</option></select><button type="button" id="exportBtn">⬇ Xuất câu trả lời JSON</button></div>
+ <div class="review-nav"><button type="button" id="reviewPrev">← Câu trước</button><label>Câu <input id="reviewJump" type="number" min="1" max="198" value="1"> / 198</label><button type="button" id="reviewNext">Câu tiếp →</button></div>
+ <div class="review-card"><h3 id="reviewTitle">Câu 1</h3><img id="reviewImage" src="./mau-198/cau-001.webp" alt="Ảnh câu hỏi để xem lại"><p id="reviewGiven"></p><p id="reviewKey"></p><p id="reviewExplain"></p><div id="manualMark" class="manual-mark"><span>Tự đối chiếu:</span><button type="button" data-mark="correct">✓ Tôi làm đúng</button><button type="button" data-mark="wrong">✕ Tôi làm sai</button><button type="button" data-mark="none">Bỏ đánh dấu</button></div></div>
+ <div class="result-actions"><a href="./index.html">← Quay lại thi thử 6.000 câu</a><button type="button" id="newExam">Làm lại 198 câu</button></div></div>
+</section>
+</main>
+<script src="./thi-198-goc.js" defer></script>
+<script type="module" src="./ioe-auth.js"></script>
+</body></html>
