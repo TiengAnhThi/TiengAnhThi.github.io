@@ -126,7 +126,7 @@ function showPayment(){
  $('ioeClosePayment').classList.remove('ioe-hide');
  $('ioeGate').classList.remove('ioe-hide');
 }
-function hidePayment(){$('ioePayment').classList.add('ioe-hide');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';$('ioeGateText').style.display='';}
+function hidePayment(){$('ioePayment').classList.add('ioe-hide');$('ioeGateTitle').textContent='Đăng nhập TAT lớp 9';$('ioeGateText').style.display='';}
 window.ioeClosePayment=()=>{paymentDismissed=true;hidePayment();$('ioeGate').classList.add('ioe-hide');if(window.ioeExamActive!==true && typeof window.ioeReturnToStart==='function')window.ioeReturnToStart();};
 window.ioeCopyBank=()=>navigator.clipboard.writeText('4603205297466').then(()=>{$('ioePayNotice').textContent='Đã sao chép số tài khoản.';}).catch(()=>{$('ioePayNotice').textContent='Số tài khoản: 4603205297466';});
 window.ioeCopyMemo=()=>navigator.clipboard.writeText($('ioePayMemo').textContent).then(()=>{$('ioePayNotice').textContent='Đã sao chép nội dung chuyển khoản.';}).catch(()=>{$('ioePayNotice').textContent='Hãy sao chép nội dung chuyển khoản hiển thị phía trên.';});
@@ -146,11 +146,11 @@ function refresh(){
  $('ioeGateUpgrade').classList.add('ioe-hide');
  $('ioeLogin').style.display='none';
  if(window.ioeAllowed){hidePayment();$('ioeGate').classList.add('ioe-hide');status('');}
- else if(!paymentDismissed){hidePayment();show('Bạn hãy nâng cấp Premium để tiếp tục thi.');$('ioeGateTitle').textContent='Nâng cấp Premium';$('ioeGateUpgrade').classList.remove('ioe-hide');status('');}
+ else if(!paymentDismissed){hidePayment();show('Bạn hãy nâng cấp Premium để tiếp tục ôn tập.');$('ioeGateTitle').textContent='Nâng cấp Premium';$('ioeGateUpgrade').classList.remove('ioe-hide');status('');}
  else{hidePayment();$('ioeGate').classList.add('ioe-hide');}
 }
 window.ioeClaimAttempt=async()=>{
- if(!me||!db)throw new Error('Bạn cần đăng nhập Google trước khi thi.');
+ if(!me||!db)throw new Error('Bạn cần đăng nhập Google trước khi ôn tập.');
  if(!sessionOwned)throw new Error('Phiên đăng nhập không hợp lệ. Vui lòng đăng nhập lại.');
  if(hasUltimateFlag()){ultimateActive=true;return 'Ultimate';}
  if(premiumEndMs()>Date.now()){premiumActive=true;return 'Premium';}
@@ -159,7 +159,7 @@ window.ioeClaimAttempt=async()=>{
  const newCount=await runTransaction(db,async transaction=>{
   const snap=await transaction.get(ref);
   const count=snap.exists()?snap.data().count:0;
-  if(!Number.isInteger(count)||count<0||count>=MAX_ATTEMPTS)throw new Error('Bạn đã sử dụng hết 5 lượt thi thử.');
+  if(!Number.isInteger(count)||count<0||count>=MAX_ATTEMPTS)throw new Error('Bạn đã sử dụng hết 5 lượt ôn tập.');
   if(snap.exists())transaction.update(ref,{count:count+1});
   else transaction.set(ref,{count:1,uid:uid});
   return count+1;
@@ -190,9 +190,9 @@ else{
    $('ioePremiumBadge').classList.add('ioe-hide');
    $('ioeWelcomePremium').classList.add('ioe-hide');$('ioeGateUpgrade').classList.add('ioe-hide');
 
-   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để thi thử tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';}status('');ultimateActive=false;premiumActive=false;return;}
+   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để ôn tập tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập TAT lớp 9';}status('');ultimateActive=false;premiumActive=false;return;}
    $('ioeIdentity').textContent=user.displayName||user.email||'Đã đăng nhập Google';
-   show('Đã đăng nhập Google. Đang kiểm tra số lượt thi…');
+   show('Đã đăng nhập Google. Đang kiểm tra số lượt ôn tập…');
    status('Đang xác minh phiên đăng nhập và Cloud Firestore…');
    try{
     await withTimeout(acquireSession(user.uid),12000);
