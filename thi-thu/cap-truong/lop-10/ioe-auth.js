@@ -159,7 +159,7 @@ window.ioeClaimAttempt=async()=>{
  const newCount=await runTransaction(db,async transaction=>{
   const snap=await transaction.get(ref);
   const count=snap.exists()?snap.data().count:0;
-  if(!Number.isInteger(count)||count<0||count>=MAX_ATTEMPTS)throw new Error('Bạn đã sử dụng hết 5 lượt thi thử.');
+  if(!Number.isInteger(count)||count<0||count>=MAX_ATTEMPTS)throw new Error('Bạn đã sử dụng hết 5 lượt ôn tập.');
   if(snap.exists())transaction.update(ref,{count:count+1});
   else transaction.set(ref,{count:1,uid:uid});
   return count+1;
@@ -190,7 +190,7 @@ else{
    $('ioePremiumBadge').classList.add('ioe-hide');
    $('ioeWelcomePremium').classList.add('ioe-hide');$('ioeGateUpgrade').classList.add('ioe-hide');
 
-   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để thi thử tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';}status('');ultimateActive=false;premiumActive=false;return;}
+   if(!user){hidePayment();$('ioeIdentity').textContent='Chưa đăng nhập';$('ioeLogin').style.display='';$('ioeLogin').disabled=false;if(displaced){show('Tài khoản của bạn vừa được đăng nhập ở một nơi khác.');$('ioeGateTitle').textContent='Phiên đăng nhập đã kết thúc';}else{show('Đăng nhập Google để ôn tập tối đa 5 lượt.');$('ioeGateTitle').textContent='Đăng nhập IOE lớp 6';}status('');ultimateActive=false;premiumActive=false;return;}
    $('ioeIdentity').textContent=user.displayName||user.email||'Đã đăng nhập Google';
    show('Đã đăng nhập Google. Đang kiểm tra số lượt thi…');
    status('Đang xác minh phiên đăng nhập và Cloud Firestore…');
