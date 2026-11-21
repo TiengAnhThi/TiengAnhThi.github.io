@@ -1,5 +1,0 @@
-TAT – IOE LỚP 6 CẤP QUỐC GIA – BẢN TIẾP TỤC BIÊN SOẠN
-- 2.000 câu hỏi trong ngân hàng cấp Quốc gia, giữ nguyên các cấp thi khác.
-- Biên soạn lại toàn bộ 190 câu nghe từ 38 đoạn ghi âm tình huống có ngữ cảnh (mỗi đoạn 5 điểm thông tin), thay cho những câu nghe chỉ đổi tên người và địa điểm.
-- Kiểm tra tự động: 190 đáp án nghe xuất hiện trong nội dung đọc, cấu trúc đáp án của toàn bộ 2.000 câu, đồng bộ dữ liệu HTML/JSON, tính hợp lệ ZIP.
-- Lưu ý: 38 đoạn nghe dùng chung trong 190 câu nên không tương đương 190 bản ghi âm độc lập; ngân hàng chưa được kiểm định sư phạm thủ công từng câu.

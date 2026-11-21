@@ -1,8 +1,0 @@
-TAT - KIỂM TRA NGÂN HÀNG QUỐC GIA LỚP 6
-Tổng số: 2000
-Phân bố: {'choice': 760, 'fill': 570, 'order': 380, 'listen': 190, 'picture': 100}
-Câu lỗi cấu trúc: 0
-Câu trùng hoàn toàn theo nội dung chính: 2
-Đã đồng bộ HTML và JSON; kiểm tra cấu hình chọn 40 câu mỗi dạng = 200 câu/đề.
-Đã sửa lỗi mạo từ trong một số giải thích và bổ sung nội dung cụ thể cho chỉ dẫn sắp xếp câu.
-GIỚI HẠN: Chưa có bằng chứng kiểm định sư phạm độc lập từng câu, mức độ cấp Quốc gia hoặc thử nghiệm giao diện trên mọi trình duyệt.

@@ -1,3 +1,0 @@
-Bổ sung 94 câu mới cho cấp trường lớp 3, dựa trên các dạng ảnh người dùng gửi: điền chữ, ngữ pháp trắc nghiệm, tìm câu đúng, câu hỏi từ vựng, hình tình huống và đúng/sai.
-Có 4 minh họa SVG tích hợp trực tiếp cho câu hỏi, không sử dụng hình ảnh bản quyền từ video.
-Tổng ngân hàng vẫn 2000 câu; các cấp thi khác không thay đổi.
