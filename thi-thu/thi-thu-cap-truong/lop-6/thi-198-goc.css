@@ -44,3 +44,32 @@
 .tat-review-prompt{font-size:20px;font-weight:800;margin:16px 0;color:#173a57;white-space:pre-wrap}.source-review{margin-top:16px;color:#27547c}.source-review summary{cursor:pointer}.source-review img{margin-top:12px}
 #results .tat-passage{background:#eef5ff}.results-references{margin-top:25px}
 @media(max-width:680px){.tat-native-choices{grid-template-columns:1fr;gap:10px}.tat-native-choices button{min-height:60px;padding:13px 16px;font-size:17px}.tat-native-card{padding:16px 0}.tat-prompt{margin:20px auto;font-size:23px}.tat-native-card .tile-bank button,.tat-native-card .tile-selected button{font-size:16px;min-height:52px;padding:12px}}
+
+/* Đồng bộ lời giải câu sai với phần ôn tập TAT */
+.tat-review-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.tat-review-tabs button{background:#f5f8ff;border:2px solid #c6d5e7;color:#234c6c;padding:11px 17px;border-radius:10px;font-weight:850;cursor:pointer}
+.tat-review-tabs button.active{background:#234d72;color:#fff;border-color:#234d72}
+.tat-review-tabs button:focus-visible{outline:3px solid #e8ae45;outline-offset:2px}
+.tat-review-tabs button span{font-weight:900;margin-left:5px}
+.review-card{border-left:5px solid #a3b6cb}
+.review-card.tat-review-wrong{border-left-color:#df755a}
+.review-card.tat-review-correct{border-left-color:#42a777}
+.review-card.tat-review-unanswered{border-left-color:#e0b45d}
+.tat-review-heading{font-weight:900;color:#244968;margin:16px 0 8px}
+.tat-review-prompt{margin:8px 0 13px;font-size:18px;white-space:pre-wrap}
+.tat-review-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 17px}
+.tat-review-options .tat-review-heading,.tat-review-options .tat-review-tiles,.tat-review-options .tat-review-hint{grid-column:1/-1}
+.tat-review-option{background:#f0f5fb;border:1px solid #c9d7e6;border-radius:9px;padding:12px 14px;overflow-wrap:anywhere}
+.tat-review-option.correct{background:#e5f6e9;border:2px solid #42a777;color:#175f3b;font-weight:800}
+.tat-review-option.wrong{background:#fff0eb;border:2px solid #db795f;color:#8c3a2a}
+.tat-review-tiles{display:flex;gap:8px;flex-wrap:wrap}
+.tat-review-tiles span{background:#fff1d2;border:1px solid #e3c181;border-radius:8px;padding:8px 11px;color:#543e21}
+.tat-review-given,.tat-review-key{padding:11px 14px;border-radius:8px;margin:10px 0!important;font-weight:750}
+.tat-review-given{background:#fff0eb;color:#943c2c}
+.tat-review-key{background:#e6f7e9;color:#18623c}
+.tat-review-explain{background:#f1f6ff;border:1px solid #bcd2e8;border-left:4px solid #3e78a8;border-radius:10px;padding:15px 17px;line-height:1.7;overflow-wrap:anywhere;margin:16px 0}
+.tat-review-explain h4{margin:0 0 12px;color:#153f63;font-size:19px}
+.tat-review-explain-step{margin:9px 0;padding:8px 10px;background:#fff;border-radius:7px;white-space:pre-line}
+.tat-review-explain-step strong{color:#194c73}
+.tat-review-hint{margin:3px 0 10px;color:#546f86}
+@media(max-width:680px){.tat-review-options{grid-template-columns:1fr}.tat-review-tabs button{flex:1;padding:10px 9px}.tat-review-explain{padding:11px}.tat-review-explain-step{padding:8px}}

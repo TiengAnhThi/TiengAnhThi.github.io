@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TAT | Thi 174 câu chuyển từ 199 ảnh gốc · Lớp 3 cấp trường</title>
-<link rel="stylesheet" href="./thi-199-goc.css">
+<link rel="stylesheet" href="./thi-199-goc.css?v=20261122">
 </head>
 <body>
 <div class="toplink"><a href="./index.html">← Thi thử 6.000 câu</a><span>TAT / Lớp 3 / 174 câu làm từ 199 ảnh</span><a href="../../../index.html#lop-3">Chọn cấp lớp 3</a></div>
@@ -55,14 +55,16 @@
  <div class="results-body"><h2>🏅 Hoàn thành bài tập TAT</h2><div id="resultSummary" class="summary"></div>
  <p class="notice">Điểm được tính theo đáp án TAT đã đối chiếu ảnh mẫu, <b>không phải kết quả thi chính thức</b>. 25 câu tham khảo không được tính điểm hoặc yêu cầu làm bài.</p>
  <div id="resultAccess" class="result-access"></div>
+ <div class="tat-review-tabs" role="group" aria-label="Xem lời giải theo kết quả"><button type="button" id="reviewWrongTab" data-review-filter="wrong" aria-pressed="false">❌ Câu sai <span id="reviewWrongCount">0</span></button><button type="button" id="reviewCorrectTab" data-review-filter="correct" aria-pressed="false">✅ Câu đúng <span id="reviewCorrectCount">0</span></button></div>
  <div class="review-tools"><label for="reviewFilter">Lọc câu:</label><select id="reviewFilter"><option value="all">Tất cả</option><option value="wrong">Câu sai</option><option value="correct">Câu đúng</option><option value="unanswered">Chưa trả lời</option></select><button type="button" id="exportBtn">⬇ Xuất bài làm JSON</button></div>
  <div class="review-nav"><button type="button" id="reviewPrev">← Câu trước</button><span id="reviewCounter"></span><button type="button" id="reviewNext">Câu tiếp →</button></div>
- <div class="review-card"><h3 id="reviewTitle"></h3><div id="reviewPassage" class="tat-passage hidden"></div><img id="reviewIllustration" class="tat-illustration hidden" alt="Hình minh họa"><div id="reviewPrompt" class="tat-review-prompt"></div><p id="reviewGiven"></p><p id="reviewKey"></p><p id="reviewExplain"></p><details class="source-review"><summary>🔎 Xem lại ảnh gốc để đối chiếu (không dùng khi làm bài)</summary><img id="reviewImage" alt="Ảnh gốc tham khảo"></details></div>
+ <div class="review-card" id="reviewCard"><h3 id="reviewTitle"></h3><div id="reviewPassage" class="tat-passage hidden"></div><img id="reviewIllustration" class="tat-illustration hidden" alt="Hình minh họa"><div class="tat-review-heading">📄 Đề bài (TAT chuyển từ ảnh mẫu)</div><div id="reviewPrompt" class="tat-review-prompt"></div><div id="reviewOptions" class="tat-review-options"></div><p id="reviewGiven" class="tat-review-given"></p><p id="reviewKey" class="tat-review-key"></p><div id="reviewExplain" class="tat-review-explain" aria-label="Giải thích chi tiết"></div><details class="source-review"><summary>🔎 Xem lại ảnh gốc để đối chiếu (không dùng khi làm bài)</summary><img id="reviewImage" alt="Ảnh gốc tham khảo"></details></div>
  <div class="result-actions"><a href="./index.html">← Về thi thử Cấp trường lớp 3</a><button type="button" id="newExam">Làm lại bộ câu gốc</button></div>
  <details class="reference-list results-references"><summary>📋 25 câu tham khảo — không tính điểm, không cần làm</summary><div id="resultReferences"></div></details>
  </div>
 </section>
 </main>
-<script src="./thi-199-goc.js" defer></script>
+<script src="../tat-review-explanations.js?v=20261122" defer></script>
+<script src="./thi-199-goc.js?v=20261122" defer></script>
 <script type="module" src="./ioe-auth.js"></script>
 </body></html>

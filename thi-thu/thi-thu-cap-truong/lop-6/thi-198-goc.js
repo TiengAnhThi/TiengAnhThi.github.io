@@ -53,17 +53,62 @@ function stopReviewTimer(){clearInterval(reviewTimer);reviewTimer=null;}
 function startReviewTimer(){stopReviewTimer();reviewUnlimited=typeof window.ioeHasActivePremium==='function'&&window.ioeHasActivePremium();const plan=typeof window.ioeGetPlanType==='function'?window.ioeGetPlanType():'free';if(reviewUnlimited){$('resultAccess').textContent=(plan==='ultimate'?'💎 ULTIMATE':'⭐ PREMIUM')+' — Không giới hạn thời gian xem lại bài.';return;}reviewDeadline=Date.now()+5*60*1000;function tick(){const left=Math.max(0,Math.ceil((reviewDeadline-Date.now())/1000));$('resultAccess').textContent=`⏳ Tài khoản thường: còn ${Math.floor(left/60)}:${String(left%60).padStart(2,'0')} để xem lại và đọc lời giải.`;if(left===0){stopReviewTimer();window.ioeExamActive=false;window.location.replace('./index.html');}}tick();reviewTimer=setInterval(tick,1000);}
 function resultSummary(){const t=tally(),score=t.correct*10,maximum=questions.length*10;const box=$('resultSummary');box.replaceChildren();[['Điểm TAT',score+' / '+maximum],['Đã làm',t.answered+' / '+questions.length],['Đúng',t.correct],['Sai',t.wrong],['Chưa trả lời',t.unanswered],['Tham khảo (bỏ qua)',t.reference]].forEach(([label,value])=>{const item=document.createElement('div'),l=document.createElement('span'),v=document.createElement('strong');l.textContent=label;v.textContent=String(value);item.append(l,v);box.append(item);});}
 function filteredIndices(){const f=$('reviewFilter').value;return questions.map((q,i)=>i).filter(i=>f==='all'||(f==='unanswered'&&!answers[i].locked)||(f==='correct'&&correct(i)===true)||(f==='wrong'&&correct(i)===false));}
-function renderReview(){const arr=filteredIndices();if(!arr.length){$('reviewTitle').textContent='Không có câu phù hợp bộ lọc';['reviewPassage','reviewIllustration','reviewPrompt','reviewGiven','reviewKey','reviewExplain','reviewImage'].forEach(id=>{const el=$(id);if(el)el.textContent='';});$('reviewPrev').disabled=true;$('reviewNext').disabled=true;return;}
+function reviewFilterTabs(){
+ const f=$('reviewFilter').value;
+ for(const kind of ['wrong','correct']){
+  const tab=$(kind==='wrong'?'reviewWrongTab':'reviewCorrectTab');
+  tab.classList.toggle('active',f===kind);
+  tab.setAttribute('aria-pressed',String(f===kind));
+ }
+}
+function reviewFullQuestion(q){
+ const el=$('reviewOptions');el.replaceChildren();
+ if(q.mode==='choice'){
+  const title=document.createElement('div');title.className='tat-review-heading';title.textContent='Các lựa chọn A–D';el.append(title);
+  q.options.forEach((opt,j)=>{
+   const letter='ABCD'[j],b=document.createElement('div');
+   b.className='tat-review-option'+(letter===q.answer?' correct':'')+(letter===answers[reviewIndex].value&&letter!==q.answer?' wrong':'');
+   b.textContent=`${letter}. ${opt}`;el.append(b);
+  });
+ }else if(q.mode==='order'){
+  const title=document.createElement('div');title.className='tat-review-heading';title.textContent='Các thẻ từ trong đề gốc';el.append(title);
+  const bank=document.createElement('div');bank.className='tat-review-tiles';
+  q.tiles.forEach(tile=>{const b=document.createElement('span');b.textContent=tile;bank.append(b)});
+  el.append(bank);
+ }else if(q.mode==='tf'){
+  const hint=document.createElement('p');hint.className='tat-review-hint';hint.textContent='Dạng Đúng / Sai — đối chiếu với đoạn văn hoặc hình minh họa phía trên.';el.append(hint);
+ }
+}
+function reviewDetailedExplanation(q,i,result){
+ const box=$('reviewExplain');box.replaceChildren();
+ const h=document.createElement('h4');h.textContent='📘 Giải thích chi tiết';box.append(h);
+ const helper=window.TATOriginalReview;
+ if(!helper){const p=document.createElement('p');p.textContent=q.explanation||'Đối chiếu nội dung câu hỏi và đáp án TAT.';box.append(p);return;}
+ const detail=helper.explain(q,response(i),result);
+ for(const step of detail.steps){
+  const section=document.createElement('section');section.className='tat-review-explain-step';
+  const label=document.createElement('strong');label.textContent=step.label+': ';
+  const body=document.createElement('span');body.textContent=step.text;
+  section.append(label,body);box.append(section);
+ }
+}
+function renderReview(){const arr=filteredIndices();if(!arr.length){$('reviewTitle').textContent='Không có câu phù hợp bộ lọc';['reviewPassage','reviewIllustration','reviewPrompt','reviewGiven','reviewKey','reviewExplain','reviewOptions','reviewImage'].forEach(id=>{const el=$(id);if(el)el.textContent='';});$('reviewPrev').disabled=true;$('reviewNext').disabled=true;reviewFilterTabs();return;}
  if(!arr.includes(reviewIndex))reviewIndex=arr[0];const i=reviewIndex,q=questions[i],a=answers[i],result=correct(i),pos=arr.indexOf(i);$('reviewCounter').textContent=`Câu ${pos+1}/${arr.length} (gốc #${q.number})`;$('reviewTitle').textContent=`Câu ${i+1} · Mẫu #${q.number} — ${result===null?'Chưa trả lời':result?'✓ Đúng':'✕ Sai'}`;
  $('reviewPassage').textContent=q.passage||'';$('reviewPassage').classList.toggle('hidden',!q.passage);const ill=$('reviewIllustration');ill.classList.toggle('hidden',!q.illustration);if(q.illustration)ill.src=q.illustration;else ill.removeAttribute('src');
- $('reviewPrompt').textContent=q.prompt+(q.mode==='choice'?'\n'+q.options.map((o,j)=>`${'ABCD'[j]}. ${o}`).join('  |  '):'');
- $('reviewGiven').textContent=`Bạn trả lời: ${a.locked?(q.mode==='choice'?`${a.value}. ${q.options['ABCD'.indexOf(a.value)]}`:String(response(i))):'Chưa trả lời'}`;
- $('reviewKey').textContent=`Đáp án TAT: ${q.mode==='choice'?`${q.answer}. ${q.options['ABCD'.indexOf(q.answer)]}`:q.answer}`;
- $('reviewExplain').textContent=q.explanation?'Giải thích: '+q.explanation:(q.mode==='order'?'Giải thích: Sắp xếp các thẻ theo đúng cấu trúc câu.':q.mode==='text'?'Giải thích: Điền từ hoặc cụm từ hoàn chỉnh để câu đúng nghĩa và ngữ pháp.':'Giải thích: Đối chiếu đáp án đúng trong câu hỏi gốc.');
+ $('reviewPrompt').textContent=q.prompt;
+ reviewFullQuestion(q);
+ const display=q.mode==='choice'?(v=>{const idx='ABCD'.indexOf(v);return idx<0?String(v):`${v}. ${q.options[idx]}`;}):v=>String(v);
+ const user=a.locked?(q.mode==='tf'?(response(i)==='TRUE'?'ĐÚNG (TRUE)':'SAI (FALSE)'):display(response(i))):'Chưa trả lời';
+ const expected=q.mode==='choice'?display(q.answer):q.mode==='tf'?(q.answer==='TRUE'?'ĐÚNG (TRUE)':'SAI (FALSE)'):q.answer;
+ $('reviewGiven').textContent=`Bạn đã trả lời: ${user}`;
+ $('reviewKey').textContent=`Đáp án đúng (TAT): ${expected}`;
+ const card=$('reviewCard');card.classList.toggle('tat-review-wrong',result===false);card.classList.toggle('tat-review-correct',result===true);card.classList.toggle('tat-review-unanswered',result===null);
+ reviewDetailedExplanation(q,i,result);
+ reviewFilterTabs();
  $('reviewImage').src=sourceImage(q.number);$('reviewPrev').disabled=pos===0;$('reviewNext').disabled=pos===arr.length-1;
 }
 function reviewStep(d){const arr=filteredIndices(),p=arr.indexOf(reviewIndex);if(p<0)return;const next=arr[p+d];if(next!==undefined){reviewIndex=next;renderReview();}}
-function finishExam(auto=false){if(!started||finished)return;if(!auto&&!confirm(`Nộp bài? Bạn đã làm ${countLocked()}/${questions.length} câu. Những câu chưa làm sẽ được tính chưa trả lời.`))return;clearInterval(timer);timer=null;started=false;finished=true;window.ioeExamActive=false;save();$('exam').classList.add('hidden');$('welcome').classList.add('hidden');$('results').classList.remove('hidden');reviewIndex=0;resultSummary();renderReview();startReviewTimer();const t=tally();if(typeof window.ioeSaveResult==='function'){try{window.ioeSaveResult({score:t.correct*10,correct:t.correct,answered:t.answered,total:questions.length,mode:'original198-native',finishedAt:new Date().toISOString()});}catch(e){console.warn('Không lưu được kết quả TAT:',e);}}}
+function finishExam(auto=false){if(!started||finished)return;if(!auto&&!confirm(`Nộp bài? Bạn đã làm ${countLocked()}/${questions.length} câu. Những câu chưa làm sẽ được tính chưa trả lời.`))return;clearInterval(timer);timer=null;started=false;finished=true;window.ioeExamActive=false;save();$('exam').classList.add('hidden');$('welcome').classList.add('hidden');$('results').classList.remove('hidden');reviewIndex=0;resultSummary();$('reviewWrongCount').textContent=String(tally().wrong);$('reviewCorrectCount').textContent=String(tally().correct);$('reviewFilter').value=tally().wrong?'wrong':'all';reviewIndex=filteredIndices()[0]??0;renderReview();startReviewTimer();const t=tally();if(typeof window.ioeSaveResult==='function'){try{window.ioeSaveResult({score:t.correct*10,correct:t.correct,answered:t.answered,total:questions.length,mode:'original198-native',finishedAt:new Date().toISOString()});}catch(e){console.warn('Không lưu được kết quả TAT:',e);}}}
 function exportAnswers(){const payload={source:'TAT lớp 6 — 198 ảnh mẫu đã nhập thành dữ liệu TAT',generatedAt:new Date().toISOString(),totalOriginal:198,practice:questions.length,reference:references.map(x=>({number:x.number,reason:x.reason})),answers:questions.map((q,i)=>({sourceNumber:q.number,mode:q.mode,prompt:q.prompt,answer:answers[i].locked?response(i):null,locked:answers[i].locked,correct:correct(i),tatKey:q.answer}))};const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='TAT_lop6_198_anh_175_cau_lam_bai.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 async function beginExam(){if(starting||started)return;if(!window.ioeAllowed){$('ioeGate').classList.remove('ioe-hide');return;}starting=true;$('begin').disabled=true;$('begin').textContent='ĐANG KIỂM TRA LƯỢT…';try{await dataReady;await window.ioeClaimAttempt();answers=fresh();cur=0;finished=false;started=true;window.ioeExamActive=true;$('welcome').classList.add('hidden');$('results').classList.add('hidden');$('exam').classList.remove('hidden');$('ioeGate').classList.add('ioe-hide');startTimer();render();save();}catch(e){alert(e?.message||'Không thể bắt đầu. Vui lòng thử lại.');}finally{starting=false;$('begin').disabled=false;$('begin').textContent=`▶ BẮT ĐẦU LÀM ${questions.length||175} CÂU`;}}
 function resetExam(){clearInterval(timer);timer=null;stopReviewTimer();started=false;finished=false;window.ioeExamActive=false;answers=fresh();cur=0;save();$('results').classList.add('hidden');$('exam').classList.add('hidden');$('welcome').classList.remove('hidden');$('clock').textContent='30:00';}
@@ -76,7 +121,8 @@ $('pageNext').addEventListener('click',()=>go(Math.min(questions.length-1,Math.f
 $('answerBtn').addEventListener('click',submitAnswer);
 $('textAnswer').addEventListener('input',e=>{if(!started||currentA().locked)return;currentA().value=e.target.value;save();});
 $('textAnswer').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();submitAnswer();}});
-$('reviewFilter').addEventListener('change',()=>{reviewIndex=filteredIndices()[0]??0;renderReview();});
+$('reviewFilter').addEventListener('change',()=>{reviewIndex=filteredIndices()[0]??0;renderReview();reviewFilterTabs();});
+for(const kind of ['wrong','correct'])$(kind==='wrong'?'reviewWrongTab':'reviewCorrectTab').addEventListener('click',()=>{$('reviewFilter').value=kind;reviewIndex=filteredIndices()[0]??0;renderReview();reviewFilterTabs();});
 $('reviewPrev').addEventListener('click',()=>reviewStep(-1));$('reviewNext').addEventListener('click',()=>reviewStep(1));
 $('exportBtn').addEventListener('click',exportAnswers);
 $('newExam').addEventListener('click',()=>{if(confirm('Làm lại sẽ xóa bài làm hiện tại. Bạn có muốn tiếp tục?'))resetExam();});
