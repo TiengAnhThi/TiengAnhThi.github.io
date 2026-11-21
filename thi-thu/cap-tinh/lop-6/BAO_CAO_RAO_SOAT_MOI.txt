@@ -1,0 +1,8 @@
+CẬP NHẬT RÀ SOÁT NỘI DUNG IOE QUỐC GIA LỚP 6
+picture_context_removed: 400
+picture_place_prompt_fixed: 80
+order_instruction_updated: 400
+picture_grammar_fixed: 80
+choice_rewritten: 16
+Tổng: 2000 câu, 400 mỗi dạng.
+Đã kiểm tra cấu trúc, không kiểm định sư phạm thủ công toàn bộ 2000 câu.

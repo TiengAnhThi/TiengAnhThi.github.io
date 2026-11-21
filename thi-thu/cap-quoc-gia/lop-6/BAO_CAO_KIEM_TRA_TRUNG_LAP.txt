@@ -1,0 +1,6 @@
+CAP QUOC GIA - KIEM TRA TRUNG LAP NGUYEN VAN
+So cau: 2000
+Cau trung nguyen van truoc khi xu ly: 28
+Cau trung nguyen van sau khi xu ly: 0
+Doi chieu du lieu nhung trong HTML va JSON: trung khop
+Luu y: Kiem tra nay chi chung minh khong trung nguyen van de bai, khong chung minh khong trung y tuong hoac do kho tuong duong mau.

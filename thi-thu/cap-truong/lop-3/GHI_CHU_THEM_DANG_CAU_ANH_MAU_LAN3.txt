@@ -1,0 +1,1 @@
+Bổ sung 39 câu theo ảnh mẫu mới, gồm 28 trắc nghiệm, 6 điền từ, 5 câu nghe điền từ. Bốn câu nghe chọn màu với hình SVG và nút phát âm thanh được tính trong nhóm trắc nghiệm. Hình mũ và bảng đen cũng là SVG tự dựng. Ngân hàng vẫn 2000 câu. Các cấp khác giữ nguyên. Âm thanh dùng giọng đọc trình duyệt.

@@ -1,0 +1,26 @@
+{
+  "total": 6000,
+  "typeCounts": {
+    "odd_one_out": 160,
+    "order": 800,
+    "dialogue_choice": 150,
+    "knowledge": 100,
+    "question_start": 350,
+    "fill": 1100,
+    "choice": 1100,
+    "listen": 180,
+    "reply_choice": 150,
+    "pronunciation": 120,
+    "incorrect_sentence": 200,
+    "context_choice": 200,
+    "sentence_choice": 160,
+    "reading_tf": 280,
+    "reading": 350,
+    "preposition_choice": 250,
+    "find_error": 250,
+    "inline_word": 100
+  },
+  "uniqueIds": 6000,
+  "sourceImages": 198,
+  "source": "198 screenshots provided by user; new questions are original TAT variants, not verbatim OCR"
+}

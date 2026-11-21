@@ -1,0 +1,26 @@
+TAT IOE - SUA TRIET DE LOI ANH TRONG / O VUONG / DAU HOI
+=========================================================
+
+Phien ban nay sua 48 trang thi cho tat ca cac lop va cap thi.
+- Chuyen hinh minh hoa do vat/con vat thanh anh PNG co san trong source.
+- 26 loai hinh hanh dong (swim/eat/write/brush/jump/...) su dung anh PNG noi bo.
+- Hinh vi tri do vat (in/on/under/behind/next to) su dung anh PNG trong SVG.
+- Khong con phu thuoc twemoji CDN hay font emoji cua Windows.
+- Giu nguyen cau hoi, dap an, tinh diem, Firebase va Ultimate.
+
+CAP NHAT GITHUB DESKTOP:
+1. Tai ZIP day du va giai nen.
+2. Sao chep TOAN BO NOI DUNG thu muc TiengAnhThi.github.io-main vao repository tren may.
+3. Bat buoc sao chep DU CA THU MUC assets/tat-visuals (289 file anh PNG).
+4. Ghi de thi-thu/**/index.html (48 file da sua).
+5. GitHub Desktop > Commit to main > Push origin.
+6. Cho GitHub Pages trien khai, sau do nhan Ctrl + F5 de tai lai trang.
+
+KHONG DUOC chi cap nhat index.html ma bo qua assets/tat-visuals, vi anh se khong hien.
+KHONG can thay doi Firestore Rules de sua loi anh.
+
+KIEM TRA NHANH:
+- Lop 12 cap truong: cau 'Swim in the pool' va 'Eat your lunch' co anh minh hoa.
+- Lop 12 cap truong: cau 'The apple is under the box' co qua tao (khong co o vuong).
+- Lop 7 cap truong: cau 'Brush your teeth' co hinh danh rang.
+- Cac cau co hinh chon 4 dap an, phong to va nhin hinh dung/sai van hoat dong.

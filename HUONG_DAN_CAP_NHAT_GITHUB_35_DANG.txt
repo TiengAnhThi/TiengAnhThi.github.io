@@ -1,0 +1,27 @@
+TAT – 35 DẠNG CÂU / LỚP 1–12 / 4 CẤP THI THỬ
+
+1. CÁCH KHUYÊN DÙNG: GitHub Desktop
+- Clone repository tienganhthi.github.io về máy.
+- Giải nén TAT_35Dang_Lop1-12_4Cap_Full.zip.
+- Chép NỘI DUNG BÊN TRONG TiengAnhThi.github.io-main vào thư mục gốc repository.
+- Giữ file mới; ghi đè file cũ cùng đường dẫn. Không xóa các file riêng đang dùng.
+- Commit → Push origin.
+
+2. CÁCH UPLOAD TRÊN WEBSITE GITHUB (TRÁNH LỖI QUÁ 100 FILE)
+- Giải nén từng gói TAT_CapNhat_35Dang_Lop1-3.zip, Lop4-6.zip, Lop7-9.zip, Lop10-12.zip.
+- Kéo đúng các file/thư mục sau giải nén lên ở GỐC repository; giữ nguyên cấp thư mục thi-thu/...
+- Mỗi gói chứa dưới 100 file nên có thể commit từng lần; nếu browser còn lỗi, chia thêm thành 2 đợt.
+- Không đưa file .zip trực tiếp lên repo để làm website chạy.
+
+3. KIỂM TRA
+- Trang chủ TAT hiển thị lớp 1–12, bốn cấp thi thử.
+- Kiểm tra ví dụ: thi-thu/cap-quoc-gia/lop-12/index.html.
+- Mỗi ngân hàng mới có 2.000 câu; 35 dạng; mỗi lượt 200 câu, 30 phút.
+- LỚP 3 CẤP TRƯỜNG GIỮ NGUYÊN TỪNG FILE; cả hai cách đều không thay thế trang này.
+- Chức năng đăng nhập/Premium cần Firebase đã cấu hình và quyền Firestore đúng.
+- MP3 IPA cho các trang mới dùng chung các tệp đang có trong thi-thu/cap-truong/lop-3/ipa-audio/.
+
+4. LƯU Ý NỘI DUNG
+- Bài tập TỰ BIÊN SOẠN THEO CHỦ ĐỀ Global Success (Kết nối tri thức với cuộc sống), KHÔNG TRÍCH bài tập SGK.
+- Cần giáo viên kiểm duyệt độ khó, tính tự nhiên của ngữ pháp, IPA và đối chiếu từng Unit trước khi dùng đánh giá chính thức.
+- Các cấp thi trên website là mô phỏng, không xác nhận đủ điều kiện dự thi IOE chính thức.
