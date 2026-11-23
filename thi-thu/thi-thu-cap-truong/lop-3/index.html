@@ -251,6 +251,11 @@ img.emoji{height:1em;width:1em;margin:0 .04em;vertical-align:-0.12em}
 .tat-lan6-inline input{display:inline-block;vertical-align:baseline}
 @media(max-width:600px){.tat-lan6-place{min-height:155px;padding:12px}.tat-lan6-place-glyphs{font-size:42px}.tat-lan6-age-photo{min-height:165px}.tat-lan6-portrait{font-size:67px}.tat-lan6-age-number{font-size:22px;padding:8px}.tat-lan6-colour-demo span{width:68px;height:68px}.tat-lan6-inline{font-size:21px}}
 </style><style>
+/* Chú giải IPA cho câu phát âm gốc lớp 3. */
+.tat-original-ipa-hint{margin:4px auto 15px;text-align:center;font-size:13px;line-height:1.45;color:#b9d7ed}
+.tat-original-ipa-prompt .tat-ipa-word{color:#ffe59b}
+@media(max-width:550px){.tat-original-ipa-hint{font-size:12px;padding:0 10px}}
+
 /* Hiển thị IPA trên từ mẫu và phương án ngay khi đang làm bài.
    Tooltip cũng hỗ trợ chạm trên điện thoại. */
 .tat-ipa-word{display:inline;position:relative;cursor:help;border-bottom:1.5px dotted #ffda77;border-radius:2px;line-height:1.45;touch-action:manipulation}
@@ -812,7 +817,8 @@ function tatLan6ColourScene(q){
 function tatLan6Inline(q,value){
  return `<div class="tat-new-inline tat-lan6-inline" lang="en">${escapeHtml(q.before)}<input id="entry" class="tat-sentence-entry" type="text" aria-label="Nhập ${q.missing} chữ cái còn thiếu" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" maxlength="${q.missing}" placeholder="${'_'.repeat(q.missing)}" style="width:${(q.missing*1.4+0.75).toFixed(1)}ch" value="${escapeHtml(value)}" ${finished||q.submitted?'disabled':''} oninput="tatSentenceEdit(this)" onblur="tatSaveDraftCurrent()" onkeydown="if(event.key==='Enter'){event.preventDefault();submitAnswer()}"/>${escapeHtml(q.after)}</div><p class="tat-inline-tip">✍️ Điền trực tiếp chữ cái còn thiếu vào câu.</p>`;
 }
-function render(){let q=questions[current];const tatControls=document.querySelector('.question-controls');if(tatControls)tatControls.style.display=isChoice(q)?'none':'';chosen=isChoice(q)?q.user:null;typed=isInput(q)?(q.user||q.draft||''):'';selection=q.type==='order'?(q.user?[...q.user]:[]):[];nav();$('progress').textContent=`Câu ${current+1}/${questions.length} • Đã trả lời ${questions.filter(x=>x.submitted).length}/${questions.length}`;let html=`<div class="prompt ${q.type==='unscramble'?'tat-unscramble-heading':''} ${q.type==='reading'?'tat-reading-prompt':''}">${escapeHtml(q.type==='unscramble'?('Unscramble this word: '+String(q.scrambled||'')):(isChoice(q)?q.prompt.replace(/\s*\(([^()]*)\)\s*$/, (full,hint)=>{const h=hint.trim().toLowerCase();return q.options?.some(o=>o.toLowerCase().includes(h))?'':full}):q.prompt))}</div>`;
+function render(){tatHideIpaTooltip(true);let q=questions[current];const tatControls=document.querySelector('.question-controls');if(tatControls)tatControls.style.display=isChoice(q)?'none':'';chosen=isChoice(q)?q.user:null;typed=isInput(q)?(q.user||q.draft||''):'';selection=q.type==='order'?(q.user?[...q.user]:[]):[];nav();$('progress').textContent=`Câu ${current+1}/${questions.length} • Đã trả lời ${questions.filter(x=>x.submitted).length}/${questions.length}`;let html=`<div class="prompt ${q.type==='unscramble'?'tat-unscramble-heading':''} ${q.type==='reading'?'tat-reading-prompt':''}">${escapeHtml(q.type==='unscramble'?('Unscramble this word: '+String(q.scrambled||'')):(isChoice(q)?q.prompt.replace(/\s*\(([^()]*)\)\s*$/, (full,hint)=>{const h=hint.trim().toLowerCase();return q.options?.some(o=>o.toLowerCase().includes(h))?'':full}):q.prompt))}</div>`;
+ if(tatOriginalIpaSpec(q))html=`<div class="prompt tat-original-ipa-prompt">${tatOriginalIpaPrompt(q)}</div><p class="tat-original-ipa-hint">💡 Rê chuột hoặc chạm vào chữ gạch chân để xem IPA và nghe phát âm.</p>`;
  if(tatUsesPromptBlankInput(q))html=`<div class="prompt">${q.type==='listen'?'Listen and type the missing word directly in the sentence.':'Complete the sentence by typing directly in the missing part.'}</div>`;
 
 if(q.type==='reading_tf')html=(q.isOriginal&&q.illustration?'<div class="prompt">Quan sát hình minh họa và chọn TRUE hoặc FALSE.</div>':'<div class="prompt">Read the text and decide TRUE or FALSE.</div>');
@@ -849,7 +855,7 @@ if(isChoice(q)){
  if(q.type==='reading_tf'||q.type==='scene_truefalse')html+=`<div class="tat-tf-answers">${q.options.map((o,i)=>`<button type="button" class="choice tat-tf-choice ${chosen===i?'selected':''}" onclick="choose(${i});return false" ${finished||q.submitted?'disabled':''}>${o==='TRUE'?'✔ TRUE (ĐÚNG)':'✖ FALSE (SAI)'}</button>`).join('')}</div>`;
  else if(q.type==='command_picture')html+=`<div class="tat-action-grid">${q.options.map((act,i)=>`<div class="tat-action-choice ${chosen===i?'selected':''}"><button type="button" class="tat-action-select choice ${chosen===i?'selected':''}" onclick="choose(${i});return false" ${finished||q.submitted?'disabled':''} aria-label="Chọn hình ${'ABCD'[i]}"><span class="tat-action-letter">${'ABCD'[i]}.</span><span class="tat-action-glyph" aria-hidden="true">${tatActionVisual(act)}</span></button><button type="button" class="tat-action-zoom" onclick="tatOpenSceneZoom('tat-action-display-${i}');return false" title="Phóng to hình ${'ABCD'[i]}">🔎</button><div id="tat-action-display-${i}" class="hidden"><div class="tat-action-glyph">${tatActionVisual(act)}</div></div></div>`).join('')}</div>`;
 else if(q.type==='picture4')html+=`<div class="tat-picture-grid">${q.options.map((o,i)=>`<div class="tat-image-choice ${chosen===i?'selected':''}"><button type="button" class="tat-select-picture choice ${chosen===i?'selected':''}" onclick="choose(${i});return false" ${finished||q.submitted?'disabled':''} aria-label="Chọn hình ${'ABCD'[i]}"><span class="tat-card-letter">${'ABCD'[i]}.</span><span class="tat-picture-art" aria-hidden="true">${tatSceneEmojiVisual(o,96)}</span></button><button type="button" class="tat-picture-zoom" onclick="tatPictureZoom(${i});return false" title="Phóng to hình ${'ABCD'[i]}" aria-label="Phóng to hình ${'ABCD'[i]}">🔎</button></div>`).join('')}</div>`;
- else html+=`<div class="answers">${q.options.map((o,i)=>`<button type="button" class="choice ${chosen===i?'selected':''}" onclick="choose(${i});return false" ${finished||q.submitted?'disabled':''}>${'ABCD'[i]}. ${(q.type==='pronunciation'||q.type==='sound_match')?tatPronOptionHTML(q,o,i):escapeHtml(o)}</button>`).join('')}</div>`;
+ else html+=`<div class="answers">${q.options.map((o,i)=>`<button type="button" class="choice ${chosen===i?'selected':''}" onclick="choose(${i});return false" ${finished||q.submitted?'disabled':''}>${'ABCD'[i]}. ${(q.type==='pronunciation'||q.type==='sound_match')?tatPronOptionHTML(q,o,i):tatOriginalIpaOption(q,o,i)}</button>`).join('')}</div>`;
 }
 if(isInput(q)&&q.type!=='phrase_gap'&&q.type!=='unscramble'&&q.type!=='inline_word'&&q.type!=='picture_inline'&&q.type!=='cartoon_fill'&&q.type!=='animal_spelling'&&q.type!=='age_picture_gap'&&q.type!=='context_spelling'&&!tatUsesPromptBlankInput(q))html+=`<input class="input" id="entry" placeholder="Nhập đáp án tại đây" value="${escapeHtml(typed)}" ${finished||q.submitted?'disabled':''} oninput="if(!questions[current].submitted)typed=this.value" onblur="tatSaveDraftCurrent()" onkeydown="if(event.key==='Enter'){event.preventDefault();submitAnswer()}" autocomplete="off">`;
 if(q.type==='order'){html+=`<div class="slots">${q.parts.map((_,i)=>`<div class="slot" onclick="removeTile(${i})">${selection[i]!==undefined?escapeHtml(q.tiles[selection[i]].text):'?'}</div>`).join('')}</div><div class="tiles">${q.tiles.map((t,i)=>`<button class="tile ${selection.includes(i)?'used':''}" onclick="addTile(${i})" ${finished||q.submitted?'disabled':''}>${escapeHtml(t.text)}</button>`).join('')}</div><p>Nhấn thẻ để xếp vào ô phía trên. Nhấn ô đã chọn để bỏ thẻ.</p>`}
@@ -993,6 +999,45 @@ function tatPlayIpa(ipa,mode,trigger){
    finish();
    if(status)status.textContent='Trình duyệt đang chặn âm thanh. Hãy bấm lại nút loa.';
  });
+}
+
+
+/* IPA cho 6 câu phát âm gốc đã được nhập dưới dạng "choice".
+   Âm phiên theo giọng Anh–Anh, nhất quán với thư viện MP3 hiện có.
+   Không thay đổi đề, đáp án hay số lượng câu trong ngân hàng. */
+const TAT_ORIGINAL_IPA_SPECS=Object.freeze({
+ 11:{ref:'CLOCK',letter:'O',refSound:'ɒ',optionSounds:['əʊ','ʌ','ɒ','ʌ']},
+ 13:{ref:'SHORT',letter:'O',refSound:'ɔː',optionSounds:['ʌ','ɔː','ʌ','ʌ']},
+ 35:{ref:'HIS',letter:'I',refSound:'ɪ',optionSounds:['aɪ','aɪ','aɪ','ɪ']},
+ 59:{ref:'MUCH',letter:'U',refSound:'ʌ',optionSounds:['ʊ','ʌ','uː','ʊ']},
+ 65:{ref:'STUDENT',letter:'U',refSound:'juː',optionSounds:['ʌ','ɜː','juː','ʌ']},
+ 102:{ref:'MORNING',letter:'I',refSound:'ɪ',optionSounds:['aɪ','ɪ','aɪ','aɪ']}
+});
+function tatOriginalIpaSpec(q){
+ return q?.isOriginal?TAT_ORIGINAL_IPA_SPECS[q.originalSourceNumber]||null:null;
+}
+function tatOriginalIpaPrompt(q){
+ const spec=tatOriginalIpaSpec(q),text=String(q.prompt||'');
+ if(!spec)return escapeHtml(text);
+ const pos=text.lastIndexOf(spec.ref);
+ if(pos<0)return escapeHtml(text);
+ return escapeHtml(text.slice(0,pos))+
+   tatUnderlineWithIPA(spec.ref,spec.letter,spec.refSound)+
+   escapeHtml(text.slice(pos+spec.ref.length));
+}
+function tatOriginalIpaOption(q,word,i){
+ const spec=tatOriginalIpaSpec(q);
+ return spec?tatUnderlineWithIPA(word,spec.letter,spec.optionSounds[i]):escapeHtml(word);
+}
+function tatOriginalIpaReview(q){
+ const spec=tatOriginalIpaSpec(q);
+ if(!spec)return '';
+ const ref=tatUnderlineWithIPA(spec.ref,spec.letter,spec.refSound);
+ const rows=q.options.map((word,i)=>{
+   const phoneme=spec.optionSounds[i];
+   return `<div class="tat-pron-card ${i===q.answer?'correct':''}"><div class="tat-pron-head"><div class="tat-pron-word">${'ABCD'[i]}. ${tatOriginalIpaOption(q,word,i)}</div><span class="tat-pron-tag ${i===q.answer?'correct':''}">${i===q.answer?'Cùng âm':'Khác âm'}</span></div><div class="tat-pron-ipa"><b>Âm của chữ ${escapeHtml(spec.letter)}:</b> ${tatFormatExplainIPA('/'+phoneme+'/')}</div><div class="tat-pron-tools"><button type="button" class="tat-pron-btn tat-word-speak" data-word="${escapeHtml(word)}">🔊 Nghe từ</button></div></div>`;
+ }).join('');
+ return `<div class="tat-pron-compare tat-original-ipa-review"><div class="tat-pron-title">🎧 So sánh cách phát âm — từ mẫu ${ref} ${tatFormatExplainIPA('/'+spec.refSound+'/')}</div><div class="tat-pron-list">${rows}</div></div>`;
 }
 
 function tatIPASymbol(raw){
@@ -1175,7 +1220,13 @@ const TAT_IPA_FULL_WORDS=Object.freeze({
  'think':'θɪŋk','bath':'bæθ','father':'ˈfɑːðər','this':'ðɪs','they':'ðeɪ',
  'moon':'muːn','book':'bʊk','foot':'fʊt','food':'fuːd','good':'ɡʊd',
  'bike':'baɪk','time':'taɪm','milk':'mɪlk','hen':'hen','bed':'bed','he':'hiː',
- 'see':'siː','sea':'siː','pea':'piː','cat':'kæt','dog':'dɒɡ','fish':'fɪʃ'
+ 'see':'siː','sea':'siː','pea':'piː','cat':'kæt','dog':'dɒɡ','fish':'fɪʃ',
+ 'clock':'klɒk','cold':'kəʊld','brother':'ˈbrʌðə','box':'bɒks','come':'kʌm',
+ 'short':'ʃɔːt','morning':'ˈmɔːnɪŋ','some':'sʌm','his':'hɪz',
+ 'kite':'kaɪt','five':'faɪv','rabbit':'ˈræbɪt','much':'mʌtʃ',
+ 'put':'pʊt','rubber':'ˈrʌbə','ruler':'ˈruːlə','full':'fʊl',
+ 'student':'ˈstjuːdənt','bus':'bʌs','nurse':'nɜːs','pupil':'ˈpjuːpəl',
+ 'brush':'brʌʃ','lion':'ˈlaɪən','singer':'ˈsɪŋə','tiger':'ˈtaɪɡə','ninety':'ˈnaɪnti'
 });
 function tatShowIpaTooltip(button){
  const entry=TAT_IPA_GUIDE[button?.dataset?.ipa];if(!entry)return;
@@ -1257,10 +1308,12 @@ window.addEventListener('scroll',()=>tatHideIpaTooltip(true),true);
 window.addEventListener('resize',()=>tatHideIpaTooltip(true));
 
 
+let tatLastIpaTouch=0;
+document.addEventListener('touchstart',e=>{if(e.target.closest?.('.tat-ipa-word'))tatLastIpaTouch=Date.now()}, {passive:true,capture:true});
 document.addEventListener('click',e=>{
  const word=e.target.closest?.('.tat-ipa-word');
  if(!word)return;
- if(e.pointerType==='touch'||e.detail===0){
+ if(e.pointerType==='touch'||e.detail===0||Date.now()-tatLastIpaTouch<800){
   e.preventDefault();e.stopPropagation();
   if(tatIpaPinned===word){
     tatHideIpaTooltip(true);
@@ -1287,7 +1340,7 @@ document.addEventListener('keydown',e=>{
   const tiles=raw.mode==='order'?`<div class="tat-original-review-options"><b>Thẻ từ trong đề:</b> ${q.parts.map(escapeHtml).join(' | ')}${q.originalTileNote?`<p>${escapeHtml(q.originalTileNote)}</p>`:''}</div>`:'';
   const ill=q.illustration?`<img class="tat-original-review-image" src="${escapeHtml(q.illustration)}" alt="Hình minh họa câu gốc ${q.originalSourceNumber}" loading="lazy">`:'';
   const steps=explanation?.steps?.length?explanation.steps.map(step=>`<div class="tat-original-explain"><strong>${escapeHtml(step.label)}:</strong> ${escapeHtml(step.text)}</div>`).join(''):`<div class="tat-original-explain">${escapeHtml(q.explain||'Đối chiếu dữ kiện trong câu hỏi.')}</div>`;
-  return `<div class="tat-original-source"><b>📘 Câu gốc #${q.originalSourceNumber} · Đề TAT đã nhập:</b>${ill}${raw.passage&&!q.illustration?`<p><b>Đoạn đọc:</b> ${escapeHtml(raw.passage)}</p>`:''}${opts}${tiles}${steps}<details><summary>🔎 Xem ảnh mẫu gốc để đối chiếu sau bài làm</summary><img src="${escapeHtml(q.originalImage)}" alt="Ảnh gốc câu ${q.originalSourceNumber}" loading="lazy"></details></div>`;
+  return `<div class="tat-original-source"><b>📘 Câu gốc #${q.originalSourceNumber} · Đề TAT đã nhập:</b>${ill}${raw.passage&&!q.illustration?`<p><b>Đoạn đọc:</b> ${escapeHtml(raw.passage)}</p>`:''}${opts}${tiles}${steps}${tatOriginalIpaReview(q)}<details><summary>🔎 Xem ảnh mẫu gốc để đối chiếu sau bài làm</summary><img src="${escapeHtml(q.originalImage)}" alt="Ảnh gốc câu ${q.originalSourceNumber}" loading="lazy"></details></div>`;
  }
 function tatSwitchResultTab(tab){
  const isCorrect=tab==='correct';
