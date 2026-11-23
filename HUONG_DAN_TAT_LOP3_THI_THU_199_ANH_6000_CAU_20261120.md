@@ -1,3 +1,5 @@
+> **Tài liệu phiên bản cũ (20/11/2026).** Từ 23/11/2026, 174 câu gốc đã được nhập chung vào giao diện thi thử TAT, không còn trang làm bài riêng. Xem `HUONG_DAN_DONG_BO_174_CAU_GOC_LOP3_VAO_TAT_20261123.md` để biết cách sử dụng mới.
+
 # TAT lớp 3 — Thi thử cấp trường từ 199 ảnh mẫu
 
 ## Đã tích hợp
