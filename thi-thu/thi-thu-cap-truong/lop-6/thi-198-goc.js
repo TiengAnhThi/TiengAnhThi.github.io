@@ -38,6 +38,9 @@ function render(){if(!started||finished||!questions.length)return;const q=curren
  if(q.mode==='choice'||q.mode==='tf'){const box=$('choiceBox');box.replaceChildren();const choices=q.mode==='tf'?['TRUE','FALSE']:q.options;choices.forEach((text,i)=>{const b=document.createElement('button');b.type='button';b.textContent=q.mode==='tf'?(text==='TRUE'?'✓ TRUE (ĐÚNG)':'✕ FALSE (SAI)'):`${'ABCD'[i]}. ${text}`;b.disabled=a.locked;b.addEventListener('click',()=>selectChoice(q.mode==='tf'?text:'ABCD'[i]));box.append(b)});}
  if(q.mode==='text'){$('textAnswer').value=String(a.value??'');$('textAnswer').disabled=a.locked;}
  if(q.mode==='order')renderOrder();
+ if(q.mode!=='text')window.tatOriginalDecorate?.($('questionPrompt'));
+ window.tatOriginalDecorate?.($('passage'));
+ if(q.mode==='choice'||q.mode==='tf')document.querySelectorAll('#choiceBox button').forEach(b=>window.tatOriginalDecorate?.(b));
  $('answerBtn').disabled=a.locked;setStatus(a.locked?'🔒 Đã khóa đáp án. Có thể xem lại bằng thanh số câu phía trên.':'');
 }
 function go(i){if(!started||finished||i<0||i>=questions.length)return;cur=i;render();}
@@ -95,7 +98,7 @@ function reviewDetailedExplanation(q,i,result){
 function renderReview(){const arr=filteredIndices();if(!arr.length){$('reviewTitle').textContent='Không có câu phù hợp bộ lọc';['reviewPassage','reviewIllustration','reviewPrompt','reviewGiven','reviewKey','reviewExplain','reviewOptions','reviewImage'].forEach(id=>{const el=$(id);if(el)el.textContent='';});$('reviewPrev').disabled=true;$('reviewNext').disabled=true;reviewFilterTabs();return;}
  if(!arr.includes(reviewIndex))reviewIndex=arr[0];const i=reviewIndex,q=questions[i],a=answers[i],result=correct(i),pos=arr.indexOf(i);$('reviewCounter').textContent=`Câu ${pos+1}/${arr.length} (gốc #${q.number})`;$('reviewTitle').textContent=`Câu ${i+1} · Mẫu #${q.number} — ${result===null?'Chưa trả lời':result?'✓ Đúng':'✕ Sai'}`;
  $('reviewPassage').textContent=q.passage||'';$('reviewPassage').classList.toggle('hidden',!q.passage);const ill=$('reviewIllustration');ill.classList.toggle('hidden',!q.illustration);if(q.illustration)ill.src=q.illustration;else ill.removeAttribute('src');
- $('reviewPrompt').textContent=q.prompt;
+ $('reviewPrompt').textContent=q.prompt;window.tatOriginalDecorate?.($('reviewPrompt'));window.tatOriginalDecorate?.($('reviewPassage'));
  reviewFullQuestion(q);
  const display=q.mode==='choice'?(v=>{const idx='ABCD'.indexOf(v);return idx<0?String(v):`${v}. ${q.options[idx]}`;}):v=>String(v);
  const user=a.locked?(q.mode==='tf'?(response(i)==='TRUE'?'ĐÚNG (TRUE)':'SAI (FALSE)'):display(response(i))):'Chưa trả lời';
