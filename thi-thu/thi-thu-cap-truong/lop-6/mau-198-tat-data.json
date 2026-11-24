@@ -1,10 +1,10 @@
 {
   "version": 3,
   "source": "198 ảnh câu hỏi mẫu lớp 6 cấp trường do người dùng cung cấp",
-  "notice": "Câu hỏi được nhập lại bằng cách đọc ảnh, không phải đề thi chính thức. Đáp án là đáp án TAT đối chiếu nội dung, không phải đáp án do đơn vị tổ chức cung cấp. Câu không thể chuyển được đánh dấu tham khảo, không bắt buộc làm.",
+  "notice": "Đáp án TAT đối chiếu ảnh mẫu. Các câu có lời nghe TAT phục dựng hoặc được hiệu chỉnh có ghi chú riêng; không phải đáp án/âm thanh chính thức. Câu tham khảo không tính điểm.",
   "totalSource": 198,
-  "totalPractice": 175,
-  "totalReference": 23,
+  "totalPractice": 193,
+  "totalReference": 5,
   "questions": [
     {
       "number": 1,
@@ -143,11 +143,15 @@
     },
     {
       "number": 10,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 10",
       "sourceNumber": 10,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Brett ____ his dogs every day after school.",
+      "answer": "walks",
+      "explanation": "Lời nghe TAT: “Brett walks his dogs every day after school.”. Phần cần điền: walks.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Brett walks his dogs every day after school."
     },
     {
       "number": 11,
@@ -160,27 +164,33 @@
     },
     {
       "number": 12,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 12",
       "sourceNumber": 12,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Do you like ch____ or ice cream?",
+      "answer": "ocolate",
+      "explanation": "Lời nghe TAT: “Do you like chocolate or ice cream?”. Phần cần điền: ocolate.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Do you like chocolate or ice cream?"
     },
     {
       "number": 13,
       "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "reason": "Trùng ảnh số 12 (cùng câu nghe); đã phục dựng một lần ở câu 12.",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 13",
       "sourceNumber": 13,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Trùng ảnh số 12 (cùng câu nghe); đã phục dựng một lần ở câu 12."
     },
     {
       "number": 14,
       "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "reason": "Câu về truyện I am Beto không có đoạn văn hoặc dữ kiện xác nhận đáp án trong ảnh.",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 14",
       "sourceNumber": 14,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Câu về truyện I am Beto không có đoạn văn hoặc dữ kiện xác nhận đáp án trong ảnh."
     },
     {
       "number": 15,
@@ -241,19 +251,27 @@
     },
     {
       "number": 19,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 19",
       "sourceNumber": 19,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "EN____",
+      "answer": "velope",
+      "explanation": "Lời nghe TAT: “Envelope.”. Phần cần điền: velope.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Envelope."
     },
     {
       "number": 20,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 20",
       "sourceNumber": 20,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "ST____",
+      "answer": "reet",
+      "explanation": "Lời nghe TAT: “Street.”. Phần cần điền: reet.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Street."
     },
     {
       "number": 21,
@@ -367,11 +385,15 @@
     },
     {
       "number": 29,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 29",
       "sourceNumber": 29,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Does he like to coll____ baseball cards?",
+      "answer": "ect",
+      "explanation": "Lời nghe TAT: “Does he like to collect baseball cards?”. Phần cần điền: ect.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Does he like to collect baseball cards?"
     },
     {
       "number": 30,
@@ -536,11 +558,19 @@
     },
     {
       "number": 42,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "tf",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 42",
       "sourceNumber": 42,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "The speaker's friend wears glasses.",
+      "answer": "TRUE",
+      "explanation": "Lời nghe TAT: “My best friend is Tom. He has short brown hair and wears glasses.”. Nhận định là đúng.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "TRUE",
+        "FALSE"
+      ],
+      "speech": "My best friend is Tom. He has short brown hair and wears glasses."
     },
     {
       "number": 43,
@@ -648,10 +678,11 @@
     {
       "number": 51,
       "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "reason": "Ảnh chỉ có ô trống và nút nghe, không có âm thanh hay chữ gợi ý.",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 51",
       "sourceNumber": 51,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Ảnh chỉ có ô trống và nút nghe, không có âm thanh hay chữ gợi ý."
     },
     {
       "number": 52,
@@ -979,11 +1010,19 @@
     },
     {
       "number": 77,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "tf",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 77",
       "sourceNumber": 77,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "The speaker's classroom is downstairs.",
+      "answer": "FALSE",
+      "explanation": "Lời nghe TAT: “My classroom is on the second floor. I go upstairs every morning.”. Nhận định là sai.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "TRUE",
+        "FALSE"
+      ],
+      "speech": "My classroom is on the second floor. I go upstairs every morning."
     },
     {
       "number": 78,
@@ -1117,11 +1156,15 @@
     },
     {
       "number": 88,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 88",
       "sourceNumber": 88,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Listen! Someone is ____ing on the door.",
+      "answer": "knock",
+      "explanation": "Lời nghe TAT: “Listen! Someone is knocking on the door.”. Phần cần điền: knock.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Listen! Someone is knocking on the door."
     },
     {
       "number": 89,
@@ -1723,19 +1766,32 @@
     },
     {
       "number": 133,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 133",
       "sourceNumber": 133,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Having a vacation ab____ is very interesting.",
+      "answer": "road",
+      "explanation": "abroad: ở nước ngoài. TAT sửa chữ đã nhập sai trong ảnh.",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu."
     },
     {
       "number": 134,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 134",
       "sourceNumber": 134,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "What is Ben's hobby?",
+      "answer": "C",
+      "explanation": "Lời nghe TAT: “Ben likes growing flowers and vegetables in his garden. Gardening is his hobby.”. Đáp án: Gardening.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "Skating",
+        "Swimming",
+        "Gardening",
+        "Reading"
+      ],
+      "speech": "Ben likes growing flowers and vegetables in his garden. Gardening is his hobby."
     },
     {
       "number": 135,
@@ -1828,11 +1884,19 @@
     },
     {
       "number": 142,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "tf",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 142",
       "sourceNumber": 142,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "The speaker is drawing with the friend today.",
+      "answer": "TRUE",
+      "explanation": "Lời nghe TAT: “Today my friend and I are drawing pictures together.”. Nhận định là đúng.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "TRUE",
+        "FALSE"
+      ],
+      "speech": "Today my friend and I are drawing pictures together."
     },
     {
       "number": 143,
@@ -1876,19 +1940,33 @@
     },
     {
       "number": 146,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "text",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 146",
       "sourceNumber": 146,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "School starts at a quarter to ____.",
+      "answer": "seven",
+      "explanation": "Lời nghe TAT: “School starts at a quarter to seven.”. Phần cần điền: seven.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "School starts at a quarter to seven."
     },
     {
       "number": 147,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 147",
       "sourceNumber": 147,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Why should they take their jackets?",
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “Take your jackets with you. It is going to be cold this evening.”. Đáp án: Because it's going to be cold..",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "Because it's going to be rainy.",
+        "Because it's going to be cold.",
+        "Because it's going to be windy.",
+        "Because it's wet."
+      ],
+      "speech": "Take your jackets with you. It is going to be cold this evening."
     },
     {
       "number": 148,
@@ -2113,19 +2191,38 @@
     },
     {
       "number": 164,
-      "mode": "reference",
-      "reason": "Ảnh gốc không có đáp án vừa đúng thì quá khứ (fell) vừa đúng cấu trúc sau shouldn't (move). TAT không bắt học sinh làm câu lỗi.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 164",
       "sourceNumber": 164,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "He ____ off the tree and his leg is broken. He shouldn't ____ his leg.",
+      "answer": "A",
+      "explanation": "fell là quá khứ của fall; sau should not dùng động từ nguyên mẫu move. TAT sửa phương án A để có đáp án đúng.",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu.",
+      "options": [
+        "fell - move",
+        "fall - move",
+        "fell - to move",
+        "is falling - moves"
+      ]
     },
     {
       "number": 165,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 165",
       "sourceNumber": 165,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "The man is showing the way to the ____.",
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “Go straight and turn left at the traffic lights. The bookstore is on your right.”. Đáp án: bookstore.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "first street",
+        "intersection",
+        "nearest station",
+        "bookstore"
+      ],
+      "speech": "Go straight and turn left at the traffic lights. The bookstore is on your right."
     },
     {
       "number": 166,
@@ -2204,11 +2301,21 @@
     },
     {
       "number": 172,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 172",
       "sourceNumber": 172,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "What did the boy do on Saturday?",
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “On Saturday I went to the cinema with my brother. We watched a funny film.”. Đáp án: go to the cinema.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "go to the park",
+        "go to the cinema",
+        "watch TV at home",
+        "watch a football match"
+      ],
+      "speech": "On Saturday I went to the cinema with my brother. We watched a funny film."
     },
     {
       "number": 173,
@@ -2286,11 +2393,19 @@
     },
     {
       "number": 178,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "tf",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 178",
       "sourceNumber": 178,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "The speaker is still upset with the friend.",
+      "answer": "FALSE",
+      "explanation": "Lời nghe TAT: “My friend said sorry yesterday. We talked about the problem, and I am not upset with her anymore.”. Nhận định là sai.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "TRUE",
+        "FALSE"
+      ],
+      "speech": "My friend said sorry yesterday. We talked about the problem, and I am not upset with her anymore."
     },
     {
       "number": 179,
@@ -2324,11 +2439,21 @@
     },
     {
       "number": 181,
-      "mode": "reference",
-      "reason": "Ảnh gốc chưa đủ dữ liệu văn bản hoặc âm thanh để làm bài và chấm đáng tin cậy.",
+      "mode": "choice",
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 181",
       "sourceNumber": 181,
-      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
+      "origin": "Người dùng cung cấp ảnh ngày 19/11/2026",
+      "prompt": "Why can't Andy go to the park?",
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “Sorry, I cannot go to the park today. I am going to visit my grandparents with my parents.”. Đáp án: Because he is going to visit his grandparents..",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "Because he has to study.",
+        "Because he is going to buy comics.",
+        "Because he is sick.",
+        "Because he is going to visit his grandparents."
+      ],
+      "speech": "Sorry, I cannot go to the park today. I am going to visit my grandparents with my parents."
     },
     {
       "number": 182,

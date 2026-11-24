@@ -1,0 +1,15 @@
+TAT — KHÔI PHỤC CÂU THAM KHẢO LỚP 3, LỚP 6
+
+Lớp 3: 197 câu làm bài từ 199 ảnh, gồm 174 câu đã có + 23 câu khôi phục/phục dựng; 2 ảnh tham khảo (#159, #194: trùng). Ngân hàng 6.023 câu.
+Lớp 6: 193 câu làm bài từ 198 ảnh, gồm 175 câu đã có + 18 câu khôi phục/phục dựng; 5 ảnh tham khảo (#13, #44, #75: trùng; #14, #51: thiếu dữ kiện). Ngân hàng 6.018 câu.
+31 câu nghe phục dựng dùng MP3 giọng tổng hợp tiếng Anh do TAT tạo, không phải lời nghe/đáp án gốc. Một số câu chữ được hiệu chỉnh để có đáp án hợp lý; ghi chú hiện trong bài và lời giải. Ảnh gốc giữ nguyên.
+Mục tham khảo có ảnh, lý do bỏ qua và liên kết mở ảnh. 41 câu bổ sung làm trực tiếp trong TAT, không phải trả lời trên ảnh chụp toàn đề.
+Không sửa 6.000 câu cũ mỗi lớp, Firebase Rules, xác thực, Premium/Ultimate hoặc các lớp khác. Mỗi lượt 200 câu giữ 8 listen_choice, 8 listen, 8 listen_tf.
+
+KIỂM THỬ CỤC BỘ
+- So sánh JSON: 6.000 bản ghi đầu mỗi lớp hoàn toàn giống bản đầu vào.
+- Chromium: nạp HTML nội tuyến, mô phỏng quyền Ultimate; 50 lượt lấy đề mỗi lớp đủ 200 câu, 24 câu nghe, không trùng bankId; 41 câu bổ sung trả lời đúng, khóa và chuyển câu; mở kết quả và kiểm tra số điểm.
+- Kiểm tra đủ ảnh tham khảo và các tệp ảnh/MP3 bổ sung; thử giải mã/phát một MP3 mỗi lớp. Do môi trường chặn điều hướng URL, thử nghiệm ảnh/âm thanh dùng dữ liệu tệp nội tuyến. Chưa kiểm tra trên GitHub Pages/Firebase thực tế.
+
+CẬP NHẬT
+Giải nén ZIP gọn. Chép đè toàn bộ nội dung bên trong thư mục TiengAnhThi.github.io-main vào đúng thư mục gốc repository, giữ cấu trúc thư mục. Commit changes. Đợi GitHub Pages cập nhật rồi Ctrl+Shift+R. ZIP gọn có kèm 48 ảnh nguồn của các câu từng để tham khảo để tránh thiếu ảnh khi triển khai. Không cần sửa Firebase Rules.

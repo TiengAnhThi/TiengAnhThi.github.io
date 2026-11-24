@@ -1,10 +1,10 @@
 {
   "version": 1,
   "source": "199 ảnh câu hỏi lớp 3 cấp trường do người dùng cung cấp (19–20/11/2026)",
-  "notice": "Đáp án do TAT biên soạn và đối chiếu ảnh mẫu, không phải đáp án chính thức. Các câu thiếu âm thanh hoặc không đủ rõ được ghi tham khảo, không chấm điểm.",
+  "notice": "Đáp án TAT đối chiếu ảnh mẫu. Các câu có lời nghe TAT phục dựng hoặc được hiệu chỉnh có ghi chú riêng; không phải đáp án/âm thanh chính thức. Câu tham khảo không tính điểm.",
   "totalSource": 199,
-  "totalPractice": 174,
-  "totalReference": 25,
+  "totalPractice": 197,
+  "totalReference": 2,
   "questions": [
     {
       "number": 1,
@@ -18,12 +18,20 @@
     },
     {
       "number": 2,
-      "mode": "reference",
-      "prompt": "Các phần gạch chân của bốn từ trong ảnh không đủ rõ để xác minh duy nhất âm cần so sánh.",
+      "mode": "choice",
+      "prompt": "Find the word that has the underlined part pronounced differently from the others.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 2",
       "sourceNumber": 2,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Các phần gạch chân của bốn từ trong ảnh không đủ rõ để xác minh duy nhất âm cần so sánh."
+      "answer": "B",
+      "explanation": "kite có chữ i phát âm /aɪ/; chicken, pink và children có chữ i phát âm /ɪ/.",
+      "restorationNote": "Đối chiếu trực tiếp ảnh mẫu.",
+      "options": [
+        "chicken",
+        "kite",
+        "pink",
+        "children"
+      ]
     },
     {
       "number": 3,
@@ -103,12 +111,27 @@
     },
     {
       "number": 8,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn tranh không có tệp âm thanh gốc, không thể xác minh đáp án.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 8",
       "sourceNumber": 8,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn tranh không có tệp âm thanh gốc, không thể xác minh đáp án."
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “A ruler.”. Đáp án: ruler.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "gym",
+        "singing",
+        "nose",
+        "ruler"
+      ],
+      "speech": "A ruler.",
+      "optionImages": [
+        "./phuc-dung/cau-008-1.webp",
+        "./phuc-dung/cau-008-2.webp",
+        "./phuc-dung/cau-008-3.webp",
+        "./phuc-dung/cau-008-4.webp"
+      ]
     },
     {
       "number": 9,
@@ -188,12 +211,21 @@
     },
     {
       "number": 15,
-      "mode": "reference",
-      "prompt": "",
-      "reason": "Bộ thẻ “This is / my / a photo / of / grandparents.” có cách xếp chưa rõ hoặc thiếu từ; không chấm khi chưa xác nhận ảnh gốc.",
+      "mode": "order",
+      "prompt": "Sắp xếp các thẻ thành câu đúng.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 15",
       "sourceNumber": 15,
-      "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026"
+      "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
+      "answer": "This is a photo of my grandparents.",
+      "explanation": "This is a photo of my grandparents: Đây là ảnh ông bà của tôi.",
+      "restorationNote": "Đối chiếu trực tiếp ảnh mẫu.",
+      "tiles": [
+        "This is",
+        "my",
+        "of",
+        "grandparents.",
+        "a photo"
+      ]
     },
     {
       "number": 16,
@@ -227,12 +259,21 @@
     },
     {
       "number": 18,
-      "mode": "reference",
-      "prompt": "Câu hỏi “What is her name?” là câu nghe; thiếu âm thanh để phân biệt Annie, Elisa, Theresa và Alice.",
+      "mode": "choice",
+      "prompt": "What is her name?",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 18",
       "sourceNumber": 18,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu hỏi “What is her name?” là câu nghe; thiếu âm thanh để phân biệt Annie, Elisa, Theresa và Alice."
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “Her name is Elisa.”. Đáp án: Elisa.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "Annie",
+        "Elisa",
+        "Theresa",
+        "Alice"
+      ],
+      "speech": "Her name is Elisa."
     },
     {
       "number": 19,
@@ -324,12 +365,27 @@
     },
     {
       "number": 26,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn tranh không có tệp âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 26",
       "sourceNumber": 26,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn tranh không có tệp âm thanh gốc."
+      "answer": "A",
+      "explanation": "Lời nghe TAT: “Open your mouth.”. Đáp án: mouth.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "mouth",
+        "ear",
+        "nose",
+        "hair"
+      ],
+      "speech": "Open your mouth.",
+      "optionImages": [
+        "./phuc-dung/cau-026-1.webp",
+        "./phuc-dung/cau-026-2.webp",
+        "./phuc-dung/cau-026-3.webp",
+        "./phuc-dung/cau-026-4.webp"
+      ]
     },
     {
       "number": 27,
@@ -349,12 +405,27 @@
     },
     {
       "number": 28,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn hình số không có tệp âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 28",
       "sourceNumber": 28,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn hình số không có tệp âm thanh gốc."
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “Twelve.”. Đáp án: twelve.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "ten",
+        "twelve",
+        "five",
+        "six"
+      ],
+      "speech": "Twelve.",
+      "optionImages": [
+        "./phuc-dung/cau-028-1.webp",
+        "./phuc-dung/cau-028-2.webp",
+        "./phuc-dung/cau-028-3.webp",
+        "./phuc-dung/cau-028-4.webp"
+      ]
     },
     {
       "number": 29,
@@ -373,12 +444,15 @@
     },
     {
       "number": 30,
-      "mode": "reference",
-      "prompt": "Ảnh máy bay nhưng từ còn thiếu bắt đầu bằng “po…”, nội dung không khớp để chấm chắc chắn.",
+      "mode": "text",
+      "prompt": "Let's play with my pl___.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 30",
       "sourceNumber": 30,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Ảnh máy bay nhưng từ còn thiếu bắt đầu bằng “po…”, nội dung không khớp để chấm chắc chắn."
+      "answer": "ane",
+      "explanation": "plane: máy bay. TAT sửa phần đầu từ cho khớp hình.",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu.",
+      "illustration": "./phuc-dung/cau-030.webp"
     },
     {
       "number": 31,
@@ -459,12 +533,14 @@
     },
     {
       "number": 36,
-      "mode": "reference",
-      "prompt": "Ảnh chỉ tô màu chữ “there” trong câu hoàn chỉnh, không hiển thị chỗ trống hoặc chỉ dẫn trả lời rõ ràng.",
+      "mode": "text",
+      "prompt": "Are ther__ four rooms in your house?",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 36",
       "sourceNumber": 36,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Ảnh chỉ tô màu chữ “there” trong câu hoàn chỉnh, không hiển thị chỗ trống hoặc chỉ dẫn trả lời rõ ràng."
+      "answer": "e",
+      "explanation": "Are there + danh từ số nhiều: Có ... không?",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu."
     },
     {
       "number": 37,
@@ -536,21 +612,33 @@
     },
     {
       "number": 42,
-      "mode": "reference",
-      "prompt": "Câu nghe về số có dạng “…-seven”, không đủ thông tin để xác định phần đầu số.",
+      "mode": "text",
+      "prompt": "____-seven",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 42",
       "sourceNumber": 42,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe về số có dạng “…-seven”, không đủ thông tin để xác định phần đầu số."
+      "answer": "twenty",
+      "explanation": "Lời nghe TAT: “Twenty-seven.”. Phần cần điền: twenty.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Twenty-seven."
     },
     {
       "number": 43,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn câu đúng không có âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct sentence.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 43",
       "sourceNumber": 43,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn câu đúng không có âm thanh gốc."
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “Is that your school?”. Đáp án: Is that your school?.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "Is this your school?",
+        "Is that your school?",
+        "That is my school.",
+        "This is my school."
+      ],
+      "speech": "Is that your school?"
     },
     {
       "number": 44,
@@ -710,12 +798,15 @@
     },
     {
       "number": 57,
-      "mode": "reference",
-      "prompt": "Ảnh có biểu tượng nghe và một từ chưa hoàn chỉnh; không có âm thanh gốc để kiểm tra nội dung cần điền.",
+      "mode": "text",
+      "prompt": "sixte__",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 57",
       "sourceNumber": 57,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Ảnh có biểu tượng nghe và một từ chưa hoàn chỉnh; không có âm thanh gốc để kiểm tra nội dung cần điền."
+      "answer": "en",
+      "explanation": "Lời nghe TAT: “Sixteen.”. Phần cần điền: en.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "Sixteen."
     },
     {
       "number": 58,
@@ -1053,21 +1144,32 @@
     },
     {
       "number": 84,
-      "mode": "reference",
-      "prompt": "Câu nghe “There is a ___ on my desk” không có âm thanh để chọn giữa pencil, crayon, computer, flower.",
+      "mode": "choice",
+      "prompt": "There is a ____ on my desk.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 84",
       "sourceNumber": 84,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe “There is a ___ on my desk” không có âm thanh để chọn giữa pencil, crayon, computer, flower."
+      "answer": "C",
+      "explanation": "Lời nghe TAT: “There is a computer on my desk.”. Đáp án: computer.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "pencil",
+        "crayon",
+        "computer",
+        "flower"
+      ],
+      "speech": "There is a computer on my desk."
     },
     {
       "number": 85,
-      "mode": "reference",
-      "prompt": "Ảnh ghi “I love my school thin_.”; không có cách hoàn thành rõ ràng, tự nhiên trong ngữ cảnh.",
+      "mode": "text",
+      "prompt": "I love my school thin__.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 85",
       "sourceNumber": 85,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Ảnh ghi “I love my school thin_.”; không có cách hoàn thành rõ ràng, tự nhiên trong ngữ cảnh."
+      "answer": "gs",
+      "explanation": "school things: đồ dùng học tập; things là danh từ số nhiều.",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu."
     },
     {
       "number": 86,
@@ -1153,12 +1255,14 @@
     },
     {
       "number": 92,
-      "mode": "reference",
-      "prompt": "Ảnh chỉ đánh dấu phần sở hữu “Tony’s” trong câu đúng, không có yêu cầu điền hay sửa xác định.",
+      "mode": "text",
+      "prompt": "That is Tony'__ house. It's big.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 92",
       "sourceNumber": 92,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Ảnh chỉ đánh dấu phần sở hữu “Tony’s” trong câu đúng, không có yêu cầu điền hay sửa xác định."
+      "answer": "s",
+      "explanation": "Tony's house: nhà của Tony; thêm s sau dấu nháy để chỉ sở hữu.",
+      "restorationNote": "TAT hiệu chỉnh từ ảnh mẫu."
     },
     {
       "number": 93,
@@ -1479,12 +1583,27 @@
     },
     {
       "number": 115,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn tranh không có tệp âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 115",
       "sourceNumber": 115,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn tranh không có tệp âm thanh gốc."
+      "answer": "C",
+      "explanation": "Lời nghe TAT: “An ear.”. Đáp án: ear.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "running",
+        "notebook",
+        "ear",
+        "school"
+      ],
+      "speech": "An ear.",
+      "optionImages": [
+        "./phuc-dung/cau-115-1.webp",
+        "./phuc-dung/cau-115-2.webp",
+        "./phuc-dung/cau-115-3.webp",
+        "./phuc-dung/cau-115-4.webp"
+      ]
     },
     {
       "number": 116,
@@ -1700,12 +1819,21 @@
     },
     {
       "number": 131,
-      "mode": "reference",
-      "prompt": "Hình nhiều hoạt động nhỏ không đủ rõ để phân biệt chắc chắn các nhận định trong 4 đáp án.",
+      "mode": "choice",
+      "prompt": "Look at the picture and choose the CORRECT answer.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 131",
       "sourceNumber": 131,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Hình nhiều hoạt động nhỏ không đủ rõ để phân biệt chắc chắn các nhận định trong 4 đáp án."
+      "answer": "B",
+      "explanation": "Bạn nam và bạn nữ ở phía trước đang chơi cờ vua.",
+      "restorationNote": "Đối chiếu trực tiếp ảnh mẫu.",
+      "options": [
+        "There are eight pupils in the picture.",
+        "The boy and the girl play chess.",
+        "Two girls play table tennis.",
+        "Two boys play badminton."
+      ],
+      "illustration": "./phuc-dung/cau-131.webp"
     },
     {
       "number": 132,
@@ -1828,12 +1956,21 @@
     },
     {
       "number": 140,
-      "mode": "reference",
-      "prompt": "Câu nghe “He has a new ___ in his room” không có âm thanh để chọn đáp án.",
+      "mode": "choice",
+      "prompt": "He has a new ____ in his room.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 140",
       "sourceNumber": 140,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe “He has a new ___ in his room” không có âm thanh để chọn đáp án."
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “He has a new lamp in his room.”. Đáp án: lamp.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "stamp",
+        "books",
+        "plane",
+        "lamp"
+      ],
+      "speech": "He has a new lamp in his room."
     },
     {
       "number": 141,
@@ -1854,12 +1991,27 @@
     },
     {
       "number": 142,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn tranh không có tệp âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 142",
       "sourceNumber": 142,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn tranh không có tệp âm thanh gốc."
+      "answer": "B",
+      "explanation": "Lời nghe TAT: “A swimming pool.”. Đáp án: swimming pool.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "art room",
+        "swimming pool",
+        "library",
+        "park"
+      ],
+      "speech": "A swimming pool.",
+      "optionImages": [
+        "./phuc-dung/cau-142-1.webp",
+        "./phuc-dung/cau-142-2.webp",
+        "./phuc-dung/cau-142-3.webp",
+        "./phuc-dung/cau-142-4.webp"
+      ]
     },
     {
       "number": 143,
@@ -1933,12 +2085,27 @@
     },
     {
       "number": 148,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn tranh không có tệp âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct picture.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 148",
       "sourceNumber": 148,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn tranh không có tệp âm thanh gốc."
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “The boy has an eraser.”. Đáp án: eraser.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "pencil",
+        "school things",
+        "ruler",
+        "eraser"
+      ],
+      "speech": "The boy has an eraser.",
+      "optionImages": [
+        "./phuc-dung/cau-148-1.webp",
+        "./phuc-dung/cau-148-2.webp",
+        "./phuc-dung/cau-148-3.webp",
+        "./phuc-dung/cau-148-4.webp"
+      ]
     },
     {
       "number": 149,
@@ -2010,12 +2177,21 @@
     },
     {
       "number": 154,
-      "mode": "reference",
-      "prompt": "",
-      "reason": "Các thẻ “Look”, “at that”, “man.”, “young.”, “He is” cho phép ghép “Look at that man. He is young.”; nội dung có dấu câu tách rời cần đối chiếu, để tham khảo.",
+      "mode": "order",
+      "prompt": "Sắp xếp các thẻ thành câu đúng.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 154",
       "sourceNumber": 154,
-      "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026"
+      "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
+      "answer": "Look at that man. He is young.",
+      "explanation": "Look at that man: Hãy nhìn người đàn ông kia. He is young: Ông ấy còn trẻ.",
+      "restorationNote": "Đối chiếu trực tiếp ảnh mẫu.",
+      "tiles": [
+        "man.",
+        "at that",
+        "Look",
+        "young.",
+        "He is"
+      ]
     },
     {
       "number": 155,
@@ -2163,12 +2339,21 @@
     },
     {
       "number": 165,
-      "mode": "reference",
-      "prompt": "Câu nghe chọn câu trả lời về màu sắc con quái vật không có âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "Listen and choose the correct answer.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 165",
       "sourceNumber": 165,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe chọn câu trả lời về màu sắc con quái vật không có âm thanh gốc."
+      "answer": "A",
+      "explanation": "Lời nghe TAT: “These are purple monsters.”. Đáp án: These are purple monsters..",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "These are purple monsters.",
+        "This is yellow monster.",
+        "These are yellow monsters.",
+        "Those are yellow monsters."
+      ],
+      "speech": "These are purple monsters."
     },
     {
       "number": 166,
@@ -2285,21 +2470,33 @@
     },
     {
       "number": 176,
-      "mode": "reference",
-      "prompt": "Câu nghe “The ___ is in the fridge” không có âm thanh để xác định danh từ.",
+      "mode": "text",
+      "prompt": "The ____ is in the fridge.",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 176",
       "sourceNumber": 176,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe “The ___ is in the fridge” không có âm thanh để xác định danh từ."
+      "answer": "milk",
+      "explanation": "Lời nghe TAT: “The milk is in the fridge.”. Phần cần điền: milk.",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "speech": "The milk is in the fridge."
     },
     {
       "number": 177,
-      "mode": "reference",
-      "prompt": "Câu nghe về con vật yêu thích không có âm thanh gốc.",
+      "mode": "choice",
+      "prompt": "What are her favourite animals?",
       "source": "Ảnh mẫu lớp 3 cấp trường — câu 177",
       "sourceNumber": 177,
       "origin": "199 ảnh do người dùng cung cấp ngày 20/11/2026",
-      "reason": "Câu nghe về con vật yêu thích không có âm thanh gốc."
+      "answer": "D",
+      "explanation": "Lời nghe TAT: “Her favourite animals are giraffes.”. Đáp án: They are giraffes..",
+      "restorationNote": "Lời nghe TAT phục dựng, không phải âm thanh gốc.",
+      "options": [
+        "They are tigers.",
+        "They are hippos.",
+        "They are lions.",
+        "They are giraffes."
+      ],
+      "speech": "Her favourite animals are giraffes."
     },
     {
       "number": 178,

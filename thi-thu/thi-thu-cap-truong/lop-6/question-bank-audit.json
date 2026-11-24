@@ -1,16 +1,16 @@
 {
-  "total": 6000,
+  "total": 6018,
   "typeCounts": {
     "order": 800,
-    "fill": 1100,
-    "choice": 1094,
+    "fill": 1101,
+    "choice": 1095,
     "reading": 356,
     "reading_tf": 280,
     "odd_one_out": 160,
     "dialogue_choice": 150,
     "knowledge": 100,
     "question_start": 350,
-    "listen": 180,
+    "listen": 187,
     "reply_choice": 150,
     "pronunciation": 120,
     "incorrect_sentence": 200,
@@ -18,12 +18,14 @@
     "sentence_choice": 160,
     "preposition_choice": 250,
     "find_error": 250,
-    "inline_word": 100
+    "inline_word": 100,
+    "listen_tf": 4,
+    "listen_choice": 5
   },
-  "uniqueIds": 6000,
+  "uniqueIds": 6018,
   "sourceImages": 198,
-  "source": "175 original questions converted from 198 supplied class-6 screenshots; 23 reference-only; remaining 5825 TAT variants; answers prepared by TAT, not official.",
-  "originalPractice": 175,
-  "referenceOnly": 23,
+  "source": "193 questions from 198 screenshots, including 18 restored/adapted items; 5 reference-only; original 6000 bank entries preserved.",
+  "originalPractice": 193,
+  "referenceOnly": 5,
   "generatedPractice": 5825
 }
