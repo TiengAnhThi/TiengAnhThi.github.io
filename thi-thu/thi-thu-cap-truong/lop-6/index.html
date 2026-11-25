@@ -597,31 +597,80 @@ function tatRememberQuestions(items){
   return Q.filter(q=>q.type===t);
  }
 
+ // Độ khó tương đối theo lớp, ước lượng từ nội dung có sẵn (không sửa ngân hàng).
+ const TAT_TRIAL_HARD_TARGET=120;
+ function tatDifficultyWords(value){return String(value||'').match(/[a-z]+(?:['’][a-z]+)?/gi)||[];}
+ function tatDifficultyCloseOptions(q){
+  const options=(q.options||[]).map(x=>norm(x));
+  const grammarGroups=[['am','is','are','be','was','were','been','being'],['do','does','did','doing','done'],['have','has','had','having'],['i','me','my','mine','you','your','yours','he','him','his','she','her','hers','it','its','we','us','our','ours','they','them','their','theirs'],['a','an','the','some','any','much','many','few','little','no'],['in','on','at','to','from','with','of','for','under','above','between','behind','near','next to','beside'],['what','where','when','who','whose','which','why','how','how old','how many','how much']];
+  if(grammarGroups.some(group=>options.filter(x=>group.includes(x)).length>=3))return true;
+  const stems=options.map(x=>x.replace(/^(?:am|is|are|was|were|do|does|did|will|can|has|have|had)\s+/,'').replace(/\b(\w{3,})ies\b/g,'$1y').replace(/\b(\w{3,})(?:ing|ed|es|s)\b/g,'$1'));
+  for(let i=0;i<stems.length;i++){
+   if(stems[i].length>=3&&stems.filter(x=>x===stems[i]).length>=3)return true;
+   if(options[i].length>=3&&options.filter(x=>x.startsWith(options[i].slice(0,3))).length>=3)return true;
+  }
+  return false;
+ }
+ function tatIsHardTrialQuestion(q){
+  const grade=Number(q.grade)||3, upper=grade>=6, prompt=String(q.prompt||''), answer=String(q.answer??'');
+  const words=tatDifficultyWords(prompt).length, speechWords=tatDifficultyWords(q.speech).length, passageWords=tatDifficultyWords(q.passage).length;
+  const letters=answer.replace(/[^a-z]/gi,'').length;
+  switch(q.type){
+   case 'find_error':case 'incorrect_sentence':case 'sentence_choice':case 'pronunciation':return true;
+   case 'order':return (q.parts||[]).length>=5||tatDifficultyWords(answer).length>=(upper?8:7);
+   case 'fill':return upper?(letters>=6||/\s/.test(answer.trim())||(/\bpast simple\b/i.test(prompt)&&letters>=3&&!/ed$/i.test(answer))||(letters>=4&&!/\(.*\)/.test(prompt)&&!/[a-z]_{2,}|_{2,}[a-z]/i.test(prompt))):letters>=3;
+   case 'inline_word':return letters>=3;
+   case 'reading':return passageWords>=20;
+   case 'reading_tf':return passageWords>=(upper?20:15)&&!/^Hình minh họa/i.test(q.passage||'');
+   case 'listen_tf':return speechWords>=(upper?20:15);
+   case 'listen':return letters>=5&&speechWords>=5;
+   case 'listen_choice':return speechWords>=(upper?7:6)&&(tatDifficultyCloseOptions(q)||(q.options||[]).filter(x=>tatDifficultyWords(x).length>=3).length>=3||speechWords>=12);
+   case 'choice':case 'question_start':return tatDifficultyCloseOptions(q)||/\b(?:main stress|pronounced|incorrect|grammatically|comparative|superlative)\b/i.test(prompt);
+   case 'preposition_choice':return /\b(?:quarter|half past|between|during|until)\b/i.test(prompt);
+   case 'knowledge':return /\b(?:stress|pronounced)\b/i.test(prompt)||(!upper&&words>=9&&/\d/.test(prompt));
+   case 'dialogue_choice':case 'reply_choice':return tatDifficultyCloseOptions(q);
+   case 'context_choice':return false;
+   default:return false;
+  }
+ }
+ const TAT_TRIAL_HARD_QUOTA=Object.freeze({"listen_choice":5,"listen":5,"listen_tf":8,"fill":18,"choice":20,"order":19,"reading":10,"reading_tf":8,"find_error":8,"incorrect_sentence":6,"pronunciation":5,"knowledge":4,"sentence_choice":4});
  function tatPickTrialQuestions(){
-  const seenDisplayed=new Set(),seenBankIds=new Set(),seenListeningSpeech=new Set(),tatAlreadyShown=new Set(tatGetRecentlyShown());
-  return shuffle([].concat(...QUESTION_TYPES.map(t=>{
-   const candidates=shuffle(tatTrialCandidates(t)).sort((a,b)=>Number(tatAlreadyShown.has(a.bankId))-Number(tatAlreadyShown.has(b.bankId)));
-   const chosen=[],seenExact=new Set(),seenPattern=new Set(),seenReadingPassages=new Set(),seenGroups=new Set();
-   const exactKey=q=>norm([q.prompt,q.markedSentence||'',q.word||'',q.before||'',q.after||'',q.position||'',q.objectName||'',q.cartoonA||'',q.cartoonB||'',q.cartoonThing||'',q.scene||'',q.age||'',q.word||'',q.passage||'',q.speech||'',JSON.stringify(q.players||[]),...(q.options||[])].join(' | ')).replace(/\s+/g,' ');
-   const patternKey=q=>exactKey(q).replace(/\b(?:emma|tom|anna|mary|john|peter|lucy|linda|nam|mai|lan|minh|hoa|ben|jack|david|susan|alice)\b/g,'[name]').replace(/\b\d+\b/g,'[number]');
-   for(const q of candidates){
-    if((t==='reading'||t==='reading_tf')&&seenReadingPassages.has(q.passageId))continue;
-    if(q.groupId&&seenGroups.has(q.groupId))continue;
-    const exact=exactKey(q),pattern=patternKey(q),visible=tatVisibleQuestionKey(q);
-    if(seenExact.has(exact)||seenPattern.has(pattern)||seenDisplayed.has(visible)||seenBankIds.has(q.bankId)||(tatIsTrialListening(q)&&seenListeningSpeech.has(norm(q.speech))))continue;
-    chosen.push(q);seenExact.add(exact);seenPattern.add(pattern);seenDisplayed.add(visible);seenBankIds.add(q.bankId);if(tatIsTrialListening(q))seenListeningSpeech.add(norm(q.speech));
-    if(t==='reading'||t==='reading_tf')seenReadingPassages.add(q.passageId);
-    if(q.groupId)seenGroups.add(q.groupId);
-    if(chosen.length===TAT_QUESTION_QUOTA[t])break;
-   }
-   if(chosen.length<TAT_QUESTION_QUOTA[t])for(const q of candidates){
-    const exact=exactKey(q),visible=tatVisibleQuestionKey(q);
-    if(seenExact.has(exact)||seenDisplayed.has(visible)||seenBankIds.has(q.bankId)||(tatIsTrialListening(q)&&seenListeningSpeech.has(norm(q.speech))))continue;
-    chosen.push(q);seenExact.add(exact);seenDisplayed.add(visible);seenBankIds.add(q.bankId);if(tatIsTrialListening(q))seenListeningSpeech.add(norm(q.speech));
-    if(chosen.length===TAT_QUESTION_QUOTA[t])break;
-   }
-   return chosen;
-  })));
+  const tatAlreadyShown=new Set(tatGetRecentlyShown());
+  // Chỉ xếp hạng các ứng viên của đề 200 câu, giữ nguyên số câu mỗi dạng.
+  const pools=new Map(QUESTION_TYPES.map(t=>[t,shuffle(tatTrialCandidates(t)).map(q=>({q,hard:tatIsHardTrialQuestion(q)})).sort((a,b)=>Number(tatAlreadyShown.has(a.q.bankId))-Number(tatAlreadyShown.has(b.q.bankId)))]));
+  function pick(maxHard=false){
+   const seenDisplayed=new Set(),seenBankIds=new Set(),seenListeningSpeech=new Set();
+   return [].concat(...QUESTION_TYPES.map(t=>{
+    const candidates=pools.get(t),quota=TAT_QUESTION_QUOTA[t],hardTarget=maxHard?quota:(TAT_TRIAL_HARD_QUOTA[t]||0);
+    const chosen=[],seenExact=new Set(),seenPattern=new Set(),seenReadingPassages=new Set(),seenGroups=new Set();
+    const exactKey=q=>norm([q.prompt,q.markedSentence||'',q.word||'',q.before||'',q.after||'',q.position||'',q.objectName||'',q.cartoonA||'',q.cartoonB||'',q.cartoonThing||'',q.scene||'',q.age||'',q.word||'',q.passage||'',q.speech||'',JSON.stringify(q.players||[]),...(q.options||[])].join(' | ')).replace(/\s+/g,' ');
+    const patternKey=q=>exactKey(q).replace(/\b(?:emma|tom|anna|mary|john|peter|lucy|linda|nam|mai|lan|minh|hoa|ben|jack|david|susan|alice)\b/g,'[name]').replace(/\b\d+\b/g,'[number]');
+    function take(hard,limit,strict){
+     for(const item of candidates){
+      if(chosen.length>=limit)return;
+      if(hard!==null&&item.hard!==hard)continue;
+      const q=item.q,exact=exactKey(q),pattern=patternKey(q),visible=tatVisibleQuestionKey(q),listening=tatIsTrialListening(q),speech=listening?norm(q.speech):'';
+      if(seenExact.has(exact)||seenDisplayed.has(visible)||seenBankIds.has(q.bankId)||(listening&&seenListeningSpeech.has(speech)))continue;
+      if(strict&&(seenPattern.has(pattern)||((t==='reading'||t==='reading_tf')&&seenReadingPassages.has(q.passageId))||(q.groupId&&seenGroups.has(q.groupId))))continue;
+      chosen.push(q);seenExact.add(exact);seenPattern.add(pattern);seenDisplayed.add(visible);seenBankIds.add(q.bankId);
+      if(listening)seenListeningSpeech.add(speech);
+      if(t==='reading'||t==='reading_tf')seenReadingPassages.add(q.passageId);
+      if(q.groupId)seenGroups.add(q.groupId);
+     }
+    }
+    take(true,hardTarget,true);take(true,hardTarget,false);
+    take(false,quota,true);take(false,quota,false);
+    take(null,quota,true);take(null,quota,false);
+    return chosen;
+   }));
+  }
+  let selected=pick();
+  // Nếu một dạng không đủ ứng viên khó sau lọc trùng, ưu tiên câu khó ở các dạng còn lại.
+  if(selected.filter(tatIsHardTrialQuestion).length<TAT_TRIAL_HARD_TARGET){
+   const fallback=pick(true);
+   if(fallback.length===200&&fallback.filter(tatIsHardTrialQuestion).length>selected.filter(tatIsHardTrialQuestion).length)selected=fallback;
+  }
+  return shuffle(selected);
  }
  function tatPrepareQuestion(q,keepSourceOrder){
   const item={...q,tiles:q.type==='order'?(keepSourceOrder?q.parts.map((text,i)=>({text,i})):shuffle(q.parts.map((text,i)=>({text,i})))):undefined,submitted:false,user:null,correct:false};
@@ -641,6 +690,7 @@ function tatRememberQuestions(items){
   const selected=tatExamMode==='original'?TAT_ORIGINAL_QUESTIONS:tatPickTrialQuestions();
   questions=selected.map(q=>tatPrepareQuestion(q,tatExamMode==='original'));
   if(questions.length!==(tatExamMode==='original'?193:200)||(tatExamMode==='trial'&&['listen_choice','listen','listen_tf'].some(t=>questions.filter(q=>q.type===t).length!==8))){alert('Ngân hàng câu hỏi chưa sẵn sàng. Vui lòng tải lại trang.');restart();return;}
+  if(tatExamMode==='trial'&&selected.filter(tatIsHardTrialQuestion).length<TAT_TRIAL_HARD_TARGET){alert('Chưa đủ câu hỏi khó để tạo đề 200 câu. Vui lòng thử lại.');restart();return;}
   current=0;page=0;remaining=1800;finished=false;selection=[];typed='';chosen=null;
   $('result').classList.add('hidden');$('reviewActions').classList.add('hidden');
   clearTimeout(autoReturnTimer);clearInterval(timer);
