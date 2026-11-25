@@ -442,7 +442,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 17",
       "sourceNumber": 17,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/autumn.png"
   },
   {
     "type": "choice",
@@ -635,7 +636,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 25",
       "sourceNumber": 25,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/restaurant.png"
   },
   {
     "type": "reading",
@@ -879,7 +881,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 33",
       "sourceNumber": 33,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/magazine.png"
   },
   {
     "type": "choice",
@@ -1435,7 +1438,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 53",
       "sourceNumber": 53,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3d9-fe0f.png"
   },
   {
     "type": "choice",
@@ -1866,7 +1870,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 66",
       "sourceNumber": 66,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/family-picture.png"
   },
   {
     "type": "fill",
@@ -3335,7 +3340,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 114",
       "sourceNumber": 114,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/desert.png"
   },
   {
     "type": "choice",
@@ -4828,7 +4834,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 166",
       "sourceNumber": 166,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/bench.png"
   },
   {
     "type": "fill",
@@ -5417,7 +5424,8 @@
       "source": "Ảnh mẫu lớp 6 cấp trường — câu 186",
       "sourceNumber": 186,
       "origin": "Người dùng cung cấp ảnh ngày 19/11/2026"
-    }
+    },
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/post-office.png"
   },
   {
     "type": "choice",
@@ -8233,7 +8241,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/library.png"
   },
   {
     "type": "incorrect_sentence",
@@ -9317,7 +9326,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/timetable.png"
   },
   {
     "type": "preposition_choice",
@@ -9977,7 +9987,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 196,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/station.png"
   },
   {
     "type": "sentence_choice",
@@ -10951,7 +10962,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 65,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "incorrect_sentence",
@@ -12776,7 +12788,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 20,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/library.png"
   },
   {
     "type": "order",
@@ -14020,7 +14033,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 190,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "choice",
@@ -18012,7 +18026,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 153,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "reading_tf",
@@ -18797,7 +18812,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 190,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/homework.png"
   },
   {
     "type": "choice",
@@ -19933,7 +19949,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/classroom.png"
   },
   {
     "type": "question_start",
@@ -22479,7 +22496,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/library.png"
   },
   {
     "type": "fill",
@@ -23927,7 +23945,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 190,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3ca.png"
   },
   {
     "type": "fill",
@@ -24780,7 +24799,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 161,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/environment.png"
   },
   {
     "type": "question_start",
@@ -25157,7 +25177,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "choice",
@@ -25715,7 +25736,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 161,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/timetable.png"
   },
   {
     "type": "fill",
@@ -27030,7 +27052,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/uniform.png"
   },
   {
     "type": "order",
@@ -27652,7 +27675,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 33,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/bedroom.png"
   },
   {
     "type": "question_start",
@@ -28778,7 +28802,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 161,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5d3-fe0f.png"
   },
   {
     "type": "odd_one_out",
@@ -30643,7 +30668,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 39,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/bedroom.png"
   },
   {
     "type": "odd_one_out",
@@ -32847,7 +32873,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 190,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3e5.png"
   },
   {
     "type": "order",
@@ -34385,7 +34412,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 153,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/timetable.png"
   },
   {
     "type": "choice",
@@ -36455,7 +36483,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 190,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/station.png"
   },
   {
     "type": "preposition_choice",
@@ -37907,7 +37936,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/2600-fe0f.png"
   },
   {
     "type": "order",
@@ -40672,7 +40702,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 161,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/station.png"
   },
   {
     "type": "fill",
@@ -41160,7 +41191,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 12,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/exercise.png"
   },
   {
     "type": "question_start",
@@ -43454,7 +43486,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "order",
@@ -45417,7 +45450,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 12,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "choice",
@@ -45609,7 +45643,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 29,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5a5-fe0f.png"
   },
   {
     "type": "reading",
@@ -50975,7 +51010,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/festival.png"
   },
   {
     "type": "odd_one_out",
@@ -52735,7 +52771,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 2,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/26bd.png"
   },
   {
     "type": "pronunciation",
@@ -54872,7 +54909,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 33,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5d3-fe0f.png"
   },
   {
     "type": "choice",
@@ -55235,7 +55273,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/vegetables.png"
   },
   {
     "type": "reply_choice",
@@ -56423,7 +56462,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 19,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/26bd.png"
   },
   {
     "type": "choice",
@@ -58343,7 +58383,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 19,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/classroom.png"
   },
   {
     "type": "order",
@@ -59074,7 +59115,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 2,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/dictionary.png"
   },
   {
     "type": "reading",
@@ -59522,7 +59564,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 20,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5d3-fe0f.png"
   },
   {
     "type": "choice",
@@ -59664,7 +59707,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3e5.png"
   },
   {
     "type": "sentence_choice",
@@ -59851,7 +59895,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 196,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/bedroom.png"
   },
   {
     "type": "knowledge",
@@ -61915,7 +61960,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 153,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/homework.png"
   },
   {
     "type": "fill",
@@ -65669,7 +65715,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/26bd.png"
   },
   {
     "type": "incorrect_sentence",
@@ -66399,7 +66446,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 39,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5a5-fe0f.png"
   },
   {
     "type": "reply_choice",
@@ -68025,7 +68073,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3ca.png"
   },
   {
     "type": "fill",
@@ -69618,7 +69667,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 29,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/neighbourhood.png"
   },
   {
     "type": "fill",
@@ -69908,7 +69958,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 29,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/26bd.png"
   },
   {
     "type": "reading_tf",
@@ -72404,7 +72455,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/dictionary.png"
   },
   {
     "type": "choice",
@@ -72615,7 +72667,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/bedroom.png"
   },
   {
     "type": "pronunciation",
@@ -73404,7 +73457,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 20,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/26bd.png"
   },
   {
     "type": "incorrect_sentence",
@@ -74052,7 +74106,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 153,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/dictionary.png"
   },
   {
     "type": "choice",
@@ -77396,7 +77451,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 196,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/vegetables.png"
   },
   {
     "type": "question_start",
@@ -79207,7 +79263,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 84,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/homework.png"
   },
   {
     "type": "incorrect_sentence",
@@ -79922,7 +79979,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 196,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5d3-fe0f.png"
   },
   {
     "type": "sentence_choice",
@@ -83530,7 +83588,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 12,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5d3-fe0f.png"
   },
   {
     "type": "choice",
@@ -86173,7 +86232,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 161,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/267b-fe0f.png"
   },
   {
     "type": "order",
@@ -86713,7 +86773,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 2,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3db-fe0f.png"
   },
   {
     "type": "order",
@@ -87805,7 +87866,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 19,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f5a5-fe0f.png"
   },
   {
     "type": "reading",
@@ -88435,7 +88497,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 2,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/vegetables.png"
   },
   {
     "type": "choice",
@@ -93085,7 +93148,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 19,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/festival.png"
   },
   {
     "type": "context_choice",
@@ -93117,7 +93181,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 2,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/neighbourhood.png"
   },
   {
     "type": "choice",
@@ -94846,7 +94911,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 53,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/festival.png"
   },
   {
     "type": "context_choice",
@@ -96178,7 +96244,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 12,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/dictionary.png"
   },
   {
     "type": "fill",
@@ -96249,7 +96316,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 33,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/dictionary.png"
   },
   {
     "type": "sentence_choice",
@@ -97206,7 +97274,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/2600-fe0f.png"
   },
   {
     "type": "preposition_choice",
@@ -97238,7 +97307,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 20,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/classroom.png"
   },
   {
     "type": "reading_tf",
@@ -99030,7 +99100,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 114,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/homework.png"
   },
   {
     "type": "listen",
@@ -99074,7 +99145,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 33,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/breakfast.png"
   },
   {
     "type": "incorrect_sentence",
@@ -99178,7 +99250,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 19,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/station.png"
   },
   {
     "type": "preposition_choice",
@@ -99500,7 +99573,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 20,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/vocab/neighbourhood.png"
   },
   {
     "type": "question_start",
@@ -99637,7 +99711,8 @@
     "origin": "TAT biên soạn câu mới theo dạng của 198 ảnh tham chiếu lớp 6 cấp trường.",
     "sampleImageNo": 65,
     "grade": 6,
-    "examLevel": "thi-thu-cap-truong"
+    "examLevel": "thi-thu-cap-truong",
+    "vocabularyIllustration": "../../../assets/tat-visuals/1f3e5.png"
   },
   {
     "type": "question_start",
